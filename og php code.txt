@@ -1,0 +1,19 @@
+<?php
+$db_host = 'localhost';
+$db_user = 'images';
+$db_pwd = 'F0t0b0mb';
+$db_name = 'anderson_images';
+
+$conn= new mysqli($db_host, $db_user, $db_pwd, $db_name);//database connection
+				
+$sql = "SELECT image_file,image_path FROM anderson_images.images order by image_path";
+				
+$result = $conn->query($sql);	
+				
+while($data = $result->fetch_assoc()) {
+  echo "<tr><td>". $data["image_path"]. "</td><td>". $data["image_file"]. "</td></tr>";
+  //echo("<tr><td><a href=book_info.php?id=$data[3]>$data[0]</a></td><td>$data[1]</td><td>$data[2]</td></tr>");
+}
+?>
+
+

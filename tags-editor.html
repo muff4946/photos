@@ -1,0 +1,370 @@
+<!doctype html>
+<html>
+<head>
+	<title>Anderson Photo Library</title>
+	<link rel="stylesheet" href="api/tags-style.css?v=2.02"></link>
+</head>
+
+<body>
+	
+	<div class="borders">
+		<h1 id="header" class="header">Tag Editor</h1>	
+		<input class="top_right" type="number" placeholder="image #" id="pick_image">
+		<button class="top_right" id = "submit1" type="submit" onclick="submit_image()">go</button>
+	</div>
+	
+	
+	<div id="angularEditor" class="container" ng-app="TagEditor" ng-controller="TagEditorCont">
+		<div class="grid-container">
+			
+			<div class="left">
+				<button class="prev" ng-click="prev()"> prev</button>
+			</div>
+			
+			<div class="to_be_image">
+				<img id= "photo" class="image"></img>
+			</div>
+				
+			<div class="tagsUsed">
+				<table>
+					<tr> 
+						<th>ID</th>
+						<th>TAG</th>
+						<th>DEL</th>
+					</tr>
+					<tr ng-repeat="t in tags_assigned">
+						<td>{{t.id}}</td>
+						<td>{{t.name}}</td>
+						<td class="delete"><button ng-click="deleteTagLink(t.id)">X</button></td>
+					</tr>
+				</table>
+			</div>
+				
+			<div class="addSection"><center><b>SEARCH</b></center><span class="br"></span>
+				<form>
+					<input id="searchbar" type="text" ng-model="searchText" ng-change="change(text)" placeholder="filter"/>
+					<button ng-click="addTagLink()" type="submit">add</button>
+					<span class="br"></span>
+					<select class="add_select" id="add_select">
+						<option ng-repeat="entry in entries" value={{entry.id}}>{{entry.name}}</option>
+					</select>
+					<span class="br"></span>
+					<select id="events">
+						<option ng-repeat="e in events" value={{e.id}}>{{e.name}}</option>
+					</select>
+					<button ng-click="addEvent()">add</button>
+					<select id="holidays">
+						<option ng-repeat="h in holidays" value={{h.id}}>{{h.name}}</option>
+					</select>
+					<button ng-click="addHolidays()">add</button>
+					<button ng-click="prev()">prev</button>
+					<button ng-click="next()">next</button>
+					<span class="br"></span>
+					<button ng-click="addTagLink1(9)">Gary</button>
+					<button ng-click="addTagLink1(10)">Kay</button>
+					<button ng-click="addTagLink1(2)">Tracy</button>
+					<button ng-click="addTagLink1(99)">Jill</button>
+					<button ng-click="addTagLink1(290)">Clete</button>
+					<button ng-click="addTagLink1(316)">Mack</button>
+					<button ng-click="addTagLink1(89)">Susie</button>
+					<button ng-click="addTagLink1(20)">G'ma K.</button>
+					<button ng-click="addTagLink1(22)">G'pa G.</button>
+					<button ng-click="addTagLink1(17)">G'ma G.</button>
+					<!--<button ng-click="addTagLink1(537)">94</button>
+					<button ng-click="addTagLink1(538)">95</button>
+					<button ng-click="addTagLink1(539)">96</button>
+					<button ng-click="addTagLink1(540)">97</button>-->
+					<!--<button ng-click="addTagLink1(235)">Eric</button>
+					<button ng-click="addTagLink1(248)">Ethan</button>
+					<button ng-click="addTagLink1(266)">Dylan</button>
+					<button ng-click="addTagLink1(194)">Jenny</button>
+					<button ng-click="addTagLink1(205)">Mark</button>
+					<button ng-click="addTagLink1(234)">Gwen</button>-->
+					<span class="br"></span>
+					<button ng-click="addTagLink1(1)">Bill</button>
+					<button ng-click="addTagLink1(2)">Tracy</button>
+					<button ng-click="addTagLink1(3)">Marcy</button>
+					<button ng-click="addTagLink1(4)">Dottie</button>
+					<button ng-click="addTagLink1(3);addTagLink1(4)"> Marcy&Dottie </button>
+					<button ng-click="addTagLink1(5)">Charley</button>
+					<button ng-click="addTagLink1(7)">Gabbi</button>
+					<button ng-click="addTagLink1(3);addTagLink1(4);addTagLink1(5);addTagLink1(7)"> Kids </button>
+					<button ng-click="addTagLink1(323)">Caitlyn</button>
+					<span class="br"></span>
+					<button ng-click="addTagLink1(568)">2021</button>
+					<button ng-click="addTagLink1(114)">Easter</button>
+					<button ng-click="addTagLink1(119)">H'ween</button>
+					<button ng-click="addTagLink1(127)">Studio</button>
+					<button ng-click="addTagLink1(122)">B'day</button>
+					<button ng-click="addTagLink1(118)">Grad</button>
+					<button ng-click="addTagLink1(247)">Disney</button>
+				</form>
+				
+			</div>
+				
+			<div class="fun">
+				<div class="title"><b><center>Functions</center></b></div>
+				<span class="br"></span>
+				<div class="not_title">
+					<button ng-click="notYetFunctional()">add new tag</button>
+					<span class="br"></span>
+					<button ng-click="copyTags()">copy tags from image</button>
+					<span class="br"></span>
+					<button ng-click="pasteTags()">paste tags to image</button>
+					<span class="br"></span>
+					<button ng-click="notYetFunctional()">set current photo</button>
+					<span class="br"></span>
+					<button ng-click="deleteAllTags()">Delete all tags</button>
+					<span class="br"></span>
+					<button ng-click="getLastPage()">copy from last photo</button>
+					<span class="br"></span>
+					<button ng-click="prev()">PREV</button>
+					<button ng-click="next()">NEXT</button>
+				</div>
+			</div>
+				
+			<div id="addModal" class="modal">
+				
+			</div>
+				
+			<div class= "info" >
+				<p ng-repeat="i in page_info">Image ID: {{i.id}} <br><br>{{i.path}}\{{i.file}}</p>
+			</div>
+			
+			<div class="right">
+				<button class="next" ng-click="next()"> next</button>
+			</div>
+
+		</div>
+	</div>
+</body>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+<script>
+var page;
+var keyword;
+var imageid;
+
+var app = angular.module('TagEditor',[]);
+app.controller('TagEditorCont',function($scope, $http){
+	window.onload = function(){
+		$scope.start();
+	};
+	
+	$scope.start = function(){
+		page = localStorage.getItem("tag_page");
+		keyword = localStorage.getItem("keyword");
+		if(keyword==null){
+			keyword="";
+		}
+		document.getElementById("header").innerText = "Tag Editor: " +page;
+		
+		//getting the paging information and setting the image
+		$http.get("https://photos.dbq-andersons.com/api/product/read_images_tag_edit_paging.php?page="+page+"&name="+keyword,).then(
+			function successfulCallback(response){
+				$scope.page_list = response.data.paging;
+				$scope.page_info = response.data.records;
+				$scope.getImage();
+				imageid = $scope.page_info[0].id;
+				$scope.getTags();
+				$scope.getTypes();
+			},
+			function errorCallback(response){
+				alert("No photos found here");
+				console.log("Error"+response);
+		});
+	
+	};
+	
+	//getting tags for the upper-right panel
+	$scope.getTags = function(){
+		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_image.php?image="+imageid,).then(
+			function successfulCallback(response){
+				$scope.tags_assigned = response.data.tags;
+				//console.log($scope.tags_assigned);
+			},
+			function errorCallback(response){
+				console.log(response);
+		});
+	
+	}
+	
+	//getting the image and setting the source
+	$scope.getImage = function(){
+		var str = $scope.page_info[0].path;
+		str = str.replace(/D:\\pictures\\/,"storage/");
+		str = str.replace(/\\/g, "/");
+		str = str+'/'+$scope.page_info[0].file;
+		document.getElementById("photo").src=str;
+	}
+	
+	//search bar
+	$scope.searchText=null;
+	$scope.change=function(text){
+		valtosend=$scope.searchText;
+		$http.get("https://photos.dbq-andersons.com/api/product/search_tags.php?keyword="+$scope.searchText,).then(
+			function successfulCallback(response){
+				$scope.entries=response.data.records;
+			},
+			function errorCallback(response){
+				console.log(response);
+		});
+	}
+	
+	//events list
+	$scope.getTypes=function(text){
+		$http.get("https://photos.dbq-andersons.com/api/product/search_tags.php?type=event",).then(
+			function successfulCallback(response){
+				$scope.events=response.data.records;
+			},
+			function errorCallback(response){
+				console.log(response);
+		});
+		$http.get("https://photos.dbq-andersons.com/api/product/search_tags.php?type=holiday",).then(
+			function successfulCallback(response){
+				$scope.holidays=response.data.records;
+			},
+			function errorCallback(response){
+				console.log(response);
+		});
+	}
+	
+	//adding tag link with option
+	$scope.addTagLink1=function(tag_id){
+		
+		var values_to_send="?tag="+tag_id+"&image="+imageid;
+		$http.get("https://photos.dbq-andersons.com/api/product/post_new_tag_link.php"+values_to_send,).then(
+			function successfulCallback(response){
+				//alert("new tag added");
+				$scope.getTags();
+				document.getElementById("searchbar").value = "";
+			},
+			function errorCallback(response){
+				alert("tag not added");
+				console.log(response);
+		});	
+	}
+	
+	//add from the events button
+	$scope.addEvent=function(){
+		var tag_id=document.getElementById("events").value;
+		$scope.addTagLink1(tag_id);
+	}
+	
+	//add from the holidays button
+	$scope.addHolidays=function(){
+		var tag_id=document.getElementById("holidays").value;
+		$scope.addTagLink1(tag_id);
+	}
+	
+	
+	//adding tag link
+	$scope.addTagLink=function(){
+		var tag_id = document.getElementById("add_select").value;
+		var values_to_send="?tag="+tag_id+"&image="+imageid;
+		$http.get("https://photos.dbq-andersons.com/api/product/post_new_tag_link.php"+values_to_send,).then(
+			function successfulCallback(response){
+				//alert("new tag added");
+				$scope.getTags();
+				document.getElementById("searchbar").value = "";
+			},
+			function errorCallback(response){
+				alert("tag not added");
+				console.log(response);
+		});	
+	}
+	
+	$scope.addNewTag=function(){
+		
+	}
+	
+	$scope.copyTags=function(){
+		var toAdd = JSON.stringify($scope.tags_assigned);
+		localStorage.setItem("copiedTags",toAdd);
+	}
+	
+	$scope.pasteTags=function(){
+		toAdd=localStorage.getItem("copiedTags");
+		toAdd=JSON.parse(toAdd);
+		console.log(toAdd);
+		var i;
+		for(i=0;i<toAdd.length;i++){
+			$scope.addTagLink1(toAdd[i].id);
+		}
+	}
+	
+	$scope.deleteAllTags=function(){
+		var toDelete = $scope.tags_assigned;
+		var i;
+		for(i=0;i<toDelete.length;i++){
+			$scope.deleteTagLink(toDelete[i].id);
+		}
+		
+	}
+	
+	$scope.deleteTagLink=function(tag_id){
+		var values_to_send="?tag="+tag_id+"&image="+imageid;
+		var r = confirm("Do you want to delete tag "+tag_id+"?");
+		if(r==true){
+			$http.get("https://photos.dbq-andersons.com/api/product/delete_tag_link.php"+values_to_send,).then(
+				function successfulCallback(response){
+					//alert("new tag added");
+					$scope.getTags();
+					//document.getElementById("searchbar").value = "";
+				},
+				function errorCallback(response){
+					//alert("tag not added");
+					console.log(response);
+			});
+		}	
+	}
+	
+	$scope.setLastPage = function(){
+		var toAdd = JSON.stringify($scope.tags_assigned);
+		localStorage.setItem("lastTags",toAdd);
+	}
+	
+	$scope.getLastPage=function(){
+		toAdd=localStorage.getItem("lastTags");
+		toAdd=JSON.parse(toAdd);
+		console.log(toAdd);
+		var i;
+		for(i=0;i<toAdd.length;i++){
+			$scope.addTagLink1(toAdd[i].id);
+		}
+	}
+	
+	
+	//Moving between pages
+	$scope.next = function(){
+		$scope.setLastPage();
+		goToPage(parseInt(page)+1);
+	}
+	
+	$scope.prev = function(){
+		$scope.setLastPage();
+		goToPage(page-1);
+	}
+	
+	$scope.notYetFunctional = function(){
+		alert("This is not yet functional, check back later for updates");
+	};
+	
+	
+});
+//goes to page based on numeric value
+submit_image=function(){
+	var id=document.getElementById("pick_image").value;
+	goToPage(parseInt(id));
+}
+
+//takes you to the given page number
+goToPage=function(id){
+	localStorage.setItem("tag_page",id);
+	ang = angular.element(document.getElementById('angularEditor')).scope();
+	ang.start();
+
+}
+</script>
+
+
+</html>

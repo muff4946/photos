@@ -1,0 +1,196 @@
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 2px #7C7C7C;
+	border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb{
+	background: #2B303A;
+}
+
+
+button{
+	background-color: #F7F7F2;
+	border-color: #2B303A;
+	border-radius:3px;
+	padding: 3px;
+	border-width: 1.5px;
+}
+
+button:hover{
+	background-color: #7C7C7C;
+}
+
+button:active{
+	border-style: none;
+	outline: none;
+}
+
+select{
+	border-color: #2B303A;
+	border-radius:2px;
+	padding: 3px;
+	border-width: 1.5px;
+	background-color: #F7F7F2;
+}
+
+select:active{
+	border-style: none;
+	outline: none;
+}
+
+input{
+	border-color: #2B303A;
+	background-color: #F7F7F2;
+	border-radius:2px;
+	padding: 3px;
+	border-width: 1.5px;
+}
+
+input:active{
+	border-style: none;
+	outline: none;
+}
+
+body{
+	background-color: #594157;
+}
+
+.grid-container{
+	background-color: #248794;
+	border: 1px solid black;
+	width: 100%;
+	height: 100%;
+	padding-top: 0px;
+	padding-bottom: 5px;
+}
+
+.top{
+	position: relative;
+	width: 100%;
+	text-align: center;
+	vertical-align: center;
+	background-color: #2B303A;
+	color: #F7F7F2;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid black;
+}
+
+#page_tracker {
+	text-align: right;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+#user_name {
+	text-align: left;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	color: white;
+}
+
+
+.button_bar{
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 75px;
+	text-align: justify;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.search{
+	position: absolute;
+	left: 10px;
+	top: 10px;
+}
+
+.otherTop{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	text-align: right;
+	
+}
+
+.pages{
+	position: absolute;
+	left: 10px;
+	top: 40px;
+	text-align: left;
+}
+
+.page_numbers{
+	width: 40px;
+}
+
+.pages2 input{
+	width: 50px;
+}
+
+.pages2{
+	text-align: right;
+	position: absolute;
+	top: 40px;
+	right: 10px;
+}
+
+.file_list{
+	position: relative;
+	margin-right: 5px;
+	margin-left: 5px;
+	margin-bottom: 5px;
+}
+
+.file_list #num{
+	width:40px;
+}
+
+.file_list #file_path{
+	width:25%;
+}
+
+.file_list #file_name{
+	width:auto;
+}
+
+.file_list #tag_table{
+	width:35px;
+	text-align: center;
+	position: relative;
+}
+
+table{
+	width: 100%;
+	height: 100%;
+	table-layout: fixed;
+}
+
+table, th , td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+table tr:nth-child(odd) {
+  background-color: #7C7C7C;
+}
+
+table tr:first-child {
+  background-color: #2B303A;
+  color: #F7F7F2;
+}
+
+table tr:nth-child(even) {
+  background-color: #F7F7F2;
+}
+
+
+
