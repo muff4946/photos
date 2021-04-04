@@ -3,7 +3,7 @@ $servername = "localhost";
 $username = "images";
 $password = "F0t0b0mb";
 $dbname = "anderson_images";
-
+//TODO CHANGE EVERYTHING LATER!!!!!!
 $TAG = $_GET['tag_id'];
 
 if (isset($_GET['pageno'])) {
