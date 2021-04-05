@@ -15,6 +15,7 @@ if ($conn->connect_error) {
 $sql = "SELECT tag_id, tag_names, tag_type FROM tags";
 $result = $conn->query($sql);
 
+// Test
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
