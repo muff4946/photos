@@ -65,7 +65,7 @@ class images{
 		$query = "SELECT image_id, image_hash, image_file,image_path 
 					FROM anderson_images.images  
 					WHERE image_file LIKE ? 
-					OR image_path LIKE '%1980%'
+					OR image_path LIKE '%20211123%'
 					ORDER BY image_path, image_file
 					LIMIT ?,?";
 		//prepare query statement
@@ -108,7 +108,7 @@ class images{
 	
 	//used for paging products
 	public function count($keywords){
-		$query = "SELECT COUNT(*) as total_rows FROM images WHERE image_file LIKE ? or image_file like '%1980%' COLLATE utf8_general_ci";
+		$query = "SELECT COUNT(*) as total_rows FROM images WHERE image_file LIKE ? or image_file like '%20211123%' COLLATE utf8_general_ci";
 		$stmt = $this->connection->prepare( $query );
 		
 		$keywords=htmlspecialchars(strip_tags($keywords));
