@@ -108,7 +108,7 @@ class images{
 	
 	//used for paging products
 	public function count($keywords){
-		$query = "SELECT COUNT(*) as total_rows FROM images WHERE image_file LIKE ? or image_file like '%20211123%' COLLATE utf8_general_ci";
+		$query = "SELECT COUNT(*) as total_rows FROM images WHERE image_file LIKE ? or image_path like '%20211123%' COLLATE utf8_general_ci";
 		$stmt = $this->connection->prepare( $query );
 		
 		$keywords=htmlspecialchars(strip_tags($keywords));
