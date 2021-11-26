@@ -64,7 +64,7 @@ class images{
 		//select query
 		$query = "SELECT image_id, image_hash, image_file,image_path 
 					FROM anderson_images.images  
-					WHERE image_file LIKE ?
+					WHERE image_file LIKE 'Marcy'
 					OR image_path LIKE ?
 					ORDER BY image_path, image_file
 					LIMIT ?,?";
@@ -77,9 +77,9 @@ class images{
 		
 		//bind variable values
 		$stmt->bindParam(1,$keywords);
-		$stmt->bindParam(2,$keywords);
-		$stmt->bindParam(3,$from_record_num,PDO::PARAM_INT);
-		$stmt->bindParam(4,$records_per_page,PDO::PARAM_INT);
+		//$stmt->bindParam(2,$keywords);
+		$stmt->bindParam(2,$from_record_num,PDO::PARAM_INT);
+		$stmt->bindParam(3,$records_per_page,PDO::PARAM_INT);
 		
 		//execute query
 		$stmt->execute();
