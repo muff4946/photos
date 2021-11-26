@@ -41,6 +41,7 @@ class images{
 		$query= "SELECT image_id, image_hash, image_file, image_path 
 				FROM anderson_images.images 
 				WHERE image_path LIKE ?
+				OR image_path LIKE 'Marcy'
 				ORDER BY image_path";
 		//prepare query statement
 		$stmt = $this->connection->prepare($query);
