@@ -38,7 +38,7 @@ class images{
 	//searches by the image name given in the bar
 	public function search_by_name($keywords){
 		//select all query
-		$query= "SELECT image_id, image_hash, image_file,image_path 
+		$query= "SELECT image_id, image_hash, image_file, image_path 
 				FROM anderson_images.images 
 				WHERE image_path LIKE ?
 				ORDER BY image_path";
