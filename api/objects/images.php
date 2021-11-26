@@ -64,7 +64,7 @@ class images{
 		//select query
 		$query = "SELECT image_id, image_hash, image_file,image_path 
 					FROM anderson_images.images  
-					WHERE image_file LIKE 'Marcy'
+					WHERE image_file LIKE %Marcy%
 					OR image_path LIKE ?
 					ORDER BY image_path, image_file
 					LIMIT ?,?";
