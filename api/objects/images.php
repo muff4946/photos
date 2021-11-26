@@ -65,7 +65,7 @@ class images{
 		$query = "SELECT image_id, image_hash, image_file,image_path 
 					FROM anderson_images.images  
 					WHERE image_file LIKE ?
-					OR image_path LIKE 1998
+					OR image_path LIKE ?
 					ORDER BY image_path, image_file
 					LIMIT ?,?";
 		//prepare query statement
