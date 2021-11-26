@@ -36,7 +36,7 @@ class images{
 	public function delete(){
 	}
 	//searches by the image name given in the bar
-	public function search_by_name($keywords){
+	/*public function search_by_name($keywords){
 		//select all query
 		$query= "SELECT image_id, image_hash, image_file, image_path 
 				FROM anderson_images.images 
@@ -56,7 +56,7 @@ class images{
 		$stmt->execute();
 		
 		return $stmt;
-	}
+	}*/ 
 
 
 //read products with pagination
