@@ -40,8 +40,8 @@ class images{
 		//select all query
 		$query= "SELECT image_id, image_hash, image_file,image_path 
 				FROM anderson_images.images 
-				WHERE image_file LIKE ? 
-				OR image_path LIKE ?
+				WHERE image_path LIKE ? 
+				OR image_file LIKE ?
 				ORDER BY image_path";
 		//prepare query statement
 		$stmt = $this->connection->prepare($query);
