@@ -50,7 +50,7 @@ class images{
 		$keywords = "%{$keywords}%";
 		
 		//bind
-		$stmt->bindParam(1, $keywords);
+		$stmt->bindParam(2, $keywords, $keywords);
 		
 		//execute query
 		$stmt->execute();
