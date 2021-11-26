@@ -5,7 +5,7 @@ class images{
 	
 	//table name
 	
-	private $table_name = "images";
+	private $table_name = "imagesTest";
 	
 	//table columns
 	public $image_id;
