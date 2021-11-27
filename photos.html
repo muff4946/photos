@@ -108,7 +108,7 @@ app.controller('PhotoTableCont', function($scope, $http){
 				console.log(response);
 			}, 
 			function errorCallback(response){
-				$scope.alert("No photos found here");
+				alert("No photos found here");
 				console.log("Error"+response);
 		});
 		$scope.get_user_info();
@@ -136,9 +136,6 @@ app.controller('PhotoTableCont', function($scope, $http){
 		alert("This is not yet functional, check back later for updates");
 	};
 	
-	$scope.alert = function(alertMe){
-		alert(alertMe);
-	};
 	
 	/*Buttons for switching pages*/
 	
