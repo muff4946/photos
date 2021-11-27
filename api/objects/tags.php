@@ -43,7 +43,7 @@ class tags{
 	}
 	
 	//get tag by type
-	public funciton get_tag_by_type($tagType){
+	public function get_tag_by_type($tagType){
 		$query="SELECT tag_id, tag_names, tag_type FROM tags where tag_type = ? order by tag_names";
 		$stmt = $this->connection->prepare($query);
 		$stmt->bindParam(1,$tagType);
