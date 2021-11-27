@@ -71,7 +71,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 	$scope.getPeople = function(){
 		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_type.php?type=individual").then(
 			function successfulCallback(response){
-				alert(response);
+				alert(response + "");
 				$scope.people_list = response.data.tags;
 				
 			},
