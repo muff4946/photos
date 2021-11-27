@@ -8,10 +8,10 @@
 	<div class="borders">
 		<h1 id="header" class="header">Select Tags</h1>
 	</div>
-	<button type="button" ng-click="alert(textMe)">TEST</button>
+	
 	<div id="angularEditor",class="container" ng-app="TagSelecter" ng-controler="TagSelecterCont">
 		<div class="gridContainer">
-			
+			<button type="button" ng-click="alert(textMe)">TEST</button>
 			<div class="searchType">
 				
 			</div>
@@ -85,9 +85,5 @@ app.controller('TagSelecterCont', function($scope, $http){
 		console.log(alertMe);
 	};
 });	
-
-alert = function(alertME){
-	console.log(alertMe);
-};
 </script>
 </html>
