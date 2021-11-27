@@ -32,6 +32,7 @@ class tags{
 		return $stmt;
 	}
 	
+	
 	//R
 	public function read(){
 		
@@ -40,6 +41,22 @@ class tags{
 		$stmt->execute();
 		return $stmt;
 	}
+	
+	//get tag by type
+	public funciton get_tag_by_type($tagType){
+		$query="SELECT tag_id, tag_names, tag_type FROM tags where tag_type = ? order by tag_names";
+		$stmt = $this->connection->prepare($query);
+		$stmt->bindParam(1,$tagType);
+		try{
+			$stmt->execute();
+		}
+		catch(PDOException $e){
+			echo $stmt . $e->getMessage();
+		}
+		return $stmt;
+		
+	}
+	
 	
 	//get tag by id
 	public function get_tag($id){
