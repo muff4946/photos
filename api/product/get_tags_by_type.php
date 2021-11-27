@@ -24,7 +24,7 @@ if($tagtype !=''){
 	$tag_arr = array();
 	$tag_arr["tags"]=array();
 	//retrieve table contents
-	while($row = stmt->fetch(PDO::FETCH_ASSOC)){
+	while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 		extract($row);
 		
 		$tag_item=array(
