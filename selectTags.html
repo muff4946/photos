@@ -76,12 +76,15 @@ app.controller('TagSelecterCont', function($scope, $http){
 				
 			},
 			function errorCallback(response){
-				alert("No People Tags");
+				$scope.alert("No People Tags");
 				console.log("Error"+response);
 		});
 	};
 	
 	
+	$scope.alert = function(alertMe){
+		alert(alertMe);
+	};
 });	
 </script>
 </html>
