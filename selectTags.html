@@ -9,9 +9,9 @@
 		<h1 id="header" class="header">Select Tags</h1>
 	</div>
 	
-	<div id="angularEditor",class="container" ng-app="TagSelecter" ng-controler="TagSelecterCont">
+	<div id="angularEditor",class="container" ng-app="TagSelecter" ng-controller="TagSelecterCont">
 		<div class="gridContainer">
-			<button type="button" ng-click="alert(textMe)">TEST</button>
+			<button ng-click="alert(textMe)">TEST</button>
 			<div class="searchType">
 				
 			</div>
@@ -46,7 +46,7 @@
 		</div>
 	</div>
 </body>
-<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
 <script>
 var app = angular.module('TagSelecter',[]);
 app.controller('TagSelecterCont', function($scope, $http){
