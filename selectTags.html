@@ -11,7 +11,6 @@
 	
 	<div id="angularEditor",class="container" ng-app="TagSelecter" ng-controller="TagSelecterCont">
 		<div class="gridContainer">
-			<button ng-click="alert(textMe)">TEST</button>
 			<div class="searchType">
 				
 			</div>
@@ -26,20 +25,34 @@
 						<input type="checkbox" id="box">
 						<label for="bike">{{x.names}}</label><br>
 					</div>
-				
 				</form>
 			</div>
 			
 			<div class="EventList">
-				
+				<form>
+					<div class="row" ng-repeat="x in event_list">
+						<input type="checkbox" id="box">
+						<label>{{x.names}}</label><br>
+					</div>
+				</form>
 			</div>
 			
 			<div class="YearList">
-				
+				<form>
+					<div class="row" ng-repeat="x in year_list">
+						<input type="checkbox" id="box">
+						<label>{{x.names}}</label><br>
+					</div>
+				</form>
 			</div>
 			
 			<div class="OtherList">
-				
+				<form>
+					<div class="row" ng-repeat="x in other_list">
+						<input type="checkbox" id="box">
+						<label>{{x.names}}</label><br>
+					</div>
+				</form>
 			</div>
 				
 	
@@ -63,19 +76,54 @@ app.controller('TagSelecterCont', function($scope, $http){
 		//get people tags
 		$scope.getPeople();
 		//get events tags
-		//$scope.getEvents();
+		$scope.getEvents();
 		//get year tags
-		//$scope.getYears();
+		$scope.getYears();
 		//get other tags   
-		//$scope.getOther();
+		$scope.getOther();
 		
 	};
 	
 	$scope.getPeople = function(){
 		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_type.php?type=individual").then(
 			function successfulCallback(response){
-				alert(response + "");
 				$scope.people_list = response.data.tags;
+				
+			},
+			function errorCallback(response){
+				$scope.alert("No People Tags");
+				console.log("Error"+response);
+		});
+	};
+	
+	$scope.getEvents = function(){
+		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_type.php?type=event").then(
+			function successfulCallback(response){
+				$scope.event_list = response.data.tags;
+				
+			},
+			function errorCallback(response){
+				$scope.alert("No People Tags");
+				console.log("Error"+response);
+		});
+	};
+	
+	$scope.getYears = function(){
+		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_type.php?type=year").then(
+			function successfulCallback(response){
+				$scope.year_list = response.data.tags;
+				
+			},
+			function errorCallback(response){
+				$scope.alert("No People Tags");
+				console.log("Error"+response);
+		});
+	};
+	
+	$scope.getOther = function(){
+		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_type.php?type=other").then(
+			function successfulCallback(response){
+				$scope.other_list = response.data.tags;
 				
 			},
 			function errorCallback(response){
