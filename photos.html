@@ -72,8 +72,11 @@
 				</tr>
 			</table>
 		</div>
+		<button ng-click="toSelect()">testing select</button>
 	</div>
 	</div>
+	
+	
 	
 </body>
 <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
@@ -256,7 +259,12 @@ app.controller('PhotoTableCont', function($scope, $http){
 		} catch (error){
 			console.log(error);
 		}
-	}
+	};
+	
+	$scope.toSelect = function(){
+		var url1 = "https://photos.dbq-andersons.com/selectTags.html";
+		document.location.href=url1;
+	};
 });
 
 

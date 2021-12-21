@@ -19,7 +19,12 @@ $tagtype=isset($_GET['type']) ? $_GET['type'] : '';
 
 if($tagtype !=''){
 	//get array of tags
-	$stmt = $tags->get_tag_by_type($tagtype);
+	if($tagtype=='other'){
+		$stmt = $tags->get_tag_no_type();
+	}
+	else{
+		$stmt = $tags->get_tag_by_type($tagtype);
+	}
 	//make a new array
 	$tag_arr = array();
 	$tag_arr["tags"]=array();
