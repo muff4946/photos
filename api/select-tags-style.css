@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ::-webkit-scrollbar {
 	width: 5px;
 }
@@ -160,3 +161,66 @@ input[type="checkbox"]:checked + label:before {
 
 
 
+=======
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 2px #7C7C7C;
+	border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb{
+	background: #2B303A;
+}
+
+
+/*
+These items affect everything
+*/
+
+*{
+	outline: none;
+}
+
+body,html {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+}
+
+body{
+	background-color: #2B303A;
+}
+
+
+button{
+	background-color: #F7F7F2;
+	border-color: #2B303A;
+	border-radius:3px;
+	padding: 3px;
+	border-width: 1.5px;
+	font-size: 10px;
+}
+
+button:hover{
+	background-color: #7C7C7C;
+}
+
+button:active{
+	border-style: none;
+	outline: none;
+}
+
+input{
+	border-color: #2B303A;
+	border-radius:2px;
+	padding: 3px;
+	border-width: 1.5px;
+	font: 10px;
+}
+
+
+
+>>>>>>> 07ca75e90f1c899141f1297b8cec37e1165c7df3
