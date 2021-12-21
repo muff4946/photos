@@ -1,7 +1,8 @@
 <!doctype html>
 <html>
 <head>
-<title>Anderson Photo Library</title>
+	<title>Anderson Photo Library</title>
+	<link rel="stylesheet" href="api/select-tags-style.css?v=1.02"></link>
 </head>
 <body>
 	
@@ -10,20 +11,12 @@
 	</div>
 	
 	<div id="angularEditor",class="container" ng-app="TagSelecter" ng-controller="TagSelecterCont">
-		<div class="gridContainer">
-			<div class="searchType">
-				
-			</div>
-			
-			<div class="infoBar">
-				
-			</div>
-			
+		<div class="grid-container">
 			<div class="PeopleList">
-				<form>
+				<form class = "list">
 					<div class="row" ng-repeat="x in people_list">
-						<input type="checkbox" id="box">
-						<label for="bike">{{x.names}}</label><br>
+						<input type="checkbox" id={{x.id}}>
+						<label for={{x.id}}>{{x.names}}</label>
 					</div>
 				</form>
 			</div>
@@ -31,8 +24,17 @@
 			<div class="EventList">
 				<form>
 					<div class="row" ng-repeat="x in event_list">
-						<input type="checkbox" id="box">
-						<label>{{x.names}}</label><br>
+						<input type="checkbox" id={{x.id}}>
+						<label for={{x.id}}>{{x.names}}</label>
+					</div>
+				</form>
+			</div>
+			
+			<div class="HolidayList">
+				<form>
+					<div class="row" ng-repeat="x in holiday_list">
+						<input type="checkbox" id={{x.id}}>
+						<label for={{x.id}}>{{x.names}}</label>
 					</div>
 				</form>
 			</div>
@@ -40,8 +42,8 @@
 			<div class="YearList">
 				<form>
 					<div class="row" ng-repeat="x in year_list">
-						<input type="checkbox" id="box">
-						<label>{{x.names}}</label><br>
+						<input type="checkbox" id={{x.id}}>
+						<label for={{x.id}}>{{x.names}}</label>
 					</div>
 				</form>
 			</div>
@@ -49,12 +51,19 @@
 			<div class="OtherList">
 				<form>
 					<div class="row" ng-repeat="x in other_list">
-						<input type="checkbox" id="box">
-						<label>{{x.names}}</label><br>
+						<input type="checkbox" id={{x.id}}>
+						<label for={{x.id}}>{{x.names}}</label>
 					</div>
 				</form>
 			</div>
+			
+			<div class="searchType">
+				<button class = "submitSearch" ng-click="searchMe()">SEARCH</button>
+			</div>
+			
+			<div class="infoBar">
 				
+			</div>
 	
 		</div>
 	</div>
@@ -69,7 +78,6 @@ app.controller('TagSelecterCont', function($scope, $http){
 			window.location = url;
 		}
 		$scope.start();
-		$scope.alert("test this");
 	};
 	
 	$scope.start = function(){
@@ -77,6 +85,8 @@ app.controller('TagSelecterCont', function($scope, $http){
 		$scope.getPeople();
 		//get events tags
 		$scope.getEvents();
+		//get holiday tags
+		$scope.getHolidays();
 		//get year tags
 		$scope.getYears();
 		//get other tags   
@@ -84,6 +94,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 		
 	};
 	
+	//GETTING BUTTONS
 	$scope.getPeople = function(){
 		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_type.php?type=individual").then(
 			function successfulCallback(response){
@@ -100,6 +111,18 @@ app.controller('TagSelecterCont', function($scope, $http){
 		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_type.php?type=event").then(
 			function successfulCallback(response){
 				$scope.event_list = response.data.tags;
+				
+			},
+			function errorCallback(response){
+				$scope.alert("No People Tags");
+				console.log("Error"+response);
+		});
+	};
+	
+	$scope.getHolidays = function(){
+		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_type.php?type=holiday").then(
+			function successfulCallback(response){
+				$scope.holiday_list = response.data.tags;
 				
 			},
 			function errorCallback(response){
@@ -132,10 +155,28 @@ app.controller('TagSelecterCont', function($scope, $http){
 		});
 	};
 	
+	//FUN ONES
 	
-	$scope.alert = function(alertMe){
-		console.log(alertMe);
-	};
+	
+	//SUBMITTING SEARCH
+	
+	$scope.searchMe = function(){
+		//get list
+		//write query
+		//call query
+		//change page
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 });	
 </script>
 </html>
