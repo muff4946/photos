@@ -72,7 +72,7 @@ app.controller('PhotoTableCont', function($scope, $http){
 	$scope.clickThumb = function(path, name, id){
 		var toSrc = path+"\\" + name;
 		document.getElementById("photo").src=toSrc;
-		getTags(id);
+		$scope.getTags(id);
 	};
 	
 	//getting the tags to put underneath the photo
