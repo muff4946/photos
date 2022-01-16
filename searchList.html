@@ -29,7 +29,7 @@
 					<img id= "photo" class="image"></img>
 			</div>
 			<div class = "current_tags">
-				<p *ngFor="let tag of tags_assigned">{{tag.name}}, </p>
+				<div *ngFor="let tag of tags_assigned">{{tag.name}}, </div>
 			</div>
 		</div>
 	</div>
@@ -81,7 +81,7 @@ app.controller('PhotoTableCont', function($scope, $http){
 		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_image.php?image="+imageid,).then(
 			function successfulCallback(response){
 				$scope.tags_assigned = response.data.tags;
-				//console.log($scope.tags_assigned);
+				console.log($scope.tags_assigned);
 			},
 			function errorCallback(response){
 				console.log(response);
