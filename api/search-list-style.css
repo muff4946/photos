@@ -34,7 +34,7 @@ body{
 .grid-container{
 	display: grid;
 	grid-template-columns: 58% 38%;
-	grid-template-rows: 100% 30px;
+	grid-template-rows: 90% 10%;
 	top: 10%;
 	height: 85%;
 	position: absolute;
@@ -50,7 +50,7 @@ body{
 	background-color: #1C6973;
 	grid-template-areas: 
 		'list image nothing'
-		'bottom bottom tags';
+		'list tags nothing';
 }
 
 .grid-container td, th{
@@ -74,6 +74,9 @@ body{
 	
 .current_tags {
 	grid-area:tags;
+	position: relative;
+	color: white;
+	
 }
 
 .file_list{
