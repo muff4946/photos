@@ -50,7 +50,7 @@ body{
 	background-color: #1C6973;
 	grid-template-areas: 
 		'list image nothing'
-		'bottom bottom nothing';
+		'bottom bottom tags';
 }
 
 .grid-container td, th{
@@ -72,6 +72,9 @@ body{
 	max-width: 100%;	
 }	
 	
+.current_tags {
+	grid-area:tags;
+}
 
 .file_list{
 	grid-area:list;
