@@ -22,56 +22,42 @@ $images = new images($db);
 
 //get image id from url
 $tagid= isset($_GET['tag']) ? $_GET['tag'] : '';
+$numTags= isset($_GET['num']) ? $_GET['num'] : '';
 
 //get array of tag ids
-$stmt = $taglinks->imagesByTag($tagid);
+$stmt = $images->imagesByTags($tagid, $numTags);
 $num = $stmt->rowCount();
 
-//go through array and get all of the tags associated with the tag ids
+//go through array and get all of the images that match these tag ids
 if($num>0){
 	$image_arr = array();
 	//return these
 	$image_arr["images"]=array();
-	$image_arr["tag_links"]=array();
 	//retrieve table contents
 	while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 		//extract row 
 		//this will make row['name'] to just $name 
 		extract($row);
 		
+		//Dads work getting image and thumbnail path
+		//copied from tagged-photo-list.php
+		$db_image_path = $row["image_path"];
+		$db_image_name = $row["image_file"];
+		$web_image_path = str_replace ("\\", "/", $db_image_path);
+		$web_image_path = str_replace ("D:/pictures", "https://photos.dbq-andersons.com/storage", $web_image_path);
+		$web_thumb_path = str_replace ("storage", "thumbs", $web_image_path);
+		$local_thumb_path = str_replace ("https://photos.dbq-andersons.com/storage", "/tools/webdocs/photos/thumbs", $web_image_path);
+		
 		$image_item=array(
-			"link" => $link_id,
-			"image"=> $image_id,
-			"tag" => $tag_id
+			"id" => $image_id,
+			"hash"=> $image_hash,
+			"file" => $image_file,
+			"path" => $image_path,
+			"image" => $web_image_path,
+			"thumb" => $web_thumb_path
 		);
-		
-		
-		array_push($image_arr["tag_links"],$image_item);
-	}
-	
-	//go through the array to get the tag names
-	foreach($image_arr["tag_links"] as $link){
-		$images_id = $link['image'];
-		$stmt = $images->getImageById($images_id);
-		$num = $stmt->rowCount();
-		//if($num>0){
-			while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-				extract($row);
-				$image_item=array(
-					"id" => $image_id,
-					"hash"=> $image_hash,
-					"path" => $image_path,
-					"file" => $image_file
-				);
-				array_push($image_arr["images"],$image_item);
-			}
-		//}
-		
-	}
-	
-	
-	
-	
+		array_push($image_arr["images"],$image_item);
+	}	
 	
 	//set response code - 200 OK
 	http_response_code(200);

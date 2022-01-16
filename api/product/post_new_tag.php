@@ -16,6 +16,7 @@ include_once '../objects/tag_links.php';
 //get image id from url
 $tagid= isset($_GET['tag']) ? $_GET['tag'] : '';
 $tagtype= isset($_GET['type']) ? $_GET['type'] : 'individual';
+
 if($tagid != ''){
 
 	//get array of tag ids

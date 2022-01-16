@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<title>Anderson's Photo Library</title>
+<link rel="stylesheet" href="api/search-list-style.css?v=1.01"></link
+</head>
+<body>
+	<div class="photo-table" ng-app="PhotoTable" ng-controller="PhotoTableCont">
+		<div class = "grid-container">
+			<div class="file_list">
+				<table>
+					<tr id="headers">
+						<th id="num">NUM</th>
+						<th id="file_path">FILE PATH</th>
+						<th id="file_name">FILE NAME</th>
+						<th id="thumb">THUMBNAIL</th>
+					</tr>
+				
+					<tr ng-repeat="i in imageList">
+						<td>{{$index + 1}}</td>
+						<td id = {{i.path}}>{{i.path}}</td>
+						<td>{{i.file}}</td>
+						<td ><image src = "{{i.thumb}}/{{i.file}}" ng-click = "clickThumb(i.image,i.file)"} ></image></td>
+					</tr>
+				</table>
+			</div>	
+		
+			<div class="to_be_image">
+					<img id= "photo" class="image"></img>
+			</div>
+			<div class = "placeholder">
+				<p>Some text here</p>
+			</div>
+		</div>
+	</div>
+</body>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+<script>
+var app = angular.module('PhotoTable',[]);
+app.controller('PhotoTableCont', function($scope, $http){
+	//verifies window location
+	window.onload = function(){
+		var url = "https://photos.dbq-andersons.com/searchList.html";
+		if(window.location!=url){
+			window.location = url;
+		}
+		$scope.start();
+	};
+	
+	//runs things which happen when the site is opened
+	$scope.start = function(){
+		$scope.getList();
+		
+		
+	};
+//method which gets the image list
+	
+	$scope.getList = function(){
+		toAdd = localStorage.getItem("tagList");
+		numTags = localStorage.getItem("numTags");
+		$http.get("https://photos.dbq-andersons.com/api/product/get_images_by_tag.php/?tag="+toAdd + "&num="+numTags,).then(
+			function successfulCallback(response){
+				$scope.imageList = response.data.images;
+			},
+			function errorCallback(response){
+				console.log("Error "+response);
+			});
+	};
+
+//method which gets the image
+
+	$scope.clickThumb = function(path, name){
+		var toSrc = path+"\\" + name;
+		document.getElementById("photo").src=toSrc;
+		
+	};
+});
+
+</script>
+</html>
