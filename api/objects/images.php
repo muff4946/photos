@@ -97,7 +97,7 @@ class images{
 					WHERE i.image_id = tl.image_id
 					GROUP BY i.image_id
 					HAVING count(i.image_id) = $number 
-                                        ORDER BY i.image_path";
+                                        ORDER BY i.image_path, i.image_file";
 		//prepare query statement
 		$stmt = $this->connection->prepare($query);
 		
