@@ -96,7 +96,8 @@ class images{
 						where t.tag_id = $tags ) as tl
 					WHERE i.image_id = tl.image_id
 					GROUP BY i.image_id
-					HAVING count(i.image_id) = $number ";
+					HAVING count(i.image_id) = $number 
+                                        ORDER BY i.image_path";
 		//prepare query statement
 		$stmt = $this->connection->prepare($query);
 		
