@@ -54,7 +54,8 @@ if($num>0){
 			"file" => $image_file,
 			"path" => $image_path,
 			"image" => $web_image_path,
-			"thumb" => $web_thumb_path
+			"thumb" => $web_thumb_path,
+			"num" => $num
 		);
 		array_push($image_arr["images"],$image_item);
 	}	
