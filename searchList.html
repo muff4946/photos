@@ -28,11 +28,12 @@
 		
 			<div class="to_be_image">
 					<img id= "photo" class="image" onerror="myFunction()"></img>
-			</div>
+					<p id="demo"></p>
 <script> function myFunction() {
   document.getElementById("demo").innerHTML = "The image could not be loaded.";
 }
 </script>
+			</div>
 			<div class = "current_tags">
 				<div *ngFor="let tag of tags_assigned">{{tag.name}}, </div>
 			</div>
