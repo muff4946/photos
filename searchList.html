@@ -97,5 +97,14 @@ app.controller('PhotoTableCont', function($scope, $http){
 	}
 });
 
+var app = angular.module('ClientIP', []);
+app.controller('IP', function($scope, $http) {
+        $http.get("https://ipinfo.io/json").then(function (response)
+        {
+            $scope.ip = response.data.ip;
+        });
+});
+
+
 </script>
 </html>
