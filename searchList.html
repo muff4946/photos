@@ -27,7 +27,7 @@
 			</div>	
 		
 			<div class="to_be_image">
-					<img id= "photo" class="image"></img>
+					<img id= "photo" class="image" onerror="this.onerror=null;this.src='https://photos.dbq-andersons.com/403-error.html';"></img>
 			</div>
 			<div class = "current_tags">
 				<div *ngFor="let tag of tags_assigned">{{tag.name}}, </div>
