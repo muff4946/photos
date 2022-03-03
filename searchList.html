@@ -30,10 +30,10 @@
 			<div class="to_be_image">
 					<img id= "photo" class="image" onerror="myFunction()"></img>
 					<p id="demo"></p>
-<script> function myFunction() {
-  document.getElementById("demo").innerHTML = "The image could not be loaded likely due to the fact that<br>your internet IP address is not on the access list for full sized images.";
-}
-</script>
+                    <script> function myFunction() {
+                        document.getElementById("demo").innerHTML = "The image could not be loaded likely due to the fact that<br>your internet IP address is not on the access list for full sized images.";
+                        }
+                    </script>
 			</div>
 			<div class = "current_tags">
 				<div *ngFor="let tag of tags_assigned">{{tag.name}}, </div>
@@ -43,6 +43,14 @@
 </body>
 <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
 <script>
+
+var app = angular.module('ClientIP', []);
+app.controller('IP', function($scope, $http) {
+    $http.get("https://ipinfo.io/json").then(function (response)
+        {
+            $scope.ip = response.data.ip;
+        });
+});
 
 var app = angular.module('PhotoTable',[]);
 app.controller('PhotoTableCont', function($scope, $http){
@@ -98,13 +106,6 @@ app.controller('PhotoTableCont', function($scope, $http){
 	}
 });
 
-        var app = angular.module('ClientIP', []);
-        app.controller('IP', function($scope, $http) {
-                $http.get("https://ipinfo.io/json").then(function (response)
-                {
-                        $scope.ip = response.data.ip;
-                });
-});
 
 
 </script>
