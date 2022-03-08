@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="api/search-list-style.css?v=1.02"></link
 </head>
 <body>
-    <!--<div class="client-ip" ng-app="ClientIP" ng-controller="IP"> <span ng-bind="ip"></span></div>-->
+    
     <div class="photo-table" ng-app="PhotoTable" ng-controller="PhotoTableCont">
 		<h1 id="header" class="header">Results in Path and File Name Order</h1>
 		<div class = "grid-container">
@@ -38,22 +38,21 @@
 				<div *ngFor="let tag of tags_assigned">{{tag.name}}, </div>
 			</div>-->
 		</div>
-        
+    <div ng-app="ClientIP" ng-controller="IP"> <span ng-bind="ip"></span></div>   
 	</div>
 	
 </body>
 <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
 <script>
 
-var app = angular.module('ClientIP', []);
+var app = angular.module('PhotoTable',[]);
+
 app.controller('IP', function($scope, $http) {
     $http.get("https://ipinfo.io/json").then(function (response)
         {
             $scope.ip = response.data.ip;
         });
 });
-
-var app = angular.module('PhotoTable',[]);
 app.controller('PhotoTableCont', function($scope, $http){
 	//verifies window location
 	window.onload = function(){
