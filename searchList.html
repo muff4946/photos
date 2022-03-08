@@ -8,6 +8,7 @@
     
     <div class="photo-table" ng-app="PhotoTable" ng-controller="PhotoTableCont">
 		<h1 id="header" class="header">Results in Path and File Name Order</h1>
+		<div ng-app="ClientIP" ng-controller="IP"> <span ng-bind="ip"></span></div>
 		<div class = "grid-container">
 			<div class="file_list">
 				<table>
@@ -38,7 +39,7 @@
 				<div *ngFor="let tag of tags_assigned">{{tag.name}}, </div>
 			</div>-->
 		</div>
-    <div ng-app="ClientIP" ng-controller="IP"> <span ng-bind="ip"></span></div>   
+       
 	</div>
 	
 </body>
