@@ -30,11 +30,12 @@ body{
 }
 
 h2 {
-	color:white;
+	color: white;
 }
 
 .clientip{
 	display: inline-block;
+	color: white;
 }
 
 /*grid*/
