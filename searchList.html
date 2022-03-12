@@ -7,9 +7,7 @@
 <body>
     
     <div class="photo-table" ng-app="PhotoTable" ng-controller="PhotoTableCont">
-		<h2 id="header" class="header" style="color:white">Results in Path and File Name Order<br>Your internet IP address is: 
-		<div class="clientip" ng-app="ClientIP" ng-controller="IP"><span ng-bind="ip"></span></div></h2>
-		<div class = "grid-container">
+		<h2 id="header" class="header" style="color:white">Results in Path and File Name Order</h2>
 			<div class="file_list">
 				<table>
 					<tr id="headers">
@@ -40,6 +38,9 @@
 			</div>-->
 		</div>
         
+	</div>
+	<div class="clientip">Your internet IP address is:
+	  <div class="clientip" ng-app="ClientIP" ng-controller="IP"><span ng-bind="ip"></span></div>
 	</div>
 
 </body>
