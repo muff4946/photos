@@ -37,8 +37,8 @@ h2 {
 	display: inline-block;
 	color: white;
 	position: fixed;
-	left: 0;
-	bottom: 0;
+	left: -3;
+	bottom: -3;
 	font-size: 12px;
 }
 
