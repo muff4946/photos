@@ -36,6 +36,9 @@ h2 {
 .clientip{
 	display: inline-block;
 	color: white;
+	position: fixed;
+	left: 0;
+	bottom: 0;
 }
 
 /*grid*/
