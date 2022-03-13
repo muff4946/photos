@@ -84,7 +84,7 @@ app.controller('PhotoTableCont', function($scope, $http){
 		$http.get("https://ipinfo.io/json").then(function (response)
 			{
 				$scope.ip = response.data.ip;
-			};
+			});
 
 //method which gets the image
 
