@@ -39,8 +39,8 @@
 			</div>-->
 		</div>
         
-		<div class="clientiptext">Your internet IP address is: 
-			<div class="clientipaddress" ng-app="ClientIP" ng-controller="IP"><span ng-bind="ip"></span></div>
+		<div class="clientiptext">Your internet IP address is: {{ip}}.
+			<!--<div class="clientipaddress" ng-app="ClientIP" ng-controller="IP"><span ng-bind="ip"></span></div>-->
 		</div>
 	</div>
 </body>
@@ -49,12 +49,12 @@
 
 var app = angular.module('PhotoTable',[]);
 
-app.controller('IP', function($scope, $http) {
-    $http.get("https://ipinfo.io/json").then(function (response)
-        {
-            $scope.ip = response.data.ip;
-        });
-});
+//app.controller('IP', function($scope, $http) {
+//    $http.get("https://ipinfo.io/json").then(function (response)
+//        {
+//            $scope.ip = response.data.ip;
+//        });
+//});
 app.controller('PhotoTableCont', function($scope, $http){
 	//verifies window location
 	window.onload = function(){
@@ -84,6 +84,13 @@ app.controller('PhotoTableCont', function($scope, $http){
 				console.log("Error "+response);
 			});
 	};
+
+//Method that gets the client IP
+
+    $http.get("https://ipinfo.io/json").then(function (response)
+        {
+            $scope.ip = response.data.ip;
+        });
 
 //method which gets the image
 
