@@ -33,18 +33,12 @@ h2 {
 	color: white;
 }
 
-.clientiptext{
+.clientip{
 	display: inline-block;
 	color: white;
 	position: fixed;
 	left: 0;
 	bottom: 0;
-	font-size: 12px;
-}
-
-.clientipaddress{
-	display: inline-block;
-	color: white;
 	font-size: 12px;
 }
 
