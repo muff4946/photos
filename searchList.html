@@ -47,6 +47,8 @@
 
 var app = angular.module('PhotoTable',[]);
 
+let row_count = imageList.length
+
 app.controller('PhotoTableCont', function($scope, $http){
 	//verifies window location
 	window.onload = function(){
