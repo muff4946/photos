@@ -47,7 +47,7 @@
 
 var app = angular.module('PhotoTable',[]);
 
-let row_count = imageList.length
+
 
 app.controller('PhotoTableCont', function($scope, $http){
 	//verifies window location
@@ -73,6 +73,7 @@ app.controller('PhotoTableCont', function($scope, $http){
 		$http.get("https://photos.dbq-andersons.com/api/product/get_images_by_tag.php/?tag="+toAdd + "&num="+numTags,).then(
 			function successfulCallback(response){
 				$scope.imageList = response.data.images;
+				$scope.row_count = $scope.imageList.length;
 			},
 			function errorCallback(response){
 				console.log("Error "+response);
