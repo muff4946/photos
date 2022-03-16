@@ -87,8 +87,14 @@ h2 {
 .current_tags {
 	grid-area:tags;
 	position: relative;
-	color: white;
+	overflow: scroll;
 	
+}
+
+.current_tags table{
+	width: 100%;
+	border-collapse: collapse;
+	border-radius: 4px;
 }
 
 .file_list{
