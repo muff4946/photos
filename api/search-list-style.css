@@ -46,7 +46,7 @@ h2 {
 .grid-container{
 	display: grid;
 	grid-template-columns: 58% 40%;
-	grid-template-rows: 90% 10%;
+	grid-template-rows: 75% 25%;
 	top: 9%;
 	height: 86%;
 	position: absolute;
