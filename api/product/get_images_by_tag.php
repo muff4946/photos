@@ -69,9 +69,10 @@ else{
 	//set response code - 404 Not found
 	http_response_code(404);
 	//tell the user products does not exist
-	echo json_encode(
-		array("message" => "No products found.")
-	);
+	//echo json_encode(
+	//	array("message" => "No products found.")
+	//);
+	echo "No Results";
 }
 
 
