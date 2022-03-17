@@ -29,8 +29,9 @@ body{
 	background-color: #2B303A;
 }
 
-h2 {
+h1 {
 	color: white;
+	left: 5;
 }
 
 .clientip{
