@@ -87,7 +87,8 @@ app.controller('PhotoTableCont', function($scope, $http){
 				$scope.row_count = $scope.imageList.length;
 			},
 			function errorCallback(response){
-				console.log("Error "+response);
+				console.log("Error "+response)
+				scope.row_count = "0";
 			});
 	};
 
