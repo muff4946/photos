@@ -85,6 +85,7 @@ input[type="checkbox"]:checked + label:before {
 
 h1 {
 	color:white;
+	margin-left: 12px;
 }
 
 .grid-container{
