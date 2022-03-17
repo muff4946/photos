@@ -38,8 +38,8 @@ h1 {
 	display: inline-block;
 	color: white;
 	position: fixed;
-	left: 0;
-	bottom: 0;
+	left: 12px;
+	bottom: 0px;
 	font-size: 12px;
 }
 
