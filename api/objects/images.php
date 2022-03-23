@@ -23,7 +23,7 @@ class images{
 
 	// Get a count of all images in the database without copy in the name and not in printables folders
 	public function imageCount(){
-		$query="SELECT COUNT(*) from anderson_images.images where not image_path like '%printables%' and not image_file like '%copy%'";
+		$query="SELECT COUNT(image_id) as image_count from anderson_images.images where not image_path like '%printables%' and not image_file like '%copy%'";
 		//prepare query statement
 		$stmt = $this->connection->prepare($query);
 		//execute query
