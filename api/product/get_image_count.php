@@ -21,11 +21,7 @@ $images = new images($db);
 //query images
 $stmt = $images->imageCount();
 
-$stmt->execute();
 
-echo $stmt;
-
-return $stmt;
 
 ?>
 
