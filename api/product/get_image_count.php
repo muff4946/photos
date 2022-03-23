@@ -27,7 +27,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 //set the image_count variable
 $image_count = $row["image_count"];
 
-$count_array = array(
+$image_count_array = array(
 	"count"=>$image_count
 );
 
@@ -35,7 +35,7 @@ $count_array = array(
 http_response_code(200);
 
 //make it json format
-echo json_encode($image_count);
+echo json_encode($image_count_array);
 
 
 ?>
