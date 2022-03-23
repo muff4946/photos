@@ -157,6 +157,21 @@ app.controller('TagSelecterCont', function($scope, $http){
 		});
 	};
 	
+	// GETTING IMAGE COUNT
+	
+	$scope.getImageCount = function(){
+	$http.get("https://photos.dbq-andersons.com/api/product/get_image_count.php").then(
+			function successfulCallback(response){
+				$scope.image_count = response.data.tags;
+			
+			},
+			function errorCallback(response){
+				$scope.alert("No People Tags");
+				console.log("Error"+response);
+		});
+	};
+	
+	
 	//FUN ONES
 	
 	
