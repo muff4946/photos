@@ -27,7 +27,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 	extract($row);
 		
 	$image_count=array(
-	  "count" => $COUNT(*),
+	  "count" => $COUNT(\*),
 	);
 	
 }
