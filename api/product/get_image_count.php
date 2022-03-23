@@ -27,8 +27,10 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 //set the image_count variable
 $raw_image_count = $row["image_count"];
 
+$pretty_image_count = number_format($raw_image_count);
+
 $image_count = array(
-	"count"=>$raw_image_count
+	"count"=>$pretty_image_count
 );
 
 //set response code - 200 OK
