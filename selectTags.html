@@ -63,7 +63,7 @@
 			
 			<div class="infoBar">
 				<li ng-repeat="x in image_count">
-				   {{ x.count }}
+				   <p>{{ x.count }}</p>
 				 </li>
 				
 			</div>
@@ -96,6 +96,8 @@ app.controller('TagSelecterCont', function($scope, $http){
 		$scope.getYears();
 		//get other tags   
 		$scope.getOther();
+		//get image count
+		$scope.getImageCount();
 		
 	};
 	
