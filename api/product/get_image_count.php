@@ -23,6 +23,8 @@ $stmt = $images->imageCount();
 
 $stmt->execute();
 
+echo $stmt;
+
 return $stmt;
 
 ?>
