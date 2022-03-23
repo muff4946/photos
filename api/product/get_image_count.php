@@ -31,9 +31,10 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 //set the image_count variable
 $image_count = $row["image_count"];
 
-$image_count_array = array(
+$image_count_item = array(
 	"count"=>$image_count
 );
+array_push($image_count_array["image_count"],$image_count_item);
 
 //set response code - 200 OK
 http_response_code(200);
