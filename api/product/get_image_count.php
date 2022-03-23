@@ -27,7 +27,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 //set the image_count variable
 $image_count = $row["image_count"];
 
-$image_count_array = array(
+$image_count_array["data"] = array(
 	"count"=>$image_count
 );
 
