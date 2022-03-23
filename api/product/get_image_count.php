@@ -21,8 +21,6 @@ $images = new images($db);
 //query images
 $stmt = $images->imageCount();
 
-echo $images;
-
 ?>
 
 if($tagid != ''||$imageid=''){
