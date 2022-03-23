@@ -92,7 +92,7 @@ h2 {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr) 100px 1fr;
 	grid-template-rows: repeat(3, 1fr);
-	top: 10%;
+/*	top: 10%; */
 	height: 85%;
 	position: absolute;
 	width: 100%;
