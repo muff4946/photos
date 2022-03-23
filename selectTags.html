@@ -162,7 +162,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 	$scope.getImageCount = function(){
 		$http.get("https://photos.dbq-andersons.com/api/product/get_image_count.php").then(
 			function successfulCallback(response){
-				$scope.image_count = response.data.count;
+				$scope.image_count = response.data.data;
 			
 			},
 			function errorCallback(response){
