@@ -21,6 +21,10 @@ $images = new images($db);
 //query images
 $stmt = $images->imageCount();
 
+//make a new array
+$image_count_array = array();
+$image_count_array["image_count"]=array();
+
 //retrieve contents
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
