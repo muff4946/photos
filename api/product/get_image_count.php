@@ -21,30 +21,17 @@ $images = new images($db);
 //query images
 $stmt = $images->imageCount();
 
-
-
+//retrieve contents
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-echo $row['image_count'] . ' images.';
+//set the image_count variable
+$image_count = $row["image_count"];
 
-?>
+//set response code - 200 OK
+http_response_code(200);
 
-if($tagid != ''||$imageid=''){
+//make it json format
+echo json_encode($image_count);
 
-	//get array of tag ids
-	$stmt = $taglinks->deleteIt($tagid,$imageid);
-	http_response_code(200);
-	echo json_encode(
-		array("message"=> $tagid . " removed from this image if found")
-	);
-	
-}
-else{
-	//set response code - 404 Not found
-	http_response_code(404);
-	//tell the user products does not exist
-	echo json_encode(
-		array("message" => "No id or image given")
-	);
-}
+
 ?>
