@@ -40,7 +40,7 @@ $image_count_item = array(
 http_response_code(200);
 
 //make it json format
-echo json_encode($image_count_array);
+echo json_encode($image_count_item);
 
 
 ?>
