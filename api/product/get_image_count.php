@@ -15,14 +15,15 @@ include_once '../objects/tag_links.php';
 $database = new DBClass();
 $db = $database->getConnection();
 
-//initialize objects
-$tags = new tags($db);
-$taglinks = new tag_links($db);
+//initialize object
 $images = new images($db);
 
-//get image id from url
-$tagid= isset($_GET['tag']) ? $_GET['tag'] : '';
-$imageid= isset($_GET['image']) ? $_GET['image'] : 'individual';
+//query images
+$stmt = $images->imageCount();
+
+echo $stmt;
+
+?>
 
 if($tagid != ''||$imageid=''){
 
