@@ -21,26 +21,21 @@ $images = new images($db);
 //query images
 $stmt = $images->imageCount();
 
-//make a new array
-//$image_count_array = array();
-//$image_count_array["image_count"]=array();
-
 //retrieve contents
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 //set the image_count variable
-$image_count = $row["image_count"];
+$raw_image_count = $row["image_count"];
 
-$image_count_item = array(
-	"count"=>$image_count
+$image_count = array(
+	"count"=>$raw_image_count
 );
-//array_push($image_count_array["image_count"],$image_count_item);
 
 //set response code - 200 OK
 http_response_code(200);
 
 //make it json format
-echo json_encode($image_count_item);
+echo json_encode($image_count);
 
 
 ?>
