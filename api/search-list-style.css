@@ -47,7 +47,7 @@ h1 {
 .grid-container{
 	display: grid;
 	grid-template-columns: 58% 40%;
-	grid-template-rows: 75% 25%;
+	grid-template-rows: 50% 25% 25%;
 	top: 9%;
 	height: 86%;
 	position: absolute;
@@ -63,6 +63,7 @@ h1 {
 	background-color: #1C6973;
 	grid-template-areas: 
 		'list image nothing'
+		'list info nothing'
 		'list tags nothing';
 }
 
