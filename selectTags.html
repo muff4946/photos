@@ -193,13 +193,14 @@ app.controller('TagSelecterCont', function($scope, $http){
 			numTags++
 		}
 		console.log(toAdd);
+		console.log(numTags);
 		//send info to local storage
 		
 		localStorage.setItem("tagList",toAdd);
 		localStorage.setItem("numTags",numTags);
 		
 		//change page
-		document.location.href="https://photos.dbq-andersons.com/searchList.html";
+		//document.location.href="https://photos.dbq-andersons.com/searchList.html";
 		
 		
 	};
