@@ -18,26 +18,33 @@ $db = $database->getConnection();
 //initialize object
 $images = new images($db);
 
+//get image id from url
+$imageid= isset($_GET['image']) ? $_GET['image'] : '';
+
 //query images
-$stmt = $images->imageCount();
+$stmt = $images->getImageById($imageid);
 
 //retrieve contents
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-//set the image_count variable
-$raw_image_count = $row["image_count"];
+//grab the rows
+$image_id = $row["image_id"];
+$image_hash = $row["image_hash"];
+$image_path = $row["image_path"];
+$image_file = $row["image_file"];
 
-$pretty_image_count = number_format($raw_image_count);
-
-$image_count = array(
-	"count"=>$pretty_image_count
+$image_info = array(
+	"id"=>$image_id,
+	"hash"=>$image_hash,
+	"path"=>$image_path,
+	"file"=>$image_file
 );
 
 //set response code - 200 OK
 http_response_code(200);
 
 //make it json format
-echo json_encode($image_count);
+echo json_encode($image_info);
 
 
 ?>
