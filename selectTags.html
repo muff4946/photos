@@ -186,7 +186,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 		if(yearList.length>0 && nonYearList.length>0){
 			toAdd = toAdd + " OR t.tag_id = " + years;
 			numTags++;
-			console.log("here");
+			//console.log("here");
 		}
 		else if(yearList.length>0 && nonYearList.length==0){
 			toAdd = years;
@@ -200,7 +200,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 		localStorage.setItem("numTags",numTags);
 		
 		//change page
-		//document.location.href="https://photos.dbq-andersons.com/searchList.html";
+		document.location.href="https://photos.dbq-andersons.com/searchList.html";
 		
 		
 	};
