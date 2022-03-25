@@ -49,7 +49,7 @@
 				</table>
 			</div>
 		</div>
-        <div class="clientip">Your internet IP address is: {{ip}}
+        <div class="clientip">Your internet IP address is: {{image_id}}
 		</div>
 	</div>
 </body>
@@ -128,7 +128,7 @@ app.controller('PhotoTableCont', function($scope, $http){
 				$scope.image_hash = response.data.hash;
 				$scope.image_path = response.data.path;
 				$scope.image_file = response.data.file;
-				console.log($scope.image_id,$scope.image_hash);
+				//console.log($scope.image_id,$scope.image_hash,$scope.image_path,$scope.image_file);
 			},
 			function errorCallBack(response){
 				console.log(response);
