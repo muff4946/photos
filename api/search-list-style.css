@@ -43,6 +43,15 @@ h1 {
 	font-size: 12px;
 }
 
+.image-info{
+	display: inline-block;
+	color: white;
+	position: fixed;
+	left: 12px;
+	bottom: 0px;
+	font-size: 12px;
+}
+
 /*grid*/
 .grid-container{
 	display: grid;
