@@ -105,6 +105,7 @@ app.controller('PhotoTableCont', function($scope, $http){
 		var toSrc = path+"\\" + name;
 		document.getElementById("photo").src=toSrc;
 		$scope.getTags(id);
+		$scope.getImageInfo(id);
 	};
 	
 	//getting the tags to put underneath the photo
@@ -112,7 +113,7 @@ app.controller('PhotoTableCont', function($scope, $http){
 		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_image.php?image="+imageid,).then(
 			function successfulCallback(response){
 				$scope.tags_assigned = response.data.tags;
-				console.log($scope.tags_assigned);
+				//console.log($scope.tags_assigned);
 			},
 			function errorCallback(response){
 				console.log(response);
@@ -121,7 +122,7 @@ app.controller('PhotoTableCont', function($scope, $http){
 	}
 	//getting image information to display in the bottom row
 	$scope.getImageInfo = function(imageid){
-		$http.get("https://photos.dbq-andersons.com/api/product/get_image_info_by_id.php?image="+imageid,),then(
+		$http.get("https://photos.dbq-andersons.com/api/product/get_image_info_by_id.php?image="+imageid,).then(
 			function successfulCallback(response){
 				$scope.image_id = response.data.id;
 				$scope.image_hash = response.data.hash;
