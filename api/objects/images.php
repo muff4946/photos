@@ -120,6 +120,24 @@ class images{
 		return $stmt;
 	}
 
+	//gets the ids of all the images with a single tag
+	public function imagesByTag($tag){
+		$query = "SELECT i.image_id
+					FROM anderson_images.images i, (select t.image_id
+						FROM anderson_images.tag_links t
+						where t.tag_id = $tag ) as tl
+					WHERE i.image_id = tl.image_id";
+		//prepare query statement
+		$stmt = $this->connection->prepare($query);
+		
+		
+		//execute query
+		$stmt->execute();
+		
+		//return values from database
+		return $stmt;
+	}
+
 	//get image using id
 	public function getImageById($id){
 		//select query
