@@ -20,12 +20,13 @@ $tags = new tags($db);
 $taglinks = new tag_links($db);
 $images = new images($db);
 
-//get image id from url
-$tagid= isset($_GET['tag']) ? $_GET['tag'] : '';
+//get tag ids from url
+$tagids= isset($_GET['tag']) ? $_GET['tag'] : '';
+//get tag count from url
 $numTags= isset($_GET['num']) ? $_GET['num'] : '';
 
 //get array of tag ids
-$stmt = $images->imagesByTags($tagid, $numTags);
+$stmt = $images->imagesByTags($tagids, $numTags);
 $num = $stmt->rowCount();
 
 //go through array and get all of the images that match these tag ids
