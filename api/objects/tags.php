@@ -48,7 +48,7 @@ class tags{
 			$query="SELECT tag_id, tag_names, tag_type FROM tags where tag_type = ? order by tag_names";
 		}
 		else{
-			$query="SELECT tag_id, tag_names, tag_type FROM tags where NOT tag_id 9999 AND tag_type = ? order by tag_names DESC";
+			$query="SELECT tag_id, tag_names, tag_type FROM tags where NOT tag_id = 9999 AND tag_type = ? order by tag_names DESC";
 		}
 		$stmt = $this->connection->prepare($query);
 		$stmt->bindParam(1,$tagType);
