@@ -73,14 +73,14 @@ class images{
 //read products with pagination
 	public function readPaging($from_record_num, $records_per_page, $keywords){
 		//select query
-		$query = "SELECT image_id, image_hash, image_file,image_path 
+		$query2 = "SELECT image_id, image_hash, image_file, image_path 
 					FROM anderson_images.images  
 					WHERE image_file LIKE ? 
 					OR image_path LIKE ?
 					ORDER BY image_path, image_file
 					LIMIT ?,?";
 					
-		$query2 = "SELECT i.image_id, i.image_path, i.image_file, i.image_hash
+		$query = "SELECT i.image_id, i.image_hash, i.image_file, i.image_path
 					FROM anderson_images.images i
 					WHERE not exists
 					(select * from anderson_images.tag_links l where i.image_id = l.image_id 
