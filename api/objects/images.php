@@ -80,7 +80,7 @@ class images{
 					ORDER BY image_path, image_file
 					LIMIT ?,?";
 					
-		$query = "SELECT i.image_id, i.image_path, i.image_file
+		$query = "SELECT i.image_id, i.image_path, i.image_file, i.image_hash
 					FROM anderson_images.images i
 					WHERE not exists
 					(select * from anderson_images.tag_links l where i.image_id = l.image_id 
