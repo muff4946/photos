@@ -41,7 +41,7 @@ if($num>0){
 		
 		$image_item=array(
 			"id" => $image_id,
-//			"hash"=> $image_hash,
+			"hash"=> $image_hash,
 			"path" => $image_path,
 			"file" => $image_file,
 			"count" => $count
