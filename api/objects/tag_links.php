@@ -48,7 +48,7 @@ class tag_links{
 		$query = "SELECT link_id, image_id, tag_id
 					FROM anderson_images.tag_links
 					WHERE image_id LIKE ?
-					WHERE NOT tag_id = 0000
+					AND NOT tag_id = 0000
 					ORDER BY tag_id";
 		
 		$stmt = $this->connection->prepare($query);
