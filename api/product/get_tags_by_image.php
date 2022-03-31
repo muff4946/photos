@@ -26,7 +26,7 @@ $imageid= isset($_GET['image']) ? $_GET['image'] : '';
 
 
 //get array of tag ids
-if($use == "edit"{
+if($use == "edit"){
 	$stmt = $taglinks->tagsByImage4Edit($imageid);
 } else{
 	$stmt = $taglinks->tagsByImage4View{$imageid);
