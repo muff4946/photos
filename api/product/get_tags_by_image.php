@@ -29,7 +29,7 @@ $imageid= isset($_GET['image']) ? $_GET['image'] : '';
 if($use == "edit"){
 	$stmt = $taglinks->tagsByImage4Edit($imageid);
 } else{
-	$stmt = $taglinks->tagsByImage4View{$imageid);
+	$stmt = $taglinks->tagsByImage4View($imageid);
 }
 
 $num = $stmt->rowCount();
