@@ -179,7 +179,7 @@ app.controller('TagEditorCont',function($scope, $http){
 	
 	//getting tags for the upper-right panel
 	$scope.getTags = function(){
-		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_image.php?image="+imageid,).then(
+		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_image.php?use=edit&image="+imageid,).then(
 			function successfulCallback(response){
 				$scope.tags_assigned = response.data.tags;
 				//console.log($scope.tags_assigned);

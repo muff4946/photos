@@ -112,7 +112,7 @@ app.controller('PhotoTableCont', function($scope, $http){
 	
 	//getting the tags to put underneath the photo
 	$scope.getTags = function(imageid){
-		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_image.php?image="+imageid,).then(
+		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_image.php?use=view&image="+imageid,).then(
 			function successfulCallback(response){
 				$scope.tags_assigned = response.data.tags;
 				//console.log($scope.tags_assigned);
