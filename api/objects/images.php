@@ -82,8 +82,7 @@ class images{
 		$query = "SELECT i.image_id, i.image_path, i.image_file
 					FROM anderson_images.images i WHERE 
 					not exists
-(select * from anderson_images.tag_links l where i.image_id = l.image_id and CHAR_LENGTH(l.tag_id) = 4) and NOT i.image_path like '%printables%' and i.image_file NOT like '%Copy%' order by image_path, image_file
-					LIMIT ?,?";
+(select * from anderson_images.tag_links l where i.image_id = l.image_id and CHAR_LENGTH(l.tag_id) = 4) and NOT i.image_path like '%printables%' and i.image_file NOT like '%Copy%' order by image_path, image_file";
 		//prepare query statement
 		$stmt = $this->connection->prepare($query);
 		
