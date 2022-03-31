@@ -22,6 +22,10 @@ $taglinks = new tag_links($db);
 //get image id from url
 $imageid= isset($_GET['image']) ? $_GET['image'] : '';
 
+$source_page= $_SERVER['REQUEST_URI'};
+
+echo $source_page;
+
 //get array of tag ids
 $stmt = $taglinks->tagsByImage($imageid);
 $num = $stmt->rowCount();
