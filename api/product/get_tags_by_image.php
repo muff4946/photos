@@ -74,7 +74,7 @@ if($num>0){
 	http_response_code(200);
 
 	//make it json format
-	echo json_encode($tag_arr);
+	echo $tag_arr;
 }
 else{
 	//set response code - 404 Not found
