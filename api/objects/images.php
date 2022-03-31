@@ -97,10 +97,10 @@ class images{
 		$keywords = "%{$keywords}%";
 		
 		//bind variable values
-		$stmt->bindParam(1,$keywords);
-		$stmt->bindParam(2,$keywords);
-		$stmt->bindParam(3,$from_record_num,PDO::PARAM_INT);
-		$stmt->bindParam(4,$records_per_page,PDO::PARAM_INT);
+//		$stmt->bindParam(1,$keywords);
+//		$stmt->bindParam(2,$keywords);
+		$stmt->bindParam(1,$from_record_num,PDO::PARAM_INT);
+		$stmt->bindParam(2,$records_per_page,PDO::PARAM_INT);
 		
 		//execute query
 		$stmt->execute();
