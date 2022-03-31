@@ -19,11 +19,14 @@ $db = $database->getConnection();
 $tags = new tags($db);
 $taglinks = new tag_links($db);
 
+//get use from url
+$use= isset($_GET['use']) ? $_GET['use'] : '';
 //get image id from url
 $imageid= isset($_GET['image']) ? $_GET['image'] : '';
 
+
 //get array of tag ids
-$stmt = $taglinks->tagsByImage($imageid);
+$stmt = $taglinks->tagsByImage4Edit($imageid);
 $num = $stmt->rowCount();
 
 //go through array and get all of the tags associated with the tag ids

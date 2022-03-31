@@ -43,12 +43,27 @@ class tag_links{
 		return $stmt;
 	}
 	
-	//get tags by image
-	public function tagsByImage($image){
+	//get tags by image (filtering out 0000 for viewing)
+	public function tagsByImage4View($image){
 		$query = "SELECT link_id, image_id, tag_id
 					FROM anderson_images.tag_links
 					WHERE image_id LIKE ?
 					AND NOT tag_id = 0000
+					ORDER BY tag_id";
+		
+		$stmt = $this->connection->prepare($query);
+		
+		$stmt->bindParam(1,$image);
+		$stmt->execute();
+		
+		return $stmt;
+	}
+	
+	//get tags by image (leaving in 0000 for editing)
+	public function tagsByImage4Edit($image){
+		$query = "SELECT link_id, image_id, tag_id
+					FROM anderson_images.tag_links
+					WHERE image_id LIKE ?
 					ORDER BY tag_id";
 		
 		$stmt = $this->connection->prepare($query);
