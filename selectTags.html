@@ -231,6 +231,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 		localStorage.setItem("tagList",toAdd);
 		localStorage.setItem("numTags",numTags);
 		localStorage.setItem("searchType","andExclusive");
+		localStorage.setItem("yearCount","yearList.length");
 		
 		//change page
 		document.location.href="https://photos.dbq-andersons.com/searchList.html";
