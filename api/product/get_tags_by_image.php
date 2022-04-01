@@ -25,7 +25,7 @@ $use= isset($_GET['use']) ? $_GET['use'] : '';
 $imageid= isset($_GET['image']) ? $_GET['image'] : '';
 
 
-//get array of tag ids
+//get array of tag ids (if we're viewing, leave out the 9999 tag)
 if($use == "edit"){
 	$stmt = $taglinks->tagsByImage4Edit($imageid);
 } else{
