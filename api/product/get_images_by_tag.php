@@ -24,9 +24,17 @@ $images = new images($db);
 $tagids= isset($_GET['tag']) ? $_GET['tag'] : '';
 //get tag count from url
 $numTags= isset($_GET['num']) ? $_GET['num'] : '';
+//get searchtype from url
+$searchType= isset($_GET['searchType']) ? $_GET['searchType'] : '';
 
 //get array of tag ids
-$stmt = $images->imagesByTags($tagids, $numTags);
+if($searchType == "and"){
+	$stmt = $images->imagesByTagsAnd($tagids, $numTags);
+} else{
+	$stmt = $images->imagesByTagsAndExclusive($tagids, $numtags);
+}
+
+//$stmt = $images->imagesByTags($tagids, $numTags);
 $num = $stmt->rowCount();
 
 //go through array and get all of the images that match these tag ids
