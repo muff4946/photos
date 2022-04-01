@@ -26,12 +26,18 @@ $tagids= isset($_GET['tag']) ? $_GET['tag'] : '';
 $numTags= isset($_GET['num']) ? $_GET['num'] : '';
 //get searchtype from url
 $searchType= isset($_GET['searchType']) ? $_GET['searchType'] : '';
+//get yearCount from url
+$yearCount= isset($_GET['yearCount']) ? $_GET['yearCount'] : '';
 
 //get array of tag ids
 if($searchType == "and"){
 	$stmt = $images->imagesByTagsAnd($tagids, $numTags);
 } else{
-	$stmt = $images->imagesByTagsAndExclusive($tagids, $numTags);
+	if($yearCount == 0){
+		$stmt = $images->imagesByTagsAndExclusiveNoYear($tagids, $numTags);
+	} else
+		$stmt = $images->imagesByTagsAndExclusive($tagids, $numTags);
+	}
 }
 
 $num = $stmt->rowCount();

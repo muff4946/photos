@@ -152,6 +152,29 @@ class images{
 		return $stmt;
 	}
 	
+	//gets all the images with all of the tags (the formatting of the query under the ? is done on the html
+	public function imagesByTagsAndExclusiveNoYear($tags, $number){
+		$query = "SELECT i.image_id, i.image_hash, i.image_file, i.image_path
+					FROM anderson_images.images i, (select t.image_id
+						FROM anderson_images.tag_links t
+						where t.tag_id = $tags ) as tl
+					WHERE i.image_id = tl.image_id
+					GROUP BY i.image_id
+					HAVING count(i.image_id) = $number AND
+					count(i.image_id) = (SELECT count(tal.tag_id) FROM anderson_images.tag_links tal where tal.image_id = i.image_id ) -1
+                                        ORDER BY i.image_path, i.image_file";
+		//prepare query statement
+		$stmt = $this->connection->prepare($query);
+		
+		
+		//execute query
+		$stmt->execute();
+		
+		//return values from database
+		return $stmt;
+	}
+
+
 	//gets the ids of all the images with a single tag
 	public function imagesByTag($tag){
 		$query = "SELECT i.image_id
