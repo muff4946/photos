@@ -35,7 +35,7 @@ if($searchType == "and"){
 } else{
 	if($yearCount == 0){
 		$stmt = $images->imagesByTagsAndExclusiveNoYear($tagids, $numTags);
-	} else
+	} else{
 		$stmt = $images->imagesByTagsAndExclusive($tagids, $numTags);
 	}
 }
