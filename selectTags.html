@@ -217,13 +217,14 @@ app.controller('TagSelecterCont', function($scope, $http){
 		var numTags = nonYearList.length;
 		if(yearList.length>0 && nonYearList.length>0){
 			toAdd = toAdd + " OR t.tag_id = " + years;
-			numTags++;
+			
 			//console.log("here");
 		}
 		else if(yearList.length>0 && nonYearList.length==0){
 			toAdd = years;
-			numTags++
+			
 		}
+		numtags++;
 		console.log(toAdd);
 		console.log(numTags);
 		//send info to local storage
