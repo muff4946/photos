@@ -31,6 +31,7 @@ $searchType= isset($_GET['searchType']) ? $_GET['searchType'] : '';
 if($searchType == "and"){
 	$stmt = $images->imagesByTagsAnd($tagids, $numTags);
 } else{
+	$numTags++;
 	$stmt = $images->imagesByTagsAndExclusive($tagids, $numTags);
 }
 
