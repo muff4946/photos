@@ -34,7 +34,6 @@ if($searchType == "and"){
 	$stmt = $images->imagesByTagsAndExclusive($tagids, $numTags);
 }
 
-//$stmt = $images->imagesByTags($tagids, $numTags);
 $num = $stmt->rowCount();
 
 //go through array and get all of the images that match these tag ids
