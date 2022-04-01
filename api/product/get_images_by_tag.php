@@ -32,6 +32,7 @@ if($searchType == "and"){
 	$stmt = $images->imagesByTagsAnd($tagids, $numTags);
 } else{
 	$numTags++;
+	echo $numTags;
 	$stmt = $images->imagesByTagsAndExclusive($tagids, $numTags);
 }
 
