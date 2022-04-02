@@ -86,14 +86,17 @@ app.controller('PhotoTableCont', function($scope, $http){
 		numTags = localStorage.getItem("numTags");
 		searchType = localStorage.getItem("searchType");
 		yearCount = localStorage.getItem("yearCount");
+		$scope.imLoading = true;
 		$http.get("https://photos.dbq-andersons.com/api/product/get_images_by_tag.php/?searchType="+searchType + "&tag="+toAdd + "&num="+numTags + "&yearCount="+yearCount,).then(
 			function successfulCallback(response){
 				$scope.imageList = response.data.images;
 				$scope.row_count = $scope.imageList.length;
+				$scope.imLoading = false;
 			},
 			function errorCallback(response){
 				console.log("Error "+response)
 				$scope.row_count = "0";
+				$scope.imLoading = false;
 			});
 	};
 
