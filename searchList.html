@@ -3,7 +3,7 @@
 <head>
 <title>Anderson Photo Library Tag Search Results</title>
 <link rel="stylesheet" href="api/search-list-style.css?v=1.02"></link>
-<link rel="stylesheer" href="api/spinner.css?v=1.02"></link>
+<link rel="stylesheet" href="api/spinner.css?v=1.02"></link>
 </head>
 <body>
     
@@ -18,7 +18,7 @@
 						<th id="file_name">FILE NAME</th>
 						<th id="thumb">THUMBNAIL</th>
 					</tr>
-				
+	<div class="lds-hourglass" ng-show:"imLoading"></div>			
 					<tr ng-repeat="i in imageList">
 						<td>{{$index + 1}}</td>
 						<td id = {{i.path}}>{{i.path}}</td>
