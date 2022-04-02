@@ -1,5 +1,4 @@
 .lds-hourglass {
-  display: inline-block;
   position: relative;
   width: 80px;
   height: 80px;
@@ -11,7 +10,10 @@
   border-radius: 50%;
   width: 0;
   height: 0;
-  margin: 8px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auth;
   box-sizing: border-box;
   border: 32px solid #fff;
   border-color: #fff transparent #fff transparent;
