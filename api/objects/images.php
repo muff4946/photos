@@ -79,15 +79,6 @@ class images{
 					OR image_path LIKE ?
 					ORDER BY image_path, image_file
 					LIMIT ?,?";
-					
-		$query2 = "SELECT i.image_id, i.image_hash, i.image_file, i.image_path
-					FROM anderson_images.images i
-					WHERE not exists
-					(select * from anderson_images.tag_links l where i.image_id = l.image_id 
-					AND CHAR_LENGTH(l.tag_id) = 4)
-					AND NOT i.image_path like '%printables%' and i.image_file NOT like '%Copy%' 
-					ORDER by image_path, image_file
-					LIMIT ?,?";
 
 		//prepare query statement
 		$stmt = $this->connection->prepare($query);
