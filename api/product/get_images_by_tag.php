@@ -41,6 +41,9 @@ switch ($searchType) {
 			$stmt = $images->imagesByTagsAndExclusive($tagids, $numTags);
 		}
 		break;
+	case "or";
+		$stmt = $images->imagesByTagsOr($tagids, $numTags);
+		break
 }
 
 $num = $stmt->rowCount();
