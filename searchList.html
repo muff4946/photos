@@ -19,7 +19,7 @@
 						<th id="thumb">THUMBNAIL</th>
 					</tr>
 			
-					<tr ng-repeat="i in imageList">
+					<tr ng-repeat="i in imageList" ng-cloak>
 						<td>{{$index + 1}}</td>
 						<td id = {{i.path}}>{{i.path}}</td>
 						<td>{{i.file}}</td>
