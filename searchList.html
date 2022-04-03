@@ -92,12 +92,12 @@ app.controller('PhotoTableCont', function($scope, $http){
 			function successfulCallback(response){
 				$scope.imageList = response.data.images;
 				$scope.row_count = $scope.imageList.length;
-				//$scope.imLoading = false;
+				$scope.imLoading = false;
 			},
 			function errorCallback(response){
 				console.log("Error "+response)
 				$scope.row_count = "0";
-				//$scope.imLoading = false;
+				$scope.imLoading = false;
 			});
 	};
 
