@@ -29,6 +29,8 @@ $searchType= isset($_GET['searchType']) ? $_GET['searchType'] : '';
 //get yearCount from url
 $yearCount= isset($_GET['yearCount']) ? $_GET['yearCount'] : '';
 
+echo $searchType;
+
 //get array of tag ids
 
 switch ($searchType) {
