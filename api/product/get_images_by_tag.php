@@ -43,7 +43,7 @@ switch ($searchType) {
 		break;
 	case "or";
 		$stmt = $images->imagesByTagsOr($tagids, $numTags);
-		break
+		break;
 }
 
 $num = $stmt->rowCount();
