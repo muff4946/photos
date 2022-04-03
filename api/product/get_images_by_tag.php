@@ -50,7 +50,7 @@ echo $searchType;
 //}
 
 get array of tag ids
-if($searchType == "and"){
+/f($searchType == "and"){
 	$stmt = $images->imagesByTagsAnd($tagids, $numTags);
 } else{
 	if($yearCount == 0){
