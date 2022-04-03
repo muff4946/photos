@@ -175,6 +175,8 @@ class images{
 					GROUP BY i.image_id
 					HAVING count(i.image_id) = 1 AND
                                         ORDER BY i.image_path, i.image_file";
+										
+										echo $query;
 		//prepare query statement
 		$stmt = $this->connection->prepare($query);
 		
