@@ -49,7 +49,7 @@ echo $searchType;
 //		break;
 //}
 
-//get array of tag ids
+get array of tag ids
 if($searchType == "and"){
 	$stmt = $images->imagesByTagsAnd($tagids, $numTags);
 } else{
