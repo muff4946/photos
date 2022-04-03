@@ -30,15 +30,33 @@ $searchType= isset($_GET['searchType']) ? $_GET['searchType'] : '';
 $yearCount= isset($_GET['yearCount']) ? $_GET['yearCount'] : '';
 
 //get array of tag ids
-if($searchType == "and"){
-	$stmt = $images->imagesByTagsAnd($tagids, $numTags);
-} else{
-	if($yearCount == 0){
-		$stmt = $images->imagesByTagsAndExclusiveNoYear($tagids, $numTags);
-	} else{
-		$stmt = $images->imagesByTagsAndExclusive($tagids, $numTags);
-	}
+
+switch ($searchType) {
+	case "and":
+		$images->imagesByTagsAnd($tagids, $numTags);
+		break;
+	case "andExcusive":
+		if($yearCount == 0){
+			$stmt = $images->imagesByTagsAndExclusiveNoYear($tagids, $numTags);
+		} else{
+			$stmt = $images->imagesByTagsAndExclusive($tagids, $numTags);
+		}
+		break;
+	case "or":
+		$images->imagesByTagsOr($tagids, $numTags);
+		break;
 }
+
+//get array of tag ids
+//if($searchType == "and"){
+//	$stmt = $images->imagesByTagsAnd($tagids, $numTags);
+//} else{
+//	if($yearCount == 0){
+//		$stmt = $images->imagesByTagsAndExclusiveNoYear($tagids, $numTags);
+//	} else{
+//		$stmt = $images->imagesByTagsAndExclusive($tagids, $numTags);
+//	}
+//}
 
 $num = $stmt->rowCount();
 
