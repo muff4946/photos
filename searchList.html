@@ -26,7 +26,7 @@
 						<td ><image src = "{{i.thumb}}/{{i.file}}" ng-click = "clickThumb(i.image,i.file,i.id)"} ></image></td>
 					</tr>
 				</table>
-				<!--<div class="lds-hourglass" ng-show="imLoading"></div>-->
+				<div class="lds-hourglass" ng-show="imLoading"></div>
 			</div>	
 			<div class="to_be_image">	
 					<img id= "photo" class="image" onerror="myFunction()"></img>
@@ -34,8 +34,7 @@
                     <script> function myFunction() {
                         document.getElementById("demo").innerHTML = "The full-sized copy of this image could not be loaded likely due to the fact that your internet IP address (displayed at the bottom right of this page) is not on the access list for full-sized images.";
                         }
-                    </script>
-			<div class="lds-hourglass" ng-show="imLoading"></div>	
+                    </script>	
 			</div>
 			<div class = "current_tags">
 				<table>
