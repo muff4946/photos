@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Anderson Photo Library Tag Search</title>
-	<link rel="stylesheet" href="api/select-tags-style.css?v=1.03"></link>
+	<link rel="stylesheet" href="api/select-tags-style-new.css?v=1.03"></link>
 </head>
 <body>
 	
@@ -60,13 +60,16 @@
 			</div>
 			
 			<div class="searchType">
-				<button class = "submitSearch" ng-click="searchMe()">SEARCH<br>(boolean AND)</button>
+				<!--<button class = "submitSearch" ng-click="searchMe()">SEARCH<br>(boolean AND)</button>
 				<button class = "submitSearch" ng-click="searchMe2()">SEARCH<br>(boolean AND EXCLUSIVE)</button>
-				<button class = "submitSearch" ng-click="searchMe3()">SEARCH<br>(boolean OR)</button>
+				<button class = "submitSearch" ng-click="searchMe3()">SEARCH<br>(boolean OR)</button>-->
 			</div>
 			
 			<div class="infoBar">
-				<!--<p>{{image_count}}</p>-->
+				<h2>INFO GOES HERE</h2>
+				<button class = "submitSearch" ng-click="searchMe()">SEARCH<br>(boolean AND)</button>
+				<button class = "submitSearch" ng-click="searchMe2()">SEARCH<br>(boolean AND EXCLUSIVE)</button>
+				<button class = "submitSearch" ng-click="searchMe3()">SEARCH<br>(boolean OR)</button>
 				
 			</div>
 	
@@ -80,7 +83,7 @@ var nonYearList = [];
 var yearList = [];
 app.controller('TagSelecterCont', function($scope, $http){
 	window.onload = function(){
-		var url = "https://photos.dbq-andersons.com/selectTags.html";
+		var url = "https://photos.dbq-andersons.com/selectTags-new.html";
 		if(window.location!=url){
 			window.location = url;
 		}
