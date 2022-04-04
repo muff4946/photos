@@ -180,3 +180,12 @@ h2 {
     text-align: center;
 	color: #FFFFFF;
 }  
+
+.bottomLeftFooter{
+	display: inline-block;
+	color: white;
+	position: fixed;
+	left: 12px;
+	bottom: 0px;
+	font-size: 12px;
+}
