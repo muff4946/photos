@@ -98,13 +98,12 @@ h2 {
 */
 	height: 87%;
 	position: absolute;
-	width: 100%;
+	width: 99%;
 	grid-column-gap: 25px;
 	grid-row-gap: 10px;
-	border-top: 3px solid #594157;
+	border: 3px solid #594157;
 	padding-top: 12px;
 	padding-bottom: 5px;
-	border-bottom: 3px solid #594157;
 	background-color: #1C6973;
 	grid-template-areas: 
 		'individual individual year info info'
