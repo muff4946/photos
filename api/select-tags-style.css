@@ -158,6 +158,7 @@ h2 {
 
 .searchType{
 	grid-area:add;
+	width: 100%;
 }
 
 
