@@ -162,4 +162,10 @@ h2 {
 	width: 100%;
 }
 
-
+.TagListHeader{
+	display: block;
+	position: relative;
+	padding-left: 25px;
+	font: 14px 'Open Sans', Arial, sans-serif;
+	color: #FFFFFF;
+}  
