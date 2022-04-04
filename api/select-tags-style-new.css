@@ -1,0 +1,172 @@
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+::-webkit-scrollbar-track {
+	display: none;
+}
+
+::-webkit-scrollbar-thumb{
+	background-color: #7C7C7C;
+	border-radius: 2px;
+	opacity: .2;
+}
+
+
+/*
+These items affect everything
+*/
+
+*{
+	outline: none;
+}
+
+body,html {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+}
+
+body{
+	background-color: #2B303A;
+}
+
+
+button{
+	background-color: #F7F7F2;
+	border-color: #2B303A;
+	border-radius:3px;
+	padding: 3px;
+	border-width: 1.5px;
+	font-size: 10px;
+	width: inherit;
+}
+
+button:hover{
+	background-color: #7C7C7C;
+}
+
+button:active{
+	border-style: none;
+	outline: none;
+}
+
+
+
+/*Checkboxes styles*/
+input[type="checkbox"] { display: none; }
+
+input[type="checkbox"] + label {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  font: 14px 'Open Sans', Arial, sans-serif;
+  color: #FFFFFF;
+  cursor: pointer;
+  margin: 2px;
+}
+
+input[type="checkbox"] + label:before {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #594157;
+  border-radius: 3px;
+  position: absolute;
+  left: 0;
+  top: -1;
+  margin: 2px;
+}
+
+input[type="checkbox"]:checked + label:before {
+  background-color: #594157;
+}
+
+
+h2 {
+	color:white;
+	margin-left: 12px;
+}
+
+.grid-container{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr) 100px 1fr;
+	grid-template-rows: repeat(3, 1fr);
+/*	
+	top: 10%; 
+*/
+	height: 87%;
+	position: absolute;
+	width: 100%;
+	grid-column-gap: 25px;
+	grid-row-gap: 10px;
+	border-top: 3px solid #594157;
+	padding-top: 12px;
+	padding-bottom: 5px;
+	border-bottom: 3px solid #594157;
+	background-color: #1C6973;
+	grid-template-areas: 
+		'individual individual events year info '
+		'individual individual holiday year info '
+		'individual individual other  add info';
+}
+
+.PeopleList{
+	grid-area: individual;
+	border: 2px solid #7C7C7C;
+	padding: 10px;
+	border-radius: 7px;
+	overflow-y: auto;
+	overflow-x: auto;
+}
+
+.EventList{
+	grid-area: events;
+	border: 2px solid #7C7C7C;
+	padding: 10px;
+	border-radius: 7px;
+	overflow-y: auto;
+	overflow-x: auto;
+}
+
+.YearList{
+	grid-area: year;
+	border: 2px solid #7C7C7C;
+	padding: 10px;
+	border-radius: 7px;
+	overflow-y: auto;
+	overflow-x: auto;
+}
+
+.OtherList{
+	grid-area: other;
+	border: 2px solid #7C7C7C;
+	padding: 10px;
+	border-radius: 7px;
+	overflow-y: auto;
+	overflow-x: auto;
+}
+
+.HolidayList{
+	grid-area: holiday;
+	border: 2px solid #7C7C7C;
+	padding: 10px;
+	border-radius: 7px;
+	overflow-y: auto;
+	overflow-x: auto;
+}
+
+.searchType{
+	grid-area:add;
+	width: 100%;
+}
+
+.TagListHeader{
+	display: block;
+	position: relative;
+    font: 18px 'Open Sans', Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+	color: #FFFFFF;
+}  
