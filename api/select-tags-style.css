@@ -38,7 +38,7 @@ button{
 	border-radius:3px;
 	padding: 3px;
 	border-width: 1.5px;
-	font: 10px 'Open Sans', Arial, sans-serif;
+	font: 15px 'Open Sans', Arial, sans-serif;
 	width: 100%
 }
 
@@ -165,6 +165,7 @@ h2 {
 	overflow-x: auto;
 	font: 14px 'Open Sans', Arial, sans-serif;
 	color: #FFFFFF;
+	justify-self: center;
 }
 
 .searchType{
