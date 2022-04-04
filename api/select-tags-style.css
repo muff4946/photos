@@ -166,6 +166,8 @@ h2 {
 	display: block;
 	position: relative;
 	padding-left: 25px;
-	font: 14px 'Open Sans', Arial, sans-serif;
+    font: 24px 'Open Sans', Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
 	color: #FFFFFF;
 }  

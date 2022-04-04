@@ -20,6 +20,7 @@
 			</div>
 			
 			<div class="EventList">
+			<div class="TagListHeader">EVENTS</div>	
 				<form>
 					<div class="row" ng-repeat="x in event_list">
 						<input type="checkbox" id={{x.id}} ng-click="click(x.id, x.names)">
@@ -29,6 +30,7 @@
 			</div>
 			
 			<div class="HolidayList">
+			<div class="TagListHeader">HOLIDAYS</div>
 				<form>
 					<div class="row" ng-repeat="x in holiday_list">
 						<input type="checkbox" id={{x.id}} ng-click="click(x.id, x.names)">
@@ -38,6 +40,7 @@
 			</div>
 			
 			<div class="YearList">
+			<div class="TagListHeader">YEARS</div>
 				<form>
 					<div class="row" ng-repeat="x in year_list">
 						<input type="checkbox" id={{x.id}} ng-click="clickYear(x.id, x.names)">
@@ -47,6 +50,7 @@
 			</div>
 			
 			<div class="OtherList">
+			<div class="TagListHeader">OTHER TAGS</div>
 				<form>
 					<div class="row" ng-repeat="x in other_list">
 						<input type="checkbox" id={{x.id}} ng-click="click(x.id, x.names)">
