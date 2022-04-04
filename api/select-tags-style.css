@@ -156,6 +156,15 @@ h2 {
 	overflow-x: auto;
 }
 
+.infoBar{
+	grid-area: info;
+	border: 2px solid #7C7C7C;
+	padding: 10px;
+	border-radius: 7px;
+	overflow-y: auto;
+	overflow-x: auto;
+}
+
 .searchType{
 	grid-area:add;
 	width: 100%;
