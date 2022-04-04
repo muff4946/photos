@@ -91,7 +91,7 @@ h2 {
 
 .grid-container{
 	display: grid;
-	grid-template-columns: repeat(3, 1fr) 100px 1fr;
+	grid-template-columns: repeat(2, 1fr) 100px repeat(2, 1fr);
 	grid-template-rows: repeat(3, 1fr);
 /*	
 	top: 10%; 
@@ -107,9 +107,9 @@ h2 {
 	border-bottom: 3px solid #594157;
 	background-color: #1C6973;
 	grid-template-areas: 
-		'individual individual events year info '
-		'individual individual holiday year info '
-		'individual individual other  add info';
+		'individual individual year info info '
+		'individual individual year events holidays '
+		'individual individual add other info';
 }
 
 .PeopleList{
