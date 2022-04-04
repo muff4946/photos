@@ -107,9 +107,9 @@ h2 {
 	border-bottom: 3px solid #594157;
 	background-color: #1C6973;
 	grid-template-areas: 
-		'individual individual year info info '
-		'individual individual year events holidays '
-		'individual individual add other info';
+		'individual individual year info info'
+		'individual individual year events holiday'
+		'individual individual add other extra';
 }
 
 .PeopleList{
