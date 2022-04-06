@@ -1,0 +1,381 @@
+<!doctype html>
+<html>
+<head>
+	<title>Anderson Photo Library Tag Search</title>
+	<link rel="stylesheet" href="api/select-tags-style.css?v=1.03"></link>
+</head>
+<body>
+	
+	<div id="angularEditor",class="container" ng-app="TagSelecter" ng-controller="TagSelecterCont">
+		<h2 class="header">Select the tag(s) for which you want to search in our {{image_count}} cataloged images and click one of the search buttons.</h2>
+				<div class="grid-container">
+			<div class="PeopleList">
+			<div class="TagListHeader">PEOPLE</div>
+				<form class = "list">
+					<div class="row" ng-repeat="x in people_list">
+						<input type="checkbox" id={{x.id}} ng-click="click(x.id, x.names)">
+						<label for={{x.id}}>{{x.names}}</label>
+					</div>
+				</form>
+			</div>
+			
+			<div class="EventList">
+			<div class="TagListHeader">EVENTS</div>	
+				<form>
+					<div class="row" ng-repeat="x in event_list">
+						<input type="checkbox" id={{x.id}} ng-click="click(x.id, x.names)">
+						<label for={{x.id}}>{{x.names}}</label>
+					</div>
+				</form>
+			</div>
+			
+			<div class="HolidayList">
+			<div class="TagListHeader">HOLIDAYS</div>
+				<form>
+					<div class="row" ng-repeat="x in holiday_list">
+						<input type="checkbox" id={{x.id}} ng-click="click(x.id, x.names)">
+						<label for={{x.id}}>{{x.names}}</label>
+					</div>
+				</form>
+			</div>
+			
+			<div class="YearList">
+			<div class="TagListHeader">YEARS</div>
+				<form>
+					<div class="row" ng-repeat="x in year_list">
+						<input type="checkbox" id={{x.id}} ng-click="clickYear(x.id, x.names)">
+						<label for={{x.id}}>{{x.names}}</label>
+					</div>
+				</form>
+			</div>
+			
+			<div class="OtherList">
+			<div class="TagListHeader">OTHER TAGS</div>
+				<form>
+					<div class="row" ng-repeat="x in other_list">
+						<input type="checkbox" id={{x.id}} ng-click="click(x.id, x.names)">
+						<label for={{x.id}}>{{x.names}}</label>
+					</div>
+				</form>
+			</div>
+			
+			<div class="infoAndSearch">
+				<h2><br>Using the Different Search Types<br>(if in doubt, start with the top one to get a feel for things)</h2>
+				<table>
+				<tr><td><button class = "submitSearch" ng-click="searchMe()">SEARCH FOR ALL<br>SELECTED TAGS</button></td><td>Returns a list of photos containing ALL tags selected as well as other tags<br>(i.e. others in the same photo).</td></tr>
+				<tr><td><button class = "submitSearch" ng-click="searchMe2()">SEARCH FOR ONLY<br>SELECTED TAGS</button></td><td>Returns a list of photos containing ONLY the tags selected.<br>(still being worked on; accuracy may vary)</td></tr>
+				<tr><td><button class = "submitSearch" ng-click="searchMe3()">SEARCH FOR ANY<br>SELECTED TAGS</button></td><td>Returns a list of photos containing ANY of the tags selected.</td></tr>
+				</table>
+				
+			</div>
+		<div class="bottomLeftFooter">Primary Site Design & Coding (AngularJS/PHP/MySQL): Marcy Anderson<br>Photo Tagging/Database Design & Maintenance/Occasional Site Hacking: Bill Anderson<div>
+		</div>
+	</div>
+</body>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+<script>
+var app = angular.module('TagSelecter',[]);
+var nonYearList = [];
+var yearList = [];
+app.controller('TagSelecterCont', function($scope, $http){
+	window.onload = function(){
+		var url = "https://photos.dbq-andersons.com/selectTags.html";
+		if(window.location!=url){
+			window.location = url;
+		}
+		$scope.start();
+	};
+	
+	$scope.start = function(){
+		//get people tags
+		$scope.getPeople();
+		//get events tags
+		$scope.getEvents();
+		//get holiday tags
+		$scope.getHolidays();
+		//get year tags
+		$scope.getYears();
+		//get other tags   
+		$scope.getOther();
+		//get image count
+		$scope.getImageCount();
+		
+	};
+	
+	//GETTING BUTTONS
+	$scope.getPeople = function(){
+		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_type.php?type=individual").then(
+			function successfulCallback(response){
+				$scope.people_list = response.data.tags;
+				
+			},
+			function errorCallback(response){
+				$scope.alert("No People Tags");
+				console.log("Error"+response);
+		});
+	};
+	
+	$scope.getEvents = function(){
+		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_type.php?type=event").then(
+			function successfulCallback(response){
+				$scope.event_list = response.data.tags;
+				
+			},
+			function errorCallback(response){
+				$scope.alert("No Event Tags");
+				console.log("Error"+response);
+		});
+	};
+	
+	$scope.getHolidays = function(){
+		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_type.php?type=holiday").then(
+			function successfulCallback(response){
+				$scope.holiday_list = response.data.tags;
+				
+			},
+			function errorCallback(response){
+				$scope.alert("No Holiday Tags");
+				console.log("Error"+response);
+		});
+	};
+	
+	$scope.getYears = function(){
+		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_type.php?type=year").then(
+			function successfulCallback(response){
+				$scope.year_list = response.data.tags;
+				
+			},
+			function errorCallback(response){
+				$scope.alert("No Year Tags");
+				console.log("Error"+response);
+		});
+	};
+	
+	$scope.getOther = function(){
+		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_type.php?type=other").then(
+			function successfulCallback(response){
+				$scope.other_list = response.data.tags;
+				
+			},
+			function errorCallback(response){
+				$scope.alert("No Other Tags");
+				console.log("Error"+response);
+		});
+	};
+	
+	// GETTING IMAGE COUNT
+	
+	$scope.getImageCount = function(){
+		$http.get("https://photos.dbq-andersons.com/api/product/get_image_count.php").then(
+			function successfulCallback(response){
+				$scope.image_count = response.data.count;
+			
+			},
+			function errorCallback(response){
+				$scope.alert("No image Count");
+				console.log("Error"+response);
+		});
+	};
+	
+	
+	//FUN ONES
+	
+	
+	//SUBMITTING BOOLEAN AND SEARCH
+	
+	$scope.searchMe = function(){
+		//get lists
+		var tags = nonYearList.join(" OR t.tag_id = ");
+		var years = yearList.join(" OR t.tag_id = ");
+		var toAdd = tags;
+		var numTags = nonYearList.length;
+		if(yearList.length>0 && nonYearList.length>0){
+			toAdd = toAdd + " OR t.tag_id = " + years;
+			numTags++;
+			//console.log("here");
+		}
+		else if(yearList.length>0 && nonYearList.length==0){
+			toAdd = years;
+			numTags++
+		}
+		console.log(toAdd);
+		console.log(numTags);
+		//send info to local storage
+		
+		localStorage.setItem("tagList",toAdd);
+		localStorage.setItem("numTags",numTags);
+		localStorage.setItem("searchType","and");
+		
+		//change page
+		document.location.href="https://photos.dbq-andersons.com/searchList.html";
+		
+		
+	};
+	
+	//SUBMITTING BOOLEAN AND EXCLUSIVE SEARCH
+	
+	$scope.searchMe2 = function(){
+		//get lists
+		var tags = nonYearList.join(" OR t.tag_id = ");
+		var years = yearList.join(" OR t.tag_id = ");
+		var toAdd = tags;
+		var numTags = nonYearList.length;
+		if(yearList.length>0 && nonYearList.length>0){
+			toAdd = toAdd + " OR t.tag_id = " + years;
+			numTags++;
+			//console.log("here");
+		}
+		else if(yearList.length>0 && nonYearList.length==0){
+			toAdd = years;
+			numTags++
+		}
+		console.log(toAdd);
+		console.log(numTags);
+		console.log(yearList.length);
+		//send info to local storage
+		
+		localStorage.setItem("tagList",toAdd);
+		localStorage.setItem("numTags",numTags);
+		localStorage.setItem("searchType","andExclusive");
+		localStorage.setItem("yearCount",yearList.length);
+		
+		//change page
+		document.location.href="https://photos.dbq-andersons.com/searchList.html";
+		
+		
+	};
+
+	//SUBMITTING BOOLEAN OR SEARCH
+	
+	$scope.searchMe3 = function(){
+		//get lists
+		var tags = nonYearList.join(" OR t.tag_id = ");
+		var years = yearList.join(" OR t.tag_id = ");
+		var toAdd = tags;
+		var numTags = nonYearList.length;
+		if(yearList.length>0 && nonYearList.length>0){
+			toAdd = toAdd + " OR t.tag_id = " + years;
+			numTags++;
+			//console.log("here");
+		}
+		else if(yearList.length>0 && nonYearList.length==0){
+			toAdd = years;
+			numTags++
+		}
+		console.log(toAdd);
+		console.log(numTags);
+		console.log(yearList.length);
+		//send info to local storage
+		
+		localStorage.setItem("tagList",toAdd);
+		localStorage.setItem("numTags",numTags);
+		localStorage.setItem("searchType","or");
+		localStorage.setItem("yearCount",yearList.length);
+		
+		//change page
+		document.location.href="https://photos.dbq-andersons.com/searchList.html";
+		
+		
+	};
+
+		//check or uncheck by type so the tag counts can be fed up the line
+	
+	$scope.click = function(id, name){
+		if(document.getElementById(id).checked){
+			console.log(id);
+			console.log(name);
+			nonYearList.push(id);
+		}
+		else{
+			var spot = nonYearList.indexOf(id.toString());
+			if(spot!=-1){
+				nonYearList.splice(spot,1);
+			}
+			console.log(nonYearList.toString(" "));
+		}
+		
+	}
+	
+	$scope.clickIndividual = function(id, name){
+		if(document.getElementById(id).checked){
+			console.log(id);
+			console.log(name);
+			individualList.push(id);
+		}
+		else{
+			var spot = individualList.indexOf(id.toString());
+			if(spot!=-1){
+				individualList.splice(spot,1);
+			}
+			console.log(individualList.toString(" "));
+		}
+		
+	}
+
+	$scope.clickEvent = function(id, name){
+		if(document.getElementById(id).checked){
+			console.log(id);
+			console.log(name);
+			eventList.push(id);
+		}
+		else{
+			var spot = eventList.indexOf(id.toString());
+			if(spot!=-1){
+				eventList.splice(spot,1);
+			}
+			console.log(eventList.toString(" "));
+		}
+		
+	}
+
+	$scope.clickHoliday = function(id, name){
+		if(document.getElementById(id).checked){
+			console.log(id);
+			console.log(name);
+			holidayList.push(id);
+		}
+		else{
+			var spot = holidayList.indexOf(id.toString());
+			if(spot!=-1){
+				holidayList.splice(spot,1);
+			}
+			console.log(holidayList.toString(" "));
+		}
+		
+	}
+		
+	$scope.clickYear = function(id, name){
+		if(document.getElementById(id).checked){
+			console.log(id);
+			console.log(name);
+			yearList.push(id);
+		}
+		else{
+			var spot = yearList.indexOf(id.toString());
+			if(spot!=-1){
+				yearList.splice(spot,1);
+			}
+			console.log(yearList.toString(" "));
+		}
+		
+	}
+	
+	$scope.clickOther = function(id, name){
+		if(document.getElementById(id).checked){
+			console.log(id);
+			console.log(name);
+			otherList.push(id);
+		}
+		else{
+			var spot = otherList.indexOf(id.toString());
+			if(spot!=-1){
+				otherList.splice(spot,1);
+			}
+			console.log(otherList.toString(" "));
+		}
+		
+	}	
+	
+});	
+</script>
+</html>
