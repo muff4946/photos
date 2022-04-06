@@ -79,7 +79,7 @@ var nonYearList = [];
 var yearList = [];
 app.controller('TagSelecterCont', function($scope, $http){
 	window.onload = function(){
-		var url = "https://photos.dbq-andersons.com/selectTags.html";
+		var url = "https://photos.dbq-andersons.com/selectTags-new.html";
 		if(window.location!=url){
 			window.location = url;
 		}
@@ -207,7 +207,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 		localStorage.setItem("searchType","and");
 		
 		//change page
-		document.location.href="https://photos.dbq-andersons.com/searchList.html";
+		//document.location.href="https://photos.dbq-andersons.com/searchList.html";
 		
 		
 	};
@@ -240,7 +240,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 		localStorage.setItem("yearCount",yearList.length);
 		
 		//change page
-		document.location.href="https://photos.dbq-andersons.com/searchList.html";
+		//document.location.href="https://photos.dbq-andersons.com/searchList.html";
 		
 		
 	};
@@ -273,7 +273,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 		localStorage.setItem("yearCount",yearList.length);
 		
 		//change page
-		document.location.href="https://photos.dbq-andersons.com/searchList.html";
+		//document.location.href="https://photos.dbq-andersons.com/searchList.html";
 		
 		
 	};
