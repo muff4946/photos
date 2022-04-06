@@ -185,18 +185,22 @@ app.controller('TagSelecterCont', function($scope, $http){
 	
 	$scope.searchMe = function(){
 		//get lists
-		var tags = nonYearList.join(" OR t.tag_id = ");
+		var individuals = individualList.join(" OR t.tag_id= ");
+		var events = eventList.join(" OR t.tag_id= ");
+		var holidays = holidayList.join(" OR t.tag_id= ");
 		var years = yearList.join(" OR t.tag_id = ");
+		var others = otherList.join(" OR t.tag_id = ");
+		
+		var tags = nonYearList.join(" OR t.tag_id = ");
 		var toAdd = tags;
 		var numTags = nonYearList.length;
 		if(yearList.length>0 && nonYearList.length>0){
 			toAdd = toAdd + " OR t.tag_id = " + years;
 			numTags++;
-			//console.log("here");
 		}
 		else if(yearList.length>0 && nonYearList.length==0){
 			toAdd = years;
-			numTags++
+			numTags++;
 		}
 		console.log(toAdd);
 		console.log(numTags);
