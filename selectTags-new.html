@@ -13,7 +13,7 @@
 			<div class="TagListHeader">PEOPLE</div>
 				<form class = "list">
 					<div class="row" ng-repeat="x in people_list">
-						<input type="checkbox" id={{x.id}} ng-click="click(x.id, x.names)">
+						<input type="checkbox" id={{x.id}} ng-click="clickIndividual(x.id, x.names)">
 						<label for={{x.id}}>{{x.names}}</label>
 					</div>
 				</form>
@@ -23,7 +23,7 @@
 			<div class="TagListHeader">EVENTS</div>	
 				<form>
 					<div class="row" ng-repeat="x in event_list">
-						<input type="checkbox" id={{x.id}} ng-click="click(x.id, x.names)">
+						<input type="checkbox" id={{x.id}} ng-click="clickEvent(x.id, x.names)">
 						<label for={{x.id}}>{{x.names}}</label>
 					</div>
 				</form>
