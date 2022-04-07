@@ -296,54 +296,6 @@ app.controller('TagSelecterCont', function($scope, $http){
 		
 	}
 	
-	$scope.clickIndividual = function(id, name){
-		if(document.getElementById(id).checked){
-			console.log(id);
-			console.log(name);
-			individualList.push(id);
-		}
-		else{
-			var spot = individualList.indexOf(id.toString());
-			if(spot!=-1){
-				individualList.splice(spot,1);
-			}
-			console.log(individualList.toString(" "));
-		}
-		
-	}
-
-	$scope.clickEvent = function(id, name){
-		if(document.getElementById(id).checked){
-			console.log(id);
-			console.log(name);
-			eventList.push(id);
-		}
-		else{
-			var spot = eventList.indexOf(id.toString());
-			if(spot!=-1){
-				eventList.splice(spot,1);
-			}
-			console.log(eventList.toString(" "));
-		}
-		
-	}
-
-	$scope.clickHoliday = function(id, name){
-		if(document.getElementById(id).checked){
-			console.log(id);
-			console.log(name);
-			holidayList.push(id);
-		}
-		else{
-			var spot = holidayList.indexOf(id.toString());
-			if(spot!=-1){
-				holidayList.splice(spot,1);
-			}
-			console.log(holidayList.toString(" "));
-		}
-		
-	}
-		
 	$scope.clickYear = function(id, name){
 		if(document.getElementById(id).checked){
 			console.log(id);
@@ -359,22 +311,6 @@ app.controller('TagSelecterCont', function($scope, $http){
 		}
 		
 	}
-	
-	$scope.clickOther = function(id, name){
-		if(document.getElementById(id).checked){
-			console.log(id);
-			console.log(name);
-			otherList.push(id);
-		}
-		else{
-			var spot = otherList.indexOf(id.toString());
-			if(spot!=-1){
-				otherList.splice(spot,1);
-			}
-			console.log(otherList.toString(" "));
-		}
-		
-	}	
 	
 });	
 </script>
