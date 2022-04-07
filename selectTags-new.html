@@ -81,7 +81,7 @@ var individualList = [];
 var eventList = [];
 var holidayList = [];
 var otherList = [];
-var nonYearTags = [];
+
 app.controller('TagSelecterCont', function($scope, $http){
 	window.onload = function(){
 		var url = "https://photos.dbq-andersons.com/selectTags-new.html";
@@ -191,15 +191,15 @@ app.controller('TagSelecterCont', function($scope, $http){
 	$scope.searchMe = function(){
 		//get lists
 		if (individualList.length>0){
-			var nonYearTags = individualList.join(" OR t.tag_id= ");
+			var nonYearList = individualList.join(" OR t.tag_id= ");
 		}
 		if (eventList.length>0){
 			var events = eventList.join(" OR t.tag_id= ");
-			if (nonYearTags.length>0){
-				var nonYearTags = nonYearTags.concat(" OR t.tag_id= ", events);
+			if (nonYearList.length>0){
+				var nonYearList = nonYearList.concat(" OR t.tag_id= ", events);
 			}
 			else {
-				var NonYearTags = eventlist.join (" OR t.tag_id= ");
+				var NonYearList = eventlist.join (" OR t.tag_id= ");
 			}
 		}
 		if (holidayList.length>0){
