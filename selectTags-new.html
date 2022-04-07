@@ -77,6 +77,10 @@
 var app = angular.module('TagSelecter',[]);
 var nonYearList = [];
 var yearList = [];
+var individualList = [];
+var eventList = [];
+var holidayList = [];
+var otherList = [];
 app.controller('TagSelecterCont', function($scope, $http){
 	window.onload = function(){
 		var url = "https://photos.dbq-andersons.com/selectTags-new.html";
