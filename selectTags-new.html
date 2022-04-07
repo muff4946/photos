@@ -193,7 +193,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 			var nonYearTags = individualList.join(" OR t.tag_id= ");
 		}
 		if (eventList.length>0){
-		    var nonYearTags = nonYearTags.concat(" OR t.tag_id= ", eventList.join);
+		    var nonYearTags2 = nonYearTags.concat(" OR t.tag_id= ", eventList.join);
 		}
 		var events = eventList.join(" OR t.tag_id= ");
 		var holidays = holidayList.join(" OR t.tag_id= ");
@@ -213,7 +213,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 		}
 		console.log(toAdd);
 		console.log(numTags);
-		console.log(nonYearTags);
+		console.log(nonYearTags2);
 		//send info to local storage
 		
 		localStorage.setItem("tagList",toAdd);
