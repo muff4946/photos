@@ -194,7 +194,12 @@ app.controller('TagSelecterCont', function($scope, $http){
 		}
 		if (eventList.length>0){
 			var events = eventList.join(" OR t.tag_id= ");
-		    var nonYearTags = nonYearTags.concat(" OR t.tag_id= ", events);
+			if (nonYearTags.length>0){
+				var nonYearTags = nonYearTags.concat(" OR t.tag_id= ", events);
+			}
+			else {
+				var NonYearTags = eventlist.join (" OR t.tag_id= ");
+			}
 		}
 		if (holidayList.length>0){
 			var holidays = holidayList.join(" OR t.tag_id= ");
