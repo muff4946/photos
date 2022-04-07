@@ -204,11 +204,11 @@ app.controller('TagSelecterCont', function($scope, $http){
 		}
 		if (holidayList.length>0){
 			var holidays = holidayList.join(" OR t.tag_id= ");
-			var nonYearTags = nonYearTags.concat(" OR t.tag_id= ", holidays);
+			var nonYearList = nonYearList.concat(" OR t.tag_id= ", holidays);
 		}
 		if (otherList.length>0){
 			var others = otherList.join(" OR t.tag_id = ");
-			var nonYearTags = nonYearTags.concat(" OR t.tag_id= ", others);
+			var nonYearList = nonYearList.concat(" OR t.tag_id= ", others);
 		}
 		
 		var years = yearList.join(" OR t.tag_id = ");
