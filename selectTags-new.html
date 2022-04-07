@@ -203,7 +203,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 		if (otherList.length>0){
 			var others = otherList.join(" OR t.tag_id = ");
 			var nonYearTags = nonYearTags.concat(" OR t.tag_id= ", others);
-		fi
+		}
 		
 		var years = yearList.join(" OR t.tag_id = ");
 		
