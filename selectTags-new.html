@@ -190,10 +190,10 @@ app.controller('TagSelecterCont', function($scope, $http){
 	$scope.searchMe = function(){
 		//get lists
 		if (individualList.length>0){
-			var nonYearTags = individualList.join(" OR t.tag_id= ");
+			var "nonYearTags" = individualList.join(" OR t.tag_id= ");
 		}
 		if (eventList.length>0){
-		    var nonYearTags = nonYearTags + eventList.join(" OR t.tag_id= ");
+		    var "nonYearTags" = "nonYearTags" + eventList.join(" OR t.tag_id= ");
 		}
 		var events = eventList.join(" OR t.tag_id= ");
 		var holidays = holidayList.join(" OR t.tag_id= ");
