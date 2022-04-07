@@ -193,7 +193,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 			var nonYearTags = individualList.join(" OR t.tag_id= ");
 		}
 		if (eventList.length>0){
-		    var nonYearTags = nonYearTags + eventList.join(" OR t.tag_id= ");
+		    var nonYearTags = nonYearTags.concat(" OR t.tag_id= ", eventList.join);
 		}
 		var events = eventList.join(" OR t.tag_id= ");
 		var holidays = holidayList.join(" OR t.tag_id= ");
