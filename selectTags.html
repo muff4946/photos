@@ -13,7 +13,7 @@
 			<div class="TagListHeader">PEOPLE</div>
 				<form class = "list">
 					<div class="row" ng-repeat="x in people_list">
-						<input type="checkbox" id={{x.id}} ng-click="click(x.id, x.names)">
+						<input type="checkbox" id={{x.id}} ng-click="clickPeople(x.id, x.names)">
 						<label for={{x.id}}>{{x.names}}</label>
 					</div>
 				</form>
@@ -23,7 +23,7 @@
 			<div class="TagListHeader">EVENTS</div>	
 				<form>
 					<div class="row" ng-repeat="x in event_list">
-						<input type="checkbox" id={{x.id}} ng-click="click(x.id, x.names)">
+						<input type="checkbox" id={{x.id}} ng-click="clickEvent(x.id, x.names)">
 						<label for={{x.id}}>{{x.names}}</label>
 					</div>
 				</form>
@@ -33,7 +33,7 @@
 			<div class="TagListHeader">HOLIDAYS</div>
 				<form>
 					<div class="row" ng-repeat="x in holiday_list">
-						<input type="checkbox" id={{x.id}} ng-click="click(x.id, x.names)">
+						<input type="checkbox" id={{x.id}} ng-click="clickHoliday(x.id, x.names)">
 						<label for={{x.id}}>{{x.names}}</label>
 					</div>
 				</form>
@@ -53,7 +53,7 @@
 			<div class="TagListHeader">OTHER TAGS</div>
 				<form>
 					<div class="row" ng-repeat="x in other_list">
-						<input type="checkbox" id={{x.id}} ng-click="click(x.id, x.names)">
+						<input type="checkbox" id={{x.id}} ng-click="clickOther(x.id, x.names)">
 						<label for={{x.id}}>{{x.names}}</label>
 					</div>
 				</form>
@@ -77,9 +77,13 @@
 var app = angular.module('TagSelecter',[]);
 var nonYearList = [];
 var yearList = [];
+var peopleList = [];
+var eventList = [];
+var holidayList = [];
+var otherList = [];
 app.controller('TagSelecterCont', function($scope, $http){
 	window.onload = function(){
-		var url = "https://photos.dbq-andersons.com/selectTags.html";
+		var url = "https://photos.dbq-andersons.com/selectTags-new.html";
 		if(window.location!=url){
 			window.location = url;
 		}
@@ -202,11 +206,17 @@ app.controller('TagSelecterCont', function($scope, $http){
 		}
 		console.log(toAdd);
 		console.log(numTags);
+		
 		//send info to local storage
 		
 		localStorage.setItem("tagList",toAdd);
 		localStorage.setItem("numTags",numTags);
 		localStorage.setItem("searchType","and");
+		localStorage.setItem("otherTagCount",otherList.length);
+		localStorage.setItem("eventTagCount",eventList.length);
+		localStorage.setItem("holidayTagCount",holidayList.length);
+		localStorage.setItem("peopleTagCount",peopleList.length);
+		localStorage.setItem("yearTagCount",yearList.length);
 		
 		//change page
 		document.location.href="https://photos.dbq-andersons.com/searchList.html";
@@ -239,7 +249,12 @@ app.controller('TagSelecterCont', function($scope, $http){
 		localStorage.setItem("tagList",toAdd);
 		localStorage.setItem("numTags",numTags);
 		localStorage.setItem("searchType","andExclusive");
-		localStorage.setItem("yearCount",yearList.length);
+		localStorage.setItem("otherTagCount",otherList.length);
+		localStorage.setItem("eventTagCount",eventList.length);
+		localStorage.setItem("holidayTagCount",holidayList.length);
+		localStorage.setItem("peopleTagCount",peopleList.length);
+		localStorage.setItem("yearTagCount",yearList.length);
+		
 		
 		//change page
 		document.location.href="https://photos.dbq-andersons.com/searchList.html";
@@ -272,7 +287,12 @@ app.controller('TagSelecterCont', function($scope, $http){
 		localStorage.setItem("tagList",toAdd);
 		localStorage.setItem("numTags",numTags);
 		localStorage.setItem("searchType","or");
-		localStorage.setItem("yearCount",yearList.length);
+		localStorage.setItem("otherTagCount",otherList.length);
+		localStorage.setItem("eventTagCount",eventList.length);
+		localStorage.setItem("holidayTagCount",holidayList.length);
+		localStorage.setItem("peopleTagCount",peopleList.length);
+		localStorage.setItem("yearTagCount",yearList.length);
+		
 		
 		//change page
 		document.location.href="https://photos.dbq-andersons.com/searchList.html";
@@ -282,11 +302,12 @@ app.controller('TagSelecterCont', function($scope, $http){
 
 		//check or uncheck by type so the tag counts can be fed up the line
 	
-	$scope.click = function(id, name){
+	$scope.clickPeople = function(id, name){
 		if(document.getElementById(id).checked){
 			console.log(id);
 			console.log(name);
 			nonYearList.push(id);
+			peopleList.push(id);
 		}
 		else{
 			var spot = nonYearList.indexOf(id.toString());
@@ -294,10 +315,81 @@ app.controller('TagSelecterCont', function($scope, $http){
 				nonYearList.splice(spot,1);
 			}
 			console.log(nonYearList.toString(" "));
+			var spot2 = peopleList.indexOf(id.toString());
+			if(spot2!=-1){
+				peopleList.splice(spot2,1);
+			}
+			console.log(peopleList.toString(" "));
+		}
+		
+	}
+
+	$scope.clickHoliday = function(id, name){
+		if(document.getElementById(id).checked){
+			console.log(id);
+			console.log(name);
+			nonYearList.push(id);
+			holidayList.push(id);
+		}
+		else{
+			var spot = nonYearList.indexOf(id.toString());
+			if(spot!=-1){
+				nonYearList.splice(spot,1);
+			}
+			console.log(nonYearList.toString(" "));
+			var spot2 = holidayList.indexOf(id.toString());
+			if(spot2!=-1){
+				holidayList.splice(spot2,1);
+			}
+			console.log(holidayList.toString(" "));
 		}
 		
 	}
 	
+	$scope.clickEvent = function(id, name){
+		if(document.getElementById(id).checked){
+			console.log(id);
+			console.log(name);
+			nonYearList.push(id);
+			eventList.push(id);
+		}
+		else{
+			var spot = nonYearList.indexOf(id.toString());
+			if(spot!=-1){
+				nonYearList.splice(spot,1);
+			}
+			console.log(nonYearList.toString(" "));
+			var spot2 = eventList.indexOf(id.toString());
+			if(spot2!=-1){
+				eventList.splice(spot2,1);
+			}
+			console.log(eventList.toString(" "));		
+		}
+		
+	}
+
+	$scope.clickOther = function(id, name){
+		if(document.getElementById(id).checked){
+			console.log(id);
+			console.log(name);
+			nonYearList.push(id);
+			otherList.push(id);
+		}
+		else{
+			var spot = nonYearList.indexOf(id.toString());
+			if(spot!=-1){
+				nonYearList.splice(spot,1);
+			}
+			console.log(nonYearList.toString(" "));
+			var spot2 = otherList.indexOf(id.toString());
+			if(spot2!=-1){
+				otherList.splice(spot2,1);
+			}
+			console.log(otherList.toString(" "));
+		}
+		
+	}
+			
 	$scope.clickYear = function(id, name){
 		if(document.getElementById(id).checked){
 			console.log(id);
