@@ -186,6 +186,8 @@ app.controller('TagSelecterCont', function($scope, $http){
 	$scope.searchMe = function(){
 		//get lists
 		var tags = nonYearList.join(" OR t.tag_id = ");
+		console.log(nonYearList);
+		console.log(nonYearList.length);
 		var years = yearList.join(" OR t.tag_id = ");
 		var toAdd = tags;
 		var numTags = nonYearList.length;
