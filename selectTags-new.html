@@ -206,12 +206,16 @@ app.controller('TagSelecterCont', function($scope, $http){
 		}
 		console.log(toAdd);
 		console.log(numTags);
-		console.log(otherList.length);
+		
 		//send info to local storage
 		
 		localStorage.setItem("tagList",toAdd);
 		localStorage.setItem("numTags",numTags);
 		localStorage.setItem("searchType","and");
+		localStorage.setItem("otherTagCount",otherList.length);
+		localStorage.setItem("eventTagCount",eventList.length);
+		localStorage.setItem("holidayTagCount",holidayList.length);
+		localstorage.setItem("peopleTagCount",peopleList.length);
 		
 		//change page
 		//document.location.href="https://photos.dbq-andersons.com/searchList.html";
