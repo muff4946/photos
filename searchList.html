@@ -93,7 +93,7 @@ app.controller('PhotoTableCont', function($scope, $http){
 		peopleCount = localStorage.getItem("peopleCount");
 		
 		$scope.imLoading = true;
-//		$http.get("https://photos.dbq-andersons.com/api/product/get_images_by_tag.php/?searchType="+searchType + "&tag="+toAdd + "&num="+numTags + "&yearCount="+yearCount,).then(
+
 		$http.get("https://photos.dbq-andersons.com/api/product/get_images_by_tag.php/?searchType="+searchType + "&tag="+toAdd + "&num="+numTags + "&yearCount="+yearCount + "&otherCount="+otherCount + "&eventCount="+eventCount + "&holidayCount="+holidayCount + "&peopleCount="+peopleCount,).then(
 		function successfulCallback(response){
 				$scope.imageList = response.data.images;

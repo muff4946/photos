@@ -24,11 +24,18 @@ $images = new images($db);
 $tagids= isset($_GET['tag']) ? $_GET['tag'] : '';
 //get tag count from url
 $numTags= isset($_GET['num']) ? $_GET['num'] : '';
-//get searchtype from url
+//get searchType from url
 $searchType= isset($_GET['searchType']) ? $_GET['searchType'] : '';
 //get yearCount from url
 $yearCount= isset($_GET['yearCount']) ? $_GET['yearCount'] : '';
-
+//get otherCount from url
+$otherCount= isset($_GET['otherCount']) ? $_GET['otherCount'] : '';
+//get eventCount from url
+$eventCount= isset($_GET['eventCount']) ? $_GET['eventCount'] : '';
+//get holidayCount from url
+$holidayCount= isset($_GET['holidayCount']) ? $_GET['holidayCount'] : '';
+//get peopleCount from url
+$peopleCount= isset($_GET['peopleCount']) ? $_GET['peopleCount'] : '';
 
 switch ($searchType) {
 	case "and";
