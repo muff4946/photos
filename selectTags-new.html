@@ -196,7 +196,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 		}
 		if (eventList.length>0){
 			var events = eventList.join(" OR t.tag_id= ");
-			if (nonYearListLength>0){
+			if (nonYearList.length>0){
 				var nonYearList = nonYearList.concat(" OR t.tag_id= ", events);
 			}
 			else {
