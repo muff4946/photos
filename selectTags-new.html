@@ -195,7 +195,6 @@ app.controller('TagSelecterCont', function($scope, $http){
 		}
 		if (eventList.length>0){
 			var events = eventList.join(" OR t.tag_id= ");
-			console.log(typeof nonYearList);
 			if (typeof nonYearList !== 'undefined'){
 				var nonYearList = nonYearList.concat(" OR t.tag_id= ", events);
 			}
@@ -247,6 +246,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 		var tags = nonYearList.join(" OR t.tag_id = ");
 		var years = yearList.join(" OR t.tag_id = ");
 		var toAdd = tags;
+		console.log(typeof nonYearList);
 		var numTags = nonYearList.length;
 		if(yearList.length>0 && nonYearList.length>0){
 			toAdd = toAdd + " OR t.tag_id = " + years;
