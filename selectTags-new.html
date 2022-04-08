@@ -195,6 +195,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 		}
 		if (eventList.length>0){
 			var events = eventList.join(" OR t.tag_id= ");
+			console.log(typeof nonYearList);
 			if (typeof nonYearList !== 'undefined'){
 				var nonYearList = nonYearList.concat(" OR t.tag_id= ", events);
 			}
@@ -226,7 +227,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 		}
 		console.log(toAdd);
 		console.log(numTags);
-		console.log(nonYearTags);
+		console.log(nonYearList);
 		//send info to local storage
 		
 		localStorage.setItem("tagList",toAdd);
