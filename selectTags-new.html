@@ -307,21 +307,21 @@ app.controller('TagSelecterCont', function($scope, $http){
 
 		//check or uncheck by type so the tag counts can be fed up the line
 	
-	$scope.click = function(id, name){
-		if(document.getElementById(id).checked){
-			console.log(id);
-			console.log(name);
-			nonYearList.push(id);
-		}
-		else{
-			var spot = nonYearList.indexOf(id.toString());
-			if(spot!=-1){
-				nonYearList.splice(spot,1);
-			}
-			console.log(nonYearList.toString(" "));
-		}
-		
-	}
+//	$scope.click = function(id, name){
+//		if(document.getElementById(id).checked){
+//			console.log(id);
+//			console.log(name);
+//			nonYearList.push(id);
+//		}
+//		else{
+//			var spot = nonYearList.indexOf(id.toString());
+//			if(spot!=-1){
+//				nonYearList.splice(spot,1);
+//			}
+//			console.log(nonYearList.toString(" "));
+//		}
+//		
+//	}
 	
 	$scope.clickIndividual = function(id, name){
 		if(document.getElementById(id).checked){
