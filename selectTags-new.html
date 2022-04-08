@@ -287,6 +287,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 			console.log(id);
 			console.log(name);
 			nonYearList.push(id);
+			peopleList.push(id);
 		}
 		else{
 			var spot = nonYearList.indexOf(id.toString());
@@ -294,6 +295,11 @@ app.controller('TagSelecterCont', function($scope, $http){
 				nonYearList.splice(spot,1);
 			}
 			console.log(nonYearList.toString(" "));
+			var spot2 = peopleList.indexOf(id.toString());
+			if(spot2!=-1){
+				peopleList.splice(spot2,1);
+			}
+			console.log(peopleList.toString(" "));
 		}
 		
 	}
