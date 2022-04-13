@@ -43,7 +43,7 @@ class tag_links{
 		return $stmt;
 	}
 	
-	//get tags by image (filtering out 0000 for viewing)
+	//get tags by image (filtering out 9999 for viewing)
 	public function tagsByImage4View($image){
 		$query = "SELECT link_id, image_id, tag_id
 					FROM anderson_images.tag_links
@@ -59,7 +59,7 @@ class tag_links{
 		return $stmt;
 	}
 	
-	//get tags by image (leaving in 0000 for editing)
+	//get tags by image (leaving in 9999 for editing)
 	public function tagsByImage4Edit($image){
 		$query = "SELECT link_id, image_id, tag_id
 					FROM anderson_images.tag_links
