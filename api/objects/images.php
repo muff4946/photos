@@ -132,7 +132,7 @@ class images{
 					WHERE i.image_id = tl.image_id
 					GROUP BY i.image_id
 					HAVING count(i.image_id) = $number AND
-					count(i.image_id) = (SELECT count(tal.tag_id) FROM anderson_images.tag_links tal where tal.image_id = i.image_id )
+					count(i.image_id) = (SELECT count(tal.tag_id) FROM anderson_images.tag_links tal where tal.image_id = i.image_id and tag_type not in ('event','holiday','other'))
                                         ORDER BY i.image_path, i.image_file";
 		//prepare query statement
 		$stmt = $this->connection->prepare($query);
@@ -154,7 +154,7 @@ class images{
 					WHERE i.image_id = tl.image_id
 					GROUP BY i.image_id
 					HAVING count(i.image_id) = $number AND
-					count(i.image_id) = (SELECT count(tal.tag_id) FROM anderson_images.tag_links tal where tal.image_id = i.image_id ) -1
+					count(i.image_id) = (SELECT count(tal.tag_id) FROM anderson_images.tag_links tal where tal.image_id = i.image_id and tag_type not in ('event','holiday','other')) -1
                                         ORDER BY i.image_path, i.image_file";
 		//prepare query statement
 		$stmt = $this->connection->prepare($query);
