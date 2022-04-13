@@ -150,7 +150,7 @@ class images{
 		$query = "SELECT i.image_id, i.image_hash, i.image_file, i.image_path
 					FROM anderson_images.images i, (select t.image_id
 						FROM anderson_images.tag_links t
-						where t.tag_id = $tags ) as tl
+						where t.tag_id in ($tags) ) as tl
 					WHERE i.image_id = tl.image_id
 					GROUP BY i.image_id
 					HAVING count(i.image_id) = $number AND
