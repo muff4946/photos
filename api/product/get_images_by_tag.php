@@ -37,6 +37,8 @@ $holidayCount= isset($_GET['holidayCount']) ? $_GET['holidayCount'] : '';
 //get peopleCount from url
 $peopleCount= isset($_GET['peopleCount']) ? $_GET['peopleCount'] : '';
 
+echo $tags;
+
 switch ($searchType) {
 	case "and";
 		$stmt = $images->imagesByTagsAnd($tagids, $numTags);
