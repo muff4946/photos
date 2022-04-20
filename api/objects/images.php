@@ -181,7 +181,7 @@ class images{
 						where t.tag_id in ($tags) ) as tl
 					WHERE i.image_id = tl.image_id
 					GROUP BY i.image_id
-					HAVING count(i.image_id) = 1
+					HAVING count(i.image_id) = $number OR count(i.image_id) = 1
                                         ORDER BY i.image_path, i.image_file";
 	
 		//prepare query statement
