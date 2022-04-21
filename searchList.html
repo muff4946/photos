@@ -123,6 +123,12 @@ app.controller('PhotoTableCont', function($scope, $http){
 		$scope.getImageInfo(id);
 	};
 	
+<!--	$scope.clickImage = function(path, name){
+		var toSrc = path+"\/"+name;
+		document.getElementById("image").src=toSrc;
+	};
+-->
+	
 	//getting the tags to put underneath the photo
 	$scope.getTags = function(imageid){
 		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_image.php?use=view&image="+imageid,).then(
