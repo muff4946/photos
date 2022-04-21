@@ -123,10 +123,10 @@ app.controller('PhotoTableCont', function($scope, $http){
 		$scope.getImageInfo(id);
 	};
 	
-//	$scope.clickImage = function(path, name){
-//		var toSrc = path+"\/"+name;
-//		document.getElementById("image").src=toSrc;
-//	};
+	$scope.clickImage = function(path, name){
+		var toSrc = path+"\/"+name;
+		document.getElementById("image").src=toSrc;
+	};
 
 	
 	//getting the tags to put underneath the photo
