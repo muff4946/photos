@@ -117,7 +117,7 @@ app.controller('PhotoTableCont', function($scope, $http){
 //method which gets the image
 
 	$scope.clickThumb = function(path, name, id){
-		var toSrc = path+"\/" + name;
+		var toSrc = path+"\/"+name;
 		document.getElementById("photo").src=toSrc;
 		$scope.getTags(id);
 		$scope.getImageInfo(id);
