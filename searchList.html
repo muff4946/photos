@@ -125,6 +125,7 @@ app.controller('PhotoTableCont', function($scope, $http){
 	
 	$scope.clickImage = function(path, name){
 		var toSrc = path+"\/"+name;
+		console.log(toSrc);
 		document.getElementById("image").src=toSrc;
 	};
 
