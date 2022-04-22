@@ -32,12 +32,15 @@ $image_id = $row["image_id"];
 $image_hash = $row["image_hash"];
 $image_path = $row["image_path"];
 $image_file = $row["image_file"];
+$web_image_path = str_replace ("\\", "/", $image_path);
+$web_image_path = str_replace ("D:/pictures", "https://photos.dbq-andersons.com/storage", $web_image_path);
 
 $image_info = array(
 	"id"=>$image_id,
 	"hash"=>$image_hash,
 	"path"=>$image_path,
-	"file"=>$image_file
+	"file"=>$image_file,
+	"webpath"=>$web_image_path
 );
 
 //set response code - 200 OK
