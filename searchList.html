@@ -23,7 +23,7 @@
 						<td>{{$index + 1}}</td>
 						<td id = {{i.path}}>{{i.path}}</td>
 						<td>{{i.file}}</td>
-						<td ><image src = "{{i.thumb}}/{{i.file}}" ng-click = "clickThumb(i.image,i.file,i.id)"></image></td>
+						<td><div style="max-width: 150px"><image src = "{{i.thumb}}/{{i.file}}" ng-click = "clickThumb(i.image,i.file,i.id)"></image></div></td>
 					</tr>
 				</table>
 				<div class="lds-hourglass" ng-show="imLoading"></div>
