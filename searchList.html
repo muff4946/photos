@@ -123,10 +123,12 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 		$scope.getTags(id);
 		$scope.getImageInfo(id);
 	};
+
+//method that pops up a new tab with the full sized-image
 	
 	$scope.clickImage = function(path, name){
 		var toSrc = path+"\/"+name;
-		console.log(toSrc);
+		//console.log(toSrc);
 		$window.open(toSrc, '_blank');
 	};
 	
