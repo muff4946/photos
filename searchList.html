@@ -29,7 +29,7 @@
 				<div class="lds-hourglass" ng-show="imLoading"></div>
 			</div>	
 			<div class="to_be_image">	
-					<img id= "photo" class="image" onerror="myFunction()" ng-click = "clickImage({{i.image}},{{i.file}})"></img>
+					<img id= "photo" class="image" onerror="myFunction()" ng-click = "clickImage(image,file)"></img>
 					<p id="demo"></p>
                     <script> function myFunction() {
                         document.getElementById("demo").innerHTML = "The full-sized copy of this image could not be loaded likely due to the fact that your internet IP address (displayed at the bottom right of this page) is not on the access list for full-sized images.";
