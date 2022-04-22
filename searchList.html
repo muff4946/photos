@@ -29,7 +29,7 @@
 				<div class="lds-hourglass" ng-show="imLoading"></div>
 			</div>	
 			<div class="to_be_image">
-					<h6>{{image_webpath}}/{{image_file}}</h6>
+					<!--<h6>{{image_webpath}}/{{image_file}}</h6>-->
 					<img id= "photo" class="image" onerror="myFunction()" ng-click = "clickImage(image_webpath,image_file)"></img>
 					<p id="demo"></p>
                     <script> function myFunction() {
@@ -127,7 +127,6 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 	$scope.clickImage = function(path, name){
 		var toSrc = path+"\/"+name;
 		console.log(toSrc);
-		//document.getElementById("photo").src=toSrc;
 		$window.open(toSrc, '_blank');
 	};
 	
