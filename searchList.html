@@ -29,8 +29,7 @@
 				<div class="lds-hourglass" ng-show="imLoading"></div>
 			</div>	
 			<div class="to_be_image">
-					<h5>{{i.image}}/{{i.file}}</h5>
-					<img id= "photo" class="image" onerror="myFunction()" ng-click = "clickImage(image,file)"></img>
+					<img id= "photo" class="image" onerror="myFunction()"></img>
 					<p id="demo"></p>
                     <script> function myFunction() {
                         document.getElementById("demo").innerHTML = "The full-sized copy of this image could not be loaded likely due to the fact that your internet IP address (displayed at the bottom right of this page) is not on the access list for full-sized images.";
@@ -123,13 +122,6 @@ app.controller('PhotoTableCont', function($scope, $http){
 		$scope.getTags(id);
 		$scope.getImageInfo(id);
 	};
-	
-	$scope.clickImage = function(path, name){
-		var toSrc = path+"\/"+name;
-		console.log(toSrc);
-		document.getElementById("image").src=toSrc;
-	};
-
 	
 	//getting the tags to put underneath the photo
 	$scope.getTags = function(imageid){
