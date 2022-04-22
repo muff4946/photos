@@ -97,6 +97,7 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 		$http.get("https://photos.dbq-andersons.com/api/product/get_images_by_tag.php/?searchType="+searchType + "&tag="+toAdd + "&num="+numTags + "&yearCount="+yearCount + "&otherCount="+otherCount + "&eventCount="+eventCount + "&holidayCount="+holidayCount + "&peopleCount="+peopleCount,).then(
 		function successfulCallback(response){
 				$scope.imageList = response.data.images;
+				$scope.searchedtags = toAdd;
 				$scope.row_count = $scope.imageList.length;
 				$scope.imLoading = false;
 			},
