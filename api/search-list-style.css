@@ -71,8 +71,8 @@ h1 {
 	border-bottom: 3px solid #594157;
 	background-color: #1C6973;
 	grid-template-areas: 
-		'list image nothing'
-		'list tags nothing';
+		'list image'
+		'list tags';
 }
 
 .grid-container td, th{
