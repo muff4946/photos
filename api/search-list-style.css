@@ -72,7 +72,7 @@ h1 {
 	background-color: #1C6973;
 	grid-template-areas: 
 		'list image'
-		'list image_tags';
+		'search_tags image_tags';
 }
 
 .grid-container td, th{
@@ -94,14 +94,27 @@ h1 {
 	max-width: 100%;	
 }	
 	
-.current_tags {
+.image_tags {
 	grid-area:image_tags;
 	position: relative;
 	overflow: scroll;
 	
 }
 
-.current_tags table{
+.image_tags table{
+	width: 100%;
+	border-collapse: collapse;
+	border-radius: 4px;
+}
+
+.search_tags {
+	grid-area:search_tags;
+	position: relative;
+	overflow: scroll;
+	
+}
+
+.search_tags table{
 	width: 100%;
 	border-collapse: collapse;
 	border-radius: 4px;
