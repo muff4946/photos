@@ -72,7 +72,7 @@ h1 {
 	background-color: #1C6973;
 	grid-template-areas: 
 		'list image'
-		'search_tags image_tags';
+		'list image_tags';
 }
 
 .grid-container td, th{
