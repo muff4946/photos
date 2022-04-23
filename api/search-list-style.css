@@ -72,7 +72,7 @@ h1 {
 	background-color: #1C6973;
 	grid-template-areas: 
 		'list image'
-		'list tags';
+		'list image_tags';
 }
 
 .grid-container td, th{
@@ -95,7 +95,7 @@ h1 {
 }	
 	
 .current_tags {
-	grid-area:tags;
+	grid-area:image_tags;
 	position: relative;
 	overflow: scroll;
 	
