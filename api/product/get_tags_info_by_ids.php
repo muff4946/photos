@@ -32,7 +32,7 @@ if ($num>0){
 	
 	while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 		
-		extract ($row)
+		extract ($row);
 		
 		$tag_id = $row["tag_id"];
 		$tag_names = $row["tag_names"];
