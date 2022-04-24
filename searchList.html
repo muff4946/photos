@@ -154,6 +154,19 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 				console.log(response);
 		});
 	}
+
+getting information about the tags that were included in the search
+	$scope.getSearchedTags = function(toAdd){
+		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_info_by_ids.php?tags="+toAdd,).then(
+			function successfulCallback(response){
+				$scope.searched_tags_ids = response.data.id;
+				$scope.searched_tags_names = response.data.names;
+				$scope.searched_tags_types = response.data.type;
+			},
+			function errorCallback(response){
+				console.log(response);
+		});
+	}
 	
 	//getting image information to display in the bottom row and drive the clickImage method
 	$scope.getImageInfo = function(imageid){
