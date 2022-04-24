@@ -21,8 +21,6 @@ $tags = new tags($db);
 //get image id from url
 $tagid= isset($_GET['tags']) ? $_GET['tags'] : '';
 
-echo $tagid;
-
 //query images
 $stmt = $tags->get_tags_info_by_ids($tagid);
 

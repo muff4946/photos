@@ -95,7 +95,7 @@ class tags{
 	}
 	
 	//get tags by ids
-	public function get_tags_info_my_ids($ids){
+	public function get_tags_info_by_ids($ids){
 		//select query
 		$query = "SELECT tag_id, tag_names, tag_type
 					FROM anderson_images.tags
