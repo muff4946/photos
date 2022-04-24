@@ -94,6 +94,22 @@ class tags{
 				
 	}
 	
+	//get tags by ids
+	public function get_tags($ids){
+		//select query
+		$query = "SELECT tag_id, tag_names, tag_type
+					FROM anderson_images.tags
+					WHERE tag_id in (?)
+					ORDER BY tag_names";
+		//prepare query statement
+		$stmt = $this->connection->prepare($query);
+		
+		//bind variable values
+		$stmt->bindParam(1,$ids, PDO::PARAM_INT);
+		$stmt->execute();
+		return $stmt;
+	}
+	
 	//get tags by contains
 	public function search_tags($keywords, $type){
 		//select query
