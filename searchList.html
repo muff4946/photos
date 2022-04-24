@@ -89,6 +89,7 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 	//runs things which happen when the site is opened
 	$scope.start = function(){
 		$scope.getList();
+		$scope.getSearchedTags(toAdd);
 		
 		
 	};
@@ -162,6 +163,9 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 				$scope.searched_tags_ids = response.data.id;
 				$scope.searched_tags_names = response.data.names;
 				$scope.searched_tags_types = response.data.type;
+				console.log($scope.searched_tags_ids);
+				console.log($scope.searched_tags_names);
+				console.log($scope.searched_tags_types);
 			},
 			function errorCallback(response){
 				console.log(response);
