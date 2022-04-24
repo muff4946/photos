@@ -160,9 +160,9 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 	$scope.getSearchedTags = function(toAdd){
 		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_info_by_ids.php?tags="+toAdd,).then(
 			function successfulCallback(response){
-				$scope.searched_tags_ids = response.data.id;
-				$scope.searched_tags_names = response.data.names;
-				$scope.searched_tags_types = response.data.type;
+				$scope.searched_tags_ids = response.tags.id;
+				$scope.searched_tags_names = response.tags.names;
+				$scope.searched_tags_types = response.tags.type;
 				console.log($scope.searched_tags_ids);
 				console.log($scope.searched_tags_names);
 				console.log($scope.searched_tags_types);
