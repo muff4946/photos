@@ -89,7 +89,6 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 	//runs things which happen when the site is opened
 	$scope.start = function(){
 		$scope.getList();
-		$scope.getSearchedTags(toAdd);
 		
 		
 	};
@@ -113,6 +112,7 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 				$scope.searchedtags = toAdd;
 				$scope.row_count = $scope.imageList.length;
 				$scope.imLoading = false;
+				$scope.getSearchedTags(toAdd);
 			},
 			function errorCallback(response){
 				console.log("Error "+response)
