@@ -8,7 +8,7 @@
 <body>
     
     <div class="photo-table" ng-app="PhotoTable" ng-controller="PhotoTableCont">
-		<h1 class="header"> {{row_count}} results in path and file name order; click thumbnails for larger views.</h1>
+		<h1 class="header"> {{row_count}} results in path and file name order; click thumbnails for larger views ({{searched_tags}}.</h1>
 		<div class = "grid-container">
 			<div class="file_list">
 				<table>
@@ -39,16 +39,15 @@
 			<div class = "search_tags">
 				<table>
 					<tr id="headers">
-						<th colspan=2>Tags for Which You Searched</th>
-					</tr>
-					<tr id="headers">
 						<th id="tag_id">TAG ID</th>
 						<th id="tag_name">TAG Label(s)</th>
 					</tr>
+					<tr ng-repeat="i in tags_searched">
+						<td>{{i.id}}</td>
+						<td>{{i.name}}</td>
+					</tr>
 				</table>
-			</div>
-			
-			
+			</div>			
 			<div class = "image_tags">
 				<table>
 					<tr id="headers">
@@ -144,7 +143,7 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 		$window.open(toSrc, '_blank');
 	};
 	
-	//getting the tags to put underneath the photo
+//getting the tags to put underneath the photo
 	$scope.getTags = function(imageid){
 		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_image.php?use=view&image="+imageid,).then(
 			function successfulCallback(response){
@@ -154,8 +153,8 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 			function errorCallback(response){
 				console.log(response);
 		});
-	
 	}
+	
 	//getting image information to display in the bottom row and drive the clickImage method
 	$scope.getImageInfo = function(imageid){
 		$http.get("https://photos.dbq-andersons.com/api/product/get_image_info_by_id.php?image="+imageid,).then(
