@@ -149,7 +149,7 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_image.php?use=view&image="+imageid,).then(
 			function successfulCallback(response){
 				$scope.tags_assigned = response.data.tags;
-				console.log($scope.tags_assigned);
+				//console.log($scope.tags_assigned);
 			},
 			function errorCallback(response){
 				console.log(response);
@@ -160,12 +160,9 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 	$scope.getSearchedTags = function(toAdd){
 		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_info_by_ids.php?tags="+toAdd,).then(
 			function successfulCallback(response){
-				$scope.searched_tags_ids = response.data.id;
-				$scope.searched_tags_names = response.data.names;
-				$scope.searched_tags_types = response.data.type;
-				console.log($scope.searched_tags_ids);
-				console.log($scope.searched_tags_names);
-				console.log($scope.searched_tags_types);
+				$scope.tags_searched = response.data.tags;
+				console.log($scope.tags_searched);
+
 			},
 			function errorCallback(response){
 				console.log(response);
