@@ -155,7 +155,7 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 		});
 	}
 
-getting information about the tags that were included in the search
+//getting information about the tags that were included in the search
 	$scope.getSearchedTags = function(toAdd){
 		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_info_by_ids.php?tags="+toAdd,).then(
 			function successfulCallback(response){
