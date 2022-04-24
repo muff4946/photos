@@ -99,7 +99,7 @@ class tags{
 		//select query
 		$query = "SELECT tag_id, tag_names, tag_type
 					FROM anderson_images.tags
-					WHERE tag_id in (?)
+					WHERE tag_id in ($ids)
 					ORDER BY tag_id";
 		//prepare query statement
 		$stmt = $this->connection->prepare($query);
