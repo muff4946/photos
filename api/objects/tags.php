@@ -105,7 +105,7 @@ class tags{
 		$stmt = $this->connection->prepare($query);
 		
 		//bind variable values
-		$stmt->bindParam(1,$ids, PDO::PARAM_INT);
+		//$stmt->bindParam(1,$ids, PDO::PARAM_INT);
 		$stmt->execute();
 		return $stmt;
 	}
