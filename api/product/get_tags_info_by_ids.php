@@ -22,7 +22,7 @@ $tags = new tags($db);
 $tagid= isset($_GET['tags']) ? $_GET['tags'] : '';
 
 //query images
-$stmt = $tags->get_tags_info_by_ids($tags);
+$stmt = $tags->get_tags_info_by_ids($tagid);
 
 //retrieve contents
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
