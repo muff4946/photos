@@ -209,7 +209,8 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 	}
 
 //attempting to add a modal for the search details
-  $scope.showDetails = function(){
+  $scope.showDetails = function(person){
+    $scope.person = person;
     $('#myModal').modal('show');
   }
   
