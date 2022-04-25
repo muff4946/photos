@@ -68,6 +68,23 @@
 		<div class="clientip">Your Internet IP is {{ip}}
 		</div>
 	</div>
+	<div id="myModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Details</h4>
+                </div>
+                <div class="modal-body">
+                    <li> {{person.details}}</li>         
+                 </div>
+                 <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                 </div>
+            </div>
+        </div>
+    </div>
 </body>
 <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
 <script>
@@ -162,14 +179,13 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 			function successfulCallback(response){
 				$scope.tags_searched = response.data.tags;
 				//console.log($scope.tags_searched);
-
 			},
 			function errorCallback(response){
 				console.log(response);
 		});
 	}
 	
-	//getting image information to display in the bottom row and drive the clickImage method
+//getting image information to display in the bottom row and drive the clickImage method
 	$scope.getImageInfo = function(imageid){
 		$http.get("https://photos.dbq-andersons.com/api/product/get_image_info_by_id.php?image="+imageid,).then(
 			function successfulCallback(response){
