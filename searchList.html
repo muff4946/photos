@@ -16,7 +16,7 @@
     
     <div class="photo-table" ng-app="PhotoTable" ng-controller="PhotoTableCont">
 		<h1 class="header"> {{row_count}} results in path and file name order; click thumbnails for larger views.</h1>
-		<button class = "btn" tooltip="See what tag(s) you included in your search." ng-click="showDetails()">Searched Tags</button>
+		<button class = "btn" tooltip="searchedTagsTooltip" ng-click="showDetails()">Searched Tags</button>
 		<div class = "grid-container">
 			<div class="file_list">
 				<table>
@@ -219,9 +219,12 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 	}
 
 //attempting to add a modal for the search details
-  $scope.showDetails = function(){
+	$scope.showDetails = function(){
     $('#myModal').modal('show');
   }
+  
+//attaching a tooltip to the searched tags button
+	$scope.searchedTagsTooltip = 'See what tag(s) you searched for.';
   
 });
 
