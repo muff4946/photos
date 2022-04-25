@@ -149,6 +149,7 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 			function errorCallback(response){
 				console.log("Error "+response)
 				$scope.row_count = "0";
+				$scope.searchedtags = toAdd;
 				$scope.imLoading = false;
 			});
 	};
