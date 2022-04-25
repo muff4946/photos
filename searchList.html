@@ -75,35 +75,31 @@
 		</div>
 		<div class="clientip">Your Internet IP is {{ip}}
 		</div>
-     <div id="myModal" role="dialog" class="modal fade" style="display:none;" data-backdrop="false">
-                    <div class="modal-dialog">
-
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Tag(s) you searched for:</h4>
-                            </div>
-                            <div class="modal-body">
-                            <table>
-								<tr id="headers">
-									<th id="tag_id">TAG ID</th>
-									<th id="tag_name">TAG Label(s)</th>
-								</tr>
-								<tr ng-repeat="i in tags_searched">
-									<td>{{i.id}}</td>
-									<td>{{i.names}}</td>
-								</tr>
-							</table>
-                            
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-
+		<div id="myModal" role="dialog" class="modal fade" style="display:none;" data-backdrop="false">
+			<div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Tag(s) you searched for:</h4>
+                    </div>
+                    <div class="modal-body">
+                        <table>
+							<tr id="headers">
+								<th id="tag_id" style="padding:3px;">TAG ID</th>
+								<th id="tag_name" style="padding:3px;">TAG Label(s)</th>
+							</tr>
+							<tr ng-repeat="i in tags_searched">
+								<td style="padding:3px;">{{i.id}}</td>
+								<td style="padding:3px;">{{i.names}}</td>
+							</tr>
+						</table>                            
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
+            </div>
+        </div>
     </div>
 </body>
 
