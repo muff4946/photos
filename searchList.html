@@ -14,7 +14,7 @@
     
     <div class="photo-table" ng-app="PhotoTable" ng-controller="PhotoTableCont">
 		<h1 class="header"> {{row_count}} results in path and file name order; click thumbnails for larger views.</h1>
-		<!--<button class = "btn" ng-click="open()">TEST</button>-->
+		<button class = "btn" ng-click="showDetails()">TEST</button>
 		<div class = "grid-container">
 			<div class="file_list">
 				<table>
@@ -209,17 +209,9 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 	}
 
 //attempting to add a modal for the search details
-	$scope.open = function() {
-		$scope.showModal = true;
-	};
-
-	$scope.ok = function() {
-		$scope.showModal = false;
-	};
-
-	$scope.cancel = function() {
-		$scope.showModal = false;
-	};
+  $scope.showDetails = function(){
+    $('#myModal').modal('show');
+  }
   
 });
 
