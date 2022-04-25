@@ -144,6 +144,7 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 				$scope.row_count = $scope.imageList.length;
 				$scope.imLoading = false;
 				$scope.getSearchedTags(toAdd);
+				$scope.searchType = searchType;
 			},
 			function errorCallback(response){
 				console.log("Error "+response)
