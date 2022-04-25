@@ -83,7 +83,7 @@
                         <h4 class="modal-title">Tag(s) you searched for (using search type {{searchType}}):</h4>
                     </div>
                     <div class="modal-body">
-                        <table>
+                        <table width=75%>
 							<tr id="headers">
 								<th id="tag_id" style="padding:3px;">TAG ID</th>
 								<th id="tag_name" style="padding:3px;">TAG Label(s)</th>
@@ -194,7 +194,7 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_info_by_ids.php?tags="+toAdd,).then(
 			function successfulCallback(response){
 				$scope.tags_searched = response.data.tags;
-				console.log($scope.tags_searched);
+				//console.log($scope.tags_searched);
 			},
 			function errorCallback(response){
 				console.log(response);
