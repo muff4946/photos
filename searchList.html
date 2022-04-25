@@ -85,7 +85,16 @@
                                 <h4 class="modal-title">Details</h4>
                             </div>
                             <div class="modal-body">
-                                            <li> {{person.details}}</li>
+                            <table>
+								<tr id="headers">
+									<th id="tag_id">TAG ID</th>
+									<th id="tag_name">TAG Label(s)</th>
+								</tr>
+								<tr ng-repeat="i in tags_searched">
+									<td>{{i.id}}</td>
+									<td>{{i.names}}</td>
+								</tr>
+							</table>
                             
                             </div>
                             <div class="modal-footer">
