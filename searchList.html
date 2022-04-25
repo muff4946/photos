@@ -8,7 +8,7 @@
 <body>
     
     <div class="photo-table" ng-app="PhotoTable" ng-controller="PhotoTableCont">
-		<h1 class="header"> {{row_count}} results in path and file name order; click thumbnails for larger views ({{searchedtags}}).</h1>
+		<h1 class="header"> {{row_count}} results in path and file name order; click thumbnails for larger views).</h1>
 		<div class = "grid-container">
 			<div class="file_list">
 				<table>
@@ -161,7 +161,7 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_info_by_ids.php?tags="+toAdd,).then(
 			function successfulCallback(response){
 				$scope.tags_searched = response.data.tags;
-				console.log($scope.tags_searched);
+				//console.log($scope.tags_searched);
 
 			},
 			function errorCallback(response){
