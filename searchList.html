@@ -73,24 +73,23 @@
 		<div class="clientip">Your Internet IP is {{ip}}
 		</div>
 	</div>
-	<div modal="myModal" close="cancel()">
-			<div class="modal-header">
-                <h4>Modal Dialog</h4>
-			</div>
-			<div class="modal-body">
-				<p>Example Paragrahp with some text.</p>
-			</div>
-			<div class="modal-footer">
-				<button class="btn btn-success" ng-click="ok()">Okay</button>
-				<button class="btn" ng-click="cancel()">Cancel</button>
-			</div>
-        </div>
+	<div modal="showModal" close="cancel()">
+		<div class="modal-header">
+            <h4>Modal Dialog</h4>
+		</div>
+		<div class="modal-body">
+			<p>Example Paragrahp with some text.</p>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-success" ng-click="ok()">Okay</button>
+			<button class="btn" ng-click="cancel()">Cancel</button>
+		</div>
     </div>
 </body>
 
 <script>
 
-var app = angular.module('PhotoTable',['ui.bootstrap']);
+var app = angular.module('PhotoTable',['ui.bootstrap.modal']);
 
 app.controller('PhotoTableCont', function($scope, $http, $window){
 	//verifies window location
