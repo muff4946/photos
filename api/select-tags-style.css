@@ -84,7 +84,7 @@ input[type="checkbox"]:checked + label:before {
 }
 
 
-h2 {
+h3 {
 	color:white;
 	margin-left: 12px;
 }
