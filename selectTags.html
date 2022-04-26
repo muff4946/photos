@@ -10,7 +10,7 @@
 <body>
 	
 	<div id="angularEditor",class="container" ng-app="TagSelecter" ng-controller="TagSelecterCont">
-		<h2 class="header">Select the tag(s) for which you want to search in our {{image_count}} cataloged images and click one of the search buttons.</h2>
+		<h3 class="header">Select the tag(s) for which you want to search in our {{image_count}} cataloged images and click one of the search buttons.</h3>
 				<div class="grid-container">
 			<div class="PeopleList">
 			<div class="TagListHeader">PEOPLE</div>
@@ -63,7 +63,7 @@
 			</div>
 			
 			<div class="infoAndSearch">
-				<h2><br>Using the Different Search Types<br>(if in doubt, start with the top one to get a feel for things)</h2>
+				<h3><br>Using the Different Search Types<br>(if in doubt, start with the top one to get a feel for things)</h3>
 				<table>
 				<tr><td><button class = "submitSearch" ng-click="searchMe()">SEARCH FOR ALL<br>SELECTED TAGS</button></td><td>Returns a list of photos containing ALL tags selected as well as other tags<br>(i.e. others in the same photo).</td></tr>
 				<tr><td><button class = "submitSearch" ng-click="searchMe2()">SEARCH FOR ONLY<br>SELECTED PPL</button></td><td>Returns a list of photos containing ONLY the PEOPLE selected during a single selected year or all years.<br>(currently does NOT support other tag types or multiple year searches).<br></td></tr>
