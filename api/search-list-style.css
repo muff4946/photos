@@ -154,3 +154,7 @@ table tr:nth-child(odd){
 .placeholder{
 	grid-area:bottom;
 }
+
+.btn{
+	cursor: pointer;
+}
