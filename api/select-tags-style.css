@@ -176,6 +176,11 @@ h3 {
 	color: #FFFFFF;
 }
 
+.buttonHeader{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14;
+}
+
 .searchType{
 	grid-area:add;
 	width: 100%;
