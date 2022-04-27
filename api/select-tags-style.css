@@ -55,9 +55,9 @@ button:active{
 
 
 /*Checkboxes styles*/
-input[type="checkbox"] { display: none; }
+input[type="checkboxes"] { display: none; }
 
-input[type="checkbox"] + label {
+input[type="checkboxes"] + label {
   display: block;
   position: relative;
   padding-left: 25px;
@@ -67,7 +67,7 @@ input[type="checkbox"] + label {
   margin: 2px;
 }
 
-input[type="checkbox"] + label:before {
+input[type="checkboxes"] + label:before {
   content: '';
   display: block;
   width: 10px;
@@ -80,7 +80,7 @@ input[type="checkbox"] + label:before {
   margin: 2px;
 }
 
-input[type="checkbox"]:checked + label:before {
+input[type="checkboxes"]:checked + label:before {
   background-color: #594157;
 }
 
