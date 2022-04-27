@@ -61,7 +61,7 @@ input[type="checkbox"] + label {
   display: block;
   position: relative;
   padding-left: 25px;
-  font: 14px 'Open Sans', Arial, sans-serif;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   color: #FFFFFF;
   cursor: pointer;
   margin: 2px;
