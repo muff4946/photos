@@ -92,6 +92,12 @@ h2 {
 	font-weight: 500;
 }
 
+h3 {
+	color:white;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 500;
+}
+
 .grid-container{
 	display: grid;
 	grid-template-columns: repeat(2, 1fr) 100px repeat(2, 1fr);
