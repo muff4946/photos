@@ -146,7 +146,7 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 				$scope.row_count = $scope.imageList.length;
 				$scope.imLoading = false;
 				$scope.getSearchedTags(toAdd);
-				$scope.searchType = str.toUpperCase(searchType);
+				$scope.searchType = searchType.toUpperCase();
 			},
 			function errorCallback(response){
 				console.log("Error "+response)
