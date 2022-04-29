@@ -117,10 +117,6 @@ h3 {
 		'individual individual year other extra';
 }
 
-.PeopleHeader{
-	grid-area: individual;
-	height: 50px;
-}
 .PeopleList{
 	grid-area: individual;
 	border: 2px solid #7C7C7C;
