@@ -102,9 +102,6 @@ h3 {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr) 100px repeat(2, 1fr);
 	grid-template-rows: repeat(3, 1fr);
-/*	
-	top: 10%; 
-*/
 	height: 87%;
 	position: absolute;
 	width: 99%;
@@ -120,6 +117,10 @@ h3 {
 		'individual individual year other extra';
 }
 
+.PeopleHeader{
+	grid-area: individual;
+	height: 50px;
+}
 .PeopleList{
 	grid-area: individual;
 	border: 2px solid #7C7C7C;
