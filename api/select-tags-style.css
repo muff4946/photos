@@ -124,6 +124,7 @@ h3 {
 	border-radius: 7px;
 	overflow-y: auto;
 	overflow-x: auto;
+	z-index: 2;
 }
 
 .EventList{
@@ -193,6 +194,7 @@ h3 {
     text-align: center;
 	color: #FFFFFF;
 	background: #1C6973;
+	z-index: 1;
 }  
 
 .bottomLeftFooter{
