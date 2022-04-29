@@ -143,6 +143,10 @@ table, th, td {
 	border: 1px solid black;
 }
 
+th {
+position: sticky;
+}
+
 table tr:nth-child(even){
 	background-color:#F7F7F2;
 }
