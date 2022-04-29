@@ -126,6 +126,7 @@ h3 {
 	border: 2px solid #7C7C7C;
 	padding: 10px;
 	border-radius: 7px;
+	scroll-padding-top: 50px;
 	overflow-y: auto;
 	overflow-x: auto;
 }
