@@ -186,6 +186,14 @@ h3 {
 }
 
 .TagListHeader{
+	display: block;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    text-align: center;
+	color: #FFFFFF;
+}
+
+.PeopleTagListHeader{
 	position: sticky;
 	top: 0;
 	display: block;
@@ -195,7 +203,7 @@ h3 {
 	color: #FFFFFF;
 	background: #1C6973;
 	z-index: 1;
-}  
+}
 
 .bottomLeftFooter{
 	display: inline-block;
