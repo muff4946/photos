@@ -185,12 +185,14 @@ h3 {
 }
 
 .TagListHeader{
+	position: sticky;
+	top: 0;
 	display: block;
-	position: relative;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: bold;
     text-align: center;
 	color: #FFFFFF;
+	background: #1C6973;
 }  
 
 .bottomLeftFooter{
