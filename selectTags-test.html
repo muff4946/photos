@@ -15,7 +15,7 @@
 			<tr><td>
 			<div class="PeopleListHeader"><br>PEOPLE ({{people_count}})</div>
 			</td></tr>
-			<tr><td>
+			<tr><td><div class="PeopleListTable">
 				<form class = "list">
 					<div class="row" ng-repeat="x in people_list">
 						<input type="checkbox" id={{x.id}} ng-click="clickPeople(x.id, x.names)">
@@ -23,6 +23,7 @@
 					</div>
 				</form>
 				</td></tr>
+				</div>
 				</table>
 			</div>
 			
