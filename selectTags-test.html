@@ -14,9 +14,9 @@
 			<div class="grid-container">
 			<div class="PeopleList">
 			<div class="PeopleListHeader"><br>PEOPLE ({{people_count}})<br>
-			<script>
+			<!--<script>
 				const alphaNav = new AlphaListNav(document.getElementById("peopleList"));
-			</script>
+			</script>-->
 				<form class = "list">
 					<div id="peopleList" class="row" ng-repeat="x in people_list">
 						<input type="checkbox" id={{x.id}} ng-click="clickPeople(x.id, x.names)">
