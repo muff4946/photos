@@ -214,3 +214,8 @@ h3 {
 .alphabet{
 	font-weight: normal;
 }
+
+.alphabetLinks{
+	color: white;
+	text-decoration: none;
+}
