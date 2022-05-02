@@ -101,7 +101,7 @@ h3 {
 .grid-container{
 	display: grid;
 	grid-template-columns: repeat(2, 1fr) 100px repeat(2, 1fr);
-	grid-template-rows: repeat(3, 1fr);
+	grid-template-rows: 50 px repeat(3, 1fr);
 	height: 87%;
 	position: absolute;
 	width: 99%;
@@ -112,6 +112,7 @@ h3 {
 	padding-bottom: 5px;
 	background-color: #1C6973;
 	grid-template-areas: 
+		'individual-header individual-header year info info'
 		'individual individual year info info'
 		'individual individual year events holiday'
 		'individual individual year other extra';
