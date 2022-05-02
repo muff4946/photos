@@ -20,10 +20,6 @@ These items affect everything
 *{
 	outline: none;
 }
-
-html {
-	scroll-behavior: smooth;
-{
 		
 body,html {
 	/*height: 100%; #commenting this out FINALLY got rid of the annoying vertical scroll*/
