@@ -35,11 +35,13 @@ if($tagtype !=''){
 		$tag_id = $row["tag_id"];
 		$tag_names = $row["tag_names"];
 		$tag_type = $row["tag_type"];
+		$tag_initial = $tag_names[0];
 		
 		$tag_item=array(
 			"id"=>$tag_id,
 			"names"=>$tag_names,
-			"type"->$tag_type
+			"type"=>$tag_type,
+			"initial"=>$tag_initial
 		);
 		array_push($tag_arr["tags"],$tag_item);
 	}
