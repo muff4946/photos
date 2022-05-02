@@ -115,7 +115,7 @@ h3 {
 		'individual-header individual-header year info info'
 		'individual individual year info info'
 		'individual individual year events holiday'
-		'individual individual year other extra';
+		'individual individual year other selected-tags';
 }
 
 .PeopleList{
@@ -167,6 +167,15 @@ h3 {
 
 .HolidayList{
 	grid-area: holiday;
+	border: 2px solid #7C7C7C;
+	padding: 10px;
+	border-radius: 7px;
+	overflow-y: auto;
+	overflow-x: auto;
+}
+
+.SelectedTags{
+	grid-area: selected-tags;
 	border: 2px solid #7C7C7C;
 	padding: 10px;
 	border-radius: 7px;
