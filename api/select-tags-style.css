@@ -101,7 +101,7 @@ h3 {
 .grid-container{
 	display: grid;
 	grid-template-columns: repeat(2, 1fr) 100px repeat(2, 1fr);
-	grid-template-rows: 30px repeat(3, 1fr);
+	grid-template-rows: 40px repeat(3, 1fr);
 	height: 87%;
 	position: absolute;
 	width: 99%;
