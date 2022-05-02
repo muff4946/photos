@@ -23,8 +23,8 @@
 			
 				<form class = "list">
 					<div class="row" ng-repeat="x in people_list">
-						<input type="checkbox" id={{x.id}} ng-click="clickPeople(x.id, x.names)">
 						<a id="{{x.initial}}"></a>
+						<input type="checkbox" id={{x.id}} ng-click="clickPeople(x.id, x.names)">
 						<label for={{x.id}}>{{x.names}}</label>
 					</div>
 				</form>
