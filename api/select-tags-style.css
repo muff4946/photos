@@ -22,7 +22,7 @@ These items affect everything
 }
 
 body,html {
-	/*height: 100%;*/
+	/*height: 100%; #commenting this out FINALLY got rid of the annoying vertical scroll*/
 	width: 100%;
 	margin: 0;
 }
