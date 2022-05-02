@@ -32,6 +32,10 @@ if($tagtype !=''){
 	while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 		extract($row);
 		
+		$tag_id = $row["tag_id"];
+		$tag_names = $row["tag_names"];
+		$tag_type = $row["tag_type"];
+		
 		$tag_item=array(
 			"id"=>$tag_id,
 			"names"=>$tag_names,
