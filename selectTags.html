@@ -101,8 +101,7 @@
 			
 			<div class="SelectedTags">
 			<div class="TagListHeader">SELECTED TAGS<br>(under development)</div>
-			<!--<div>{{arrayToString(peopleList)}}</div>-->
-			<div>{{peopleList}}</div>
+			<div class="row" ng-repeat="x in tagNameList">{{x}}</div>
 			</div>
 			
 			<div class="infoAndSearch">
@@ -128,6 +127,7 @@ var peopleList = [];
 var eventList = [];
 var holidayList = [];
 var otherList = [];
+var tagNameList = [];
 app.controller('TagSelecterCont', function($scope, $http){
 	window.onload = function(){
 		var url = "https://photos.dbq-andersons.com/selectTags.html";
@@ -354,12 +354,9 @@ app.controller('TagSelecterCont', function($scope, $http){
 		if(document.getElementById(id).checked){
 			console.log(id);
 			console.log(name);
-			$scope.test=name;
 			nonYearList.push(id);
 			peopleList.push(id);
-			$scope.arrayToString = function(string){
-			  return string.join(", ");
-			};
+			tagNameList.push(name);
 		}
 		else{
 			var spot = nonYearList.indexOf(id.toString());
