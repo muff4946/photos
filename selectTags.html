@@ -363,14 +363,17 @@ app.controller('TagSelecterCont', function($scope, $http){
 			var spot = nonYearList.indexOf(id.toString());
 			if(spot!=-1){
 				nonYearList.splice(spot,1);
+				tagNameList.splice(spot,1);
+				console.log(tagNameList);
 			}
 			console.log(nonYearList.toString(" "));
 			var spot2 = peopleList.indexOf(id.toString());
 			if(spot2!=-1){
 				peopleList.splice(spot2,1);
+				tagNameList.splice(spot2,1);
+				console.log(tagNameList);
 			}
 			console.log(peopleList.toString(" "));
-			delete $scope.test;
 		}
 		
 	}
