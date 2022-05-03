@@ -356,6 +356,9 @@ app.controller('TagSelecterCont', function($scope, $http){
 			$scope.test=name;
 			nonYearList.push(id);
 			peopleList.push(id);
+			$scope.arrayToString = function(string){
+			  return string.join(", ");
+			};
 		}
 		else{
 			var spot = nonYearList.indexOf(id.toString());
