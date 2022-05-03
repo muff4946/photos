@@ -352,6 +352,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 		if(document.getElementById(id).checked){
 			console.log(id);
 			console.log(name);
+			$scope.test=name;
 			nonYearList.push(id);
 			peopleList.push(id);
 		}
