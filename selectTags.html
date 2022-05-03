@@ -382,6 +382,8 @@ app.controller('TagSelecterCont', function($scope, $http){
 			console.log(name);
 			nonYearList.push(id);
 			holidayList.push(id);
+			tagNameList.push(name);
+			$scope.tag_names=tagNameList;
 		}
 		else{
 			var spot = nonYearList.indexOf(id.toString());
