@@ -165,13 +165,12 @@ app.controller('TagSelecterCont', function($scope, $http){
 		otherList.splice(0,otherList.length);
 		tagNameList.splice(0,tagNameList.length);
 		$scope.checkall = false;
-		//location.reload(true);
 	}
 	
-	//Resetting the buttons (hopefully)
-	$scope.uncheckAll = function(){
-		$scope.checkall = false;
-	}
+	//Resetting the buttons
+	//$scope.uncheckAll = function(){
+	//	$scope.checkall = false;
+	//}
 	
 	//GETTING BUTTONS
 	$scope.getPeople = function(){
