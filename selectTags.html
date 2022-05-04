@@ -111,7 +111,7 @@
 				<tr><td><button class = "button" ng-click="searchMe()">SEARCH FOR ALL<br>SELECTED TAGS</button></td><td>Returns a list of photos containing ALL tags selected as well as other tags (i.e. others in the same photo).</td></tr>
 				<tr><td><button class = "button" ng-click="searchMe2()">SEARCH FOR ONLY<br>SELECTED PPL</button></td><td>Returns a list of photos containing ONLY the PEOPLE selected during a single selected year or all years. (currently does NOT support other tag types or multiple year searches).<br></td></tr>
 				<tr><td><button class = "button" ng-click="searchMe3()">SEARCH FOR ANY<br>SELECTED TAGS</button></td><td>Returns a list of photos containing ANY of the tags selected.</td></tr>
-				<tr><td><button class - "button" ng-click="resetSearch()">RESET SEARCH</button></td><td>(under development)</td></tr>
+				<tr><td><button class - "button" ng-click="uncheckAll()">RESET SEARCH</button></td><td>(under development)</td></tr>
 				</table>
 				
 			</div>
@@ -166,7 +166,12 @@ app.controller('TagSelecterCont', function($scope, $http){
 		tagNameList.splice(0,tagNameList.length);
 		//location.reload(true);
 	}
-		
+	
+	//Resetting the buttons (hopefully)
+	$scope.uncheckAll = function(){
+		$scope.checkall = false;
+	}
+	
 	//GETTING BUTTONS
 	$scope.getPeople = function(){
 		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_type.php?type=individual").then(
