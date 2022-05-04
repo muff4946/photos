@@ -448,6 +448,8 @@ app.controller('TagSelecterCont', function($scope, $http){
 			console.log(name);
 			nonYearList.push(id);
 			otherList.push(id);
+			tagNameList.push(name);
+			$scope.tag_names=tagNameList;
 		}
 		else{
 			var spot = nonYearList.indexOf(id.toString());
@@ -460,6 +462,12 @@ app.controller('TagSelecterCont', function($scope, $http){
 				otherList.splice(spot2,1);
 			}
 			console.log(otherList.toString(" "));
+			
+			var spot3 = tagNameList.indexOf(name);
+			if(spot3!=-1){
+			    tagNameList.splice(spot3,1);
+			}
+			console.log(tagNameList.toString(" "));
 		}
 		
 	}
