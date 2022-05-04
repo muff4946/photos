@@ -364,6 +364,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 	};
 
 		//check or uncheck by type so the tag counts can be fed up the line
+		//when something is checked, throw it in the selected tag list
 	
 	$scope.clickPeople = function(id, name){
 		if(document.getElementById(id).checked){
