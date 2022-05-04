@@ -63,7 +63,7 @@
 			<div class="TagListHeader">EVENTS</div>	
 				<form>
 					<div class="row" ng-repeat="x in event_list">
-						<input type="checkbox" id={{x.id}} ng-click="clickEvent(x.id, x.names)">
+						<input type="checkbox" id={{x.id}} ng-click="clickEvent(x.id, x.names)" ng-checked="checkall">
 						<label for={{x.id}}>{{x.names}}</label>
 					</div>
 				</form>
@@ -73,7 +73,7 @@
 			<div class="TagListHeader">HOLIDAYS</div>
 				<form>
 					<div class="row" ng-repeat="x in holiday_list">
-						<input type="checkbox" id={{x.id}} ng-click="clickHoliday(x.id, x.names)">
+						<input type="checkbox" id={{x.id}} ng-click="clickHoliday(x.id, x.names)" ng-checked="checkall">
 						<label for={{x.id}}>{{x.names}}</label>
 					</div>
 				</form>
@@ -83,7 +83,7 @@
 			<div class="TagListHeader">YEARS</div>
 				<form>
 					<div class="row" ng-repeat="x in year_list">
-						<input type="checkbox" id={{x.id}} ng-click="clickYear(x.id, x.names)">
+						<input type="checkbox" id={{x.id}} ng-click="clickYear(x.id, x.names)" ng-checked="checkall">
 						<label for={{x.id}}>{{x.names}}</label>
 					</div>
 				</form>
@@ -93,7 +93,7 @@
 			<div class="TagListHeader">OTHER TAGS<br>(Pets, Animals, Misc.)</div>
 				<form>
 					<div class="row" ng-repeat="x in other_list">
-						<input type="checkbox" id={{x.id}} ng-click="clickOther(x.id, x.names)">
+						<input type="checkbox" id={{x.id}} ng-click="clickOther(x.id, x.names)" ng-checked="checkall"
 						<label for={{x.id}}>{{x.names}}</label>
 					</div>
 				</form>
