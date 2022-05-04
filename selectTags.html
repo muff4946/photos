@@ -156,12 +156,12 @@ app.controller('TagSelecterCont', function($scope, $http){
 	
 	//Clear out the search tags and reset check boxes
 	$scope.resetSearch = function(){
-		nonYearList = [];
-		yearList = [];
-		peopleList = [];
-		eventList = [];
-		holidayList = [];
-		otherList = [];
+		nonYearList.splice(0,nonYearList.length);
+		yearList.splice(0,yearList.length);
+		peopleList.splice(0,peopleList.length);
+		eventList.splice(0,eventList.length);
+		holidayList.splice(0,holidayList.length);
+		otherList.splice(0,otherList.length);
 		tagNameList.splice(0,tagNameList.length);
 		//location.reload(true);
 	}
