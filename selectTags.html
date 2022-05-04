@@ -155,6 +155,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 	};
 	
 	//Clear out the search tags and reset check boxes
+	//Splice method is the only one I found that clears the selected tags field
 	$scope.resetSearch = function(){
 		nonYearList.splice(0,nonYearList.length);
 		yearList.splice(0,yearList.length);
@@ -163,6 +164,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 		holidayList.splice(0,holidayList.length);
 		otherList.splice(0,otherList.length);
 		tagNameList.splice(0,tagNameList.length);
+		$scope.checkall = false;
 		//location.reload(true);
 	}
 		
