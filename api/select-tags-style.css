@@ -135,6 +135,7 @@ h3 {
 	border-radius: 7px;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	text-align: center;
+	display: flex;
 	overflow-y: auto;
 	overflow-x: auto;
 }
