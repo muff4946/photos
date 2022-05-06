@@ -130,7 +130,7 @@
 
   <div class="w3-bar w3-border-bottom">
    <button class="tablink w3-bar-item w3-button" onclick="openCity(event, 'AND')">AND Search</button>
-   <button class="tablink w3-bar-item w3-button" onclick="openCity(event, 'Paris')">Paris</button>
+   <button class="tablink w3-bar-item w3-button" onclick="openCity(event, 'ANDExclusive')">AND Exclusive Search</button>
    <button class="tablink w3-bar-item w3-button" onclick="openCity(event, 'Tokyo')">Tokyo</button>
   </div>
 
@@ -140,10 +140,10 @@
    <p>Example: Searching for Bill Anderson and Tracy Anderson will return photos that contain Bill, Tracy, and other people tagged in the photos.
   </div>
 
-  <div id="Paris" class="w3-container city">
+  <div id="ANDExclusive" class="w3-container city">
    <h1>Paris</h1>
-   <p>Paris is the capital of France.</p>
-   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+   <p>This search returns a list of photos containing ONLY people selected during a single selected year or all years.</p>
+   <p>Example: Searching for Bill Anderson and Tracy Anderson will return photos that contain ONLY Bill and Tracy (note: this search currently does NOT support other tag types or multiple year searches).</p>
   </div>
 
   <div id="Tokyo" class="w3-container city">
