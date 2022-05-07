@@ -251,3 +251,14 @@ h3 {
 .w3-bar .w3-bar-item{padding:8px 16px;float:left;width:auto;border:none;display:block;outline:0}
 
 .w3-card-4,.w3-hover-shadow:hover{box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)}
+
+.modal-tab-button{
+	background-color: #F7F7F2;
+	border-color: #2B303A;
+	border-radius:0px;
+	padding: 3px;
+	border-width: 1.5px;
+	font: 12px;
+	color: black;
+	width: 150px;
+}
