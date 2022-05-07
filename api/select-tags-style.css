@@ -85,6 +85,12 @@ input[type="checkbox"]:checked + label:before {
 }
 
 
+h1 {
+	color:white;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 500;
+}
+
 h2 {
 	color:white;
 	margin-left: 12px;
