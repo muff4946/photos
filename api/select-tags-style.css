@@ -241,32 +241,3 @@ h3 {
 	color: white;
 	text-decoration: none;
 }
-
-.w3-modal{z-index:3;display:none;padding-top:100px;position:fixed;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(0,0,0,0.4);}
-
-.w3-modal-content{margin:auto;background-color:#1C6973;position:relative;padding:15px;outline:0;width:600px;color:white; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;}
-
-.w3-animate-zoom {animation:animatezoom 0.6s}@keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
-
-.w3-card-4,.w3-hover-shadow:hover{box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)}
-
-.w3-right{float:right!important}
-
-.w3-container,.w3-panel{margin-top:16px;margin-bottom:16px; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;}
-
-.w3-bar .w3-bar-item{padding:8px 16px;float:left;width:auto;border:none;display:block;outline:0}
-
-.w3-card-4,.w3-hover-shadow:hover{box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)}
-
-.w3-modal-base{align:right;}
-
-.modal-tab-button{
-	background-color: #F7F7F2;
-	border-color: #2B303A;
-	border-radius:0px;
-	padding: 3px;
-	border-width: 1.5px;
-	font: 12px;
-	color: black;
-	width: 150px;
-}
