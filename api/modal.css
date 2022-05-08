@@ -1,0 +1,272 @@
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+::-webkit-scrollbar-track {
+	display: none;
+}
+
+::-webkit-scrollbar-thumb{
+	background-color: #7C7C7C;
+	border-radius: 2px;
+	opacity: .2;
+}
+
+
+/*
+These items affect everything
+*/
+
+*{
+	outline: none;
+}
+		
+body,html {
+	/*height: 100%; #commenting this out FINALLY got rid of the annoying vertical scroll*/
+	width: 100%;
+	margin: 0;
+}
+
+body{
+	background-color: #2B303A;
+}
+
+
+button{
+	background-color: #F7F7F2;
+	border-color: #2B303A;
+	border-radius:3px;
+	padding: 3px;
+	border-width: 1.5px;
+	font: 12px;
+	color: black;
+	width: 150px;
+}
+
+button:hover{
+	background-color: #7C7C7C;
+}
+
+button:active{
+	border-style: none;
+	outline: none;
+}
+
+
+
+/*Checkboxes styles*/
+input[type="checkbox"] { display: none; }
+
+input[type="checkbox"] + label {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #FFFFFF;
+  cursor: pointer;
+  margin: 2px;
+}
+
+input[type="checkbox"] + label:before {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #594157;
+  border-radius: 3px;
+  position: absolute;
+  left: 0;
+  top: -1;
+  margin: 2px;
+}
+
+input[type="checkbox"]:checked + label:before {
+  background-color: #594157;
+}
+
+
+h1 {
+	color:white;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 500;
+}
+
+h2 {
+	color:white;
+	margin-left: 12px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 500;
+}
+
+h3 {
+	color:white;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 500;
+}
+
+.grid-container{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr) 100px repeat(2, 1fr);
+	grid-template-rows: 80px 200px repeat(2, 1fr);
+	height: 87%;
+	position: absolute;
+	width: 99%;
+	grid-column-gap: 15px;
+	grid-row-gap: 10px;
+	border: 3px solid #594157;
+	padding-top: 12px;
+	padding-bottom: 5px;
+	background-color: #1C6973;
+	grid-template-areas: 
+		'individual-header individual-header year info info'
+		'individual individual year info info'
+		'individual individual year events holiday'
+		'individual individual year other selected-tags';
+}
+
+.PeopleList{
+	grid-area: individual;
+	border: 2px solid #7C7C7C;
+	padding: 10px;
+	border-radius: 7px;
+	overflow-y: auto;
+	overflow-x: auto;
+	scroll-behavior: smooth;
+}
+
+.PeopleListHeader{
+	grid-area: individual-header;
+	border: 2px solid #7C7C7C;
+	padding: 5px;
+	border-radius: 7px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	text-align: center;
+	display: flex;
+	overflow-y: auto;
+	overflow-x: auto;
+}
+.EventList{
+	grid-area: events;
+	border: 2px solid #7C7C7C;
+	padding: 10px;
+	border-radius: 7px;
+	overflow-y: auto;
+	overflow-x: auto;
+}
+
+.YearList{
+	grid-area: year;
+	border: 2px solid #7C7C7C;
+	padding: 10px;
+	border-radius: 7px;
+	overflow-y: auto;
+	overflow-x: auto;
+}
+
+.OtherList{
+	grid-area: other;
+	border: 2px solid #7C7C7C;
+	padding: 10px;
+	border-radius: 7px;
+	overflow-y: auto;
+	overflow-x: auto;
+}
+
+.HolidayList{
+	grid-area: holiday;
+	border: 2px solid #7C7C7C;
+	padding: 10px;
+	border-radius: 7px;
+	overflow-y: auto;
+	overflow-x: auto;
+}
+
+.SelectedTags{
+	grid-area: selected-tags;
+	border: 2px solid #7C7C7C;
+	padding: 10px;
+	border-radius: 7px;
+	overflow-y: auto;
+	overflow-x: auto;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	color: white;
+}
+
+.infoAndSearch{
+	grid-area: info;
+	border: 2px solid #7C7C7C;
+	padding: 10px;
+	border-radius: 7px;
+	overflow-y: auto;
+	overflow-x: auto;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	color: #FFFFFF;
+}
+
+.buttonHeader{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.searchType{
+	grid-area:add;
+	width: 100%;
+}
+
+.TagListHeader{
+	display: block;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    text-align: center;
+	color: #FFFFFF;
+}
+
+.bottomLeftFooter{
+	display: inline-block;
+	color: white;
+	position: fixed;
+	left: 12px;
+	bottom: 2px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 12px;
+}
+
+.alphabet{
+	font-weight: normal;
+}
+
+.alphabetLinks{
+	color: white;
+	text-decoration: none;
+}
+
+.w3-modal{z-index:3;display:none;padding-top:100px;position:fixed;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(0,0,0,0.4);}
+
+.w3-modal-content{margin:auto;background-color:#1C6973;position:relative;padding:15px;outline:0;width:600px;color:white; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;}
+
+.w3-animate-zoom {animation:animatezoom 0.6s}@keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
+
+.w3-card-4,.w3-hover-shadow:hover{box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)}
+
+.w3-right{float:right!important}
+
+.w3-container,.w3-panel{margin-top:16px;margin-bottom:16px; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;}
+
+.w3-bar .w3-bar-item{padding:8px 16px;float:left;width:auto;border:none;display:block;outline:0}
+
+.w3-card-4,.w3-hover-shadow:hover{box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)}
+
+.w3-modal-base{align:right;}
+
+.modal-tab-button{
+	background-color: #F7F7F2;
+	border-color: #2B303A;
+	border-radius:0px;
+	padding: 3px;
+	border-width: 1.5px;
+	font: 12px;
+	color: black;
+	width: 150px;
+}
