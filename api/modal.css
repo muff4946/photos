@@ -1,4 +1,4 @@
-.modal{
+modal{
 		z-index:3;
 		display:none;
 		padding-top:150px;
@@ -12,7 +12,7 @@
 		background-color:rgba(0,0,0,0.4);
 }
 	
-modal-link-button{
+.modal-link{
 	background-color: #F7F7F2;
 	border-color: #2B303A;
 	border-radius:3px;
@@ -22,11 +22,11 @@ modal-link-button{
 	color: black;
 }
 
-modal-link-button:hover{
+.modal-link:hover{
 	background-color: #7C7C7C;
 }
 
-modal-link-button:active{
+.modal-link:active{
 	border-style: none;
 	outline: none;
 }
