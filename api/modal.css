@@ -12,6 +12,25 @@
 		background-color:rgba(0,0,0,0.4);
 }
 	
+.modal-link-button{
+	background-color: #F7F7F2;
+	border-color: #2B303A;
+	border-radius:3px;
+	padding: 3px;
+	border-width: 1.5px;
+	font: 12px;
+	color: black;
+	width: 150px;
+}
+
+modal-link-button:hover{
+	background-color: #7C7C7C;
+}
+
+modal-link-button:active{
+	border-style: none;
+	outline: none;
+}
 
 .w3-modal-content{margin:auto;background-color:#1C6973;position:relative;padding:15px;outline:0;width:600px;color:white; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;}
 
