@@ -109,14 +109,19 @@
 			<div class="infoAndSearch">
 				<div class="buttonHeader">Using the Different Search Types<br>(if in doubt, start with the top one to get a feel for things)</div>
 				<br>
-				<table>
+<!--				<table>
 				<tr><td><button class = "button" ng-click="searchMe()" title="testing title with lots of text to see if<br>or when the words wrap around">SEARCH FOR ALL<br>SELECTED TAGS</button></td><td>Returns a list of photos containing ALL tags selected as well as other tags (i.e. others in the same photo).</td></tr>
 				<tr><td><button class = "button" ng-click="searchMe2()">SEARCH FOR ONLY<br>SELECTED PPL</button></td><td>Returns a list of photos containing ONLY the PEOPLE selected during a single selected year or all years. (currently does NOT support other tag types or multiple year searches).<br></td></tr>
 				<tr><td><button class = "button" ng-click="searchMe3()">SEARCH FOR ANY<br>SELECTED TAGS</button></td><td>Returns a list of photos containing ANY of the tags selected.</td></tr>
 				<tr><td><button class = "button" ng-click="resetSearch()">RESET SEARCH</button></td><td>Unchecks all checkboxes and clears selected tags.</td></tr>
 				<tr><td><button onclick="document.getElementById('search-tips-modal').style.display='block'" class="modal-link-button"><img src="help-icon-white.png" style="width:24px;"></button></td></tr>
-				</table>
+				</table>-->
 				
+				<table>
+				<tr><td><button class = "button" ng-click="searchMe()" title="testing title with lots of text to see if<br>or when the words wrap around">SEARCH FOR ALL<br>SELECTED TAGS</button></td><td></td><td><button class = "button" ng-click="searchMe2()">SEARCH FOR ONLY<br>SELECTED PPL</button></td></tr>
+				<tr><td></td><td><button onclick="document.getElementById('search-tips-modal').style.display='block'" class="modal-link-button"><img src="help-icon-white.png" style="width:24px;"></button></td><td></td></tr>
+				<tr><td><button class = "button" ng-click="searchMe3()">SEARCH FOR ANY<br>SELECTED TAGS</button></td><td></td><td><button class = "button" ng-click="resetSearch()">RESET SEARCH</button></td></tr>			
+				</table>
 			</div>
 		<div class="bottomLeftFooter">Primary Site Design & Coding (AngularJS/PHP/MySQL): Marcy Anderson<br>Photo Tagging/Database Design & Maintenance/Occasional Site Hacking: Bill Anderson<div>
 		</div>
