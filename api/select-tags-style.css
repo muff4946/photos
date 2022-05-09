@@ -32,7 +32,7 @@ body{
 }
 
 
-button{
+.button{
 	background-color: #F7F7F2;
 	border-color: #2B303A;
 	border-radius:3px;
@@ -43,11 +43,11 @@ button{
 	width: 150px;
 }
 
-button:hover{
+.button:hover{
 	background-color: #7C7C7C;
 }
 
-button:active{
+.button:active{
 	border-style: none;
 	outline: none;
 }
