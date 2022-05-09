@@ -54,7 +54,11 @@
 	border-bottom: 1px solid #2B303A
 }
 
-.w3-container,.w3-panel{margin-top:16px;margin-bottom:16px; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;}
+.w3-container{
+	margin-top:16px;
+	margin-bottom:16px; 
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 
 .w3-bar .w3-bar-item{padding:8px 16px;float:left;width:auto;border:none;display:block;outline:0}
 
