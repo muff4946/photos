@@ -63,6 +63,8 @@ p{
 	margin-top:16px;
 	margin-bottom:16px; 
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	padding-bottom: 12px;
+	line-height: 1.5;
 }
 
 .w3-bar .w3-bar-item{padding:8px 16px;float:left;width:auto;border:none;display:block;outline:0}
