@@ -160,7 +160,7 @@
 <script>
 document.getElementsByClassName("tablink")[0].click();
 
-function openSearchType(evt, cityName) {
+function openSearchType(evt, searchName) {
   var i, x, tablinks;
   x = document.getElementsByClassName("search-type");
   for (i = 0; i < x.length; i++) {
@@ -170,7 +170,7 @@ function openSearchType(evt, cityName) {
   for (i = 0; i < x.length; i++) {
     tablinks[i].classList.remove("w3-light-grey");
   }
-  document.getElementById(cityName).style.display = "block";
+  document.getElementById(searchName).style.display = "block";
   evt.currentTarget.classList.add("w3-light-grey");
 }
 </script>
