@@ -2,7 +2,6 @@
 <html>
 <head>
 	<title>Anderson Photo Library Tag Search</title>
-	<!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"></link>-->
 	<link rel="stylesheet" href="api/select-tags-style.css?v=1.03"></link>
 	<link rel="stylesheet" href="api/modal.css?v=1.03"></link>
 	
@@ -127,23 +126,23 @@
   </header>
 
   <div class="modal-tab-bar">
-   <button class="tablink modal-tab-button" onclick="openCity(event, 'AND')">AND Search</button>
-   <button class="tablink modal-tab-button" onclick="openCity(event, 'ANDExclusive')">AND Exclusive Search</button>
-   <button class="tablink modal-tab-button" onclick="openCity(event, 'OR')">OR Search</button>
+   <button class="tablink modal-tab-button" onclick="openSearchType(event, 'AND')">AND Search</button>
+   <button class="tablink modal-tab-button" onclick="openSearchType(event, 'ANDExclusive')">AND Exclusive Search</button>
+   <button class="tablink modal-tab-button" onclick="openSearchtype(event, 'OR')">OR Search</button>
   </div>
-  <div id="AND" class="modal-container city">
+  <div id="AND" class="modal-container search-type">
    <h2 style="margin-left:0px">Basic AND Search</h2>
    <p>This search returns a list of photos containing ALL tags selected as well as other tags (i.e. others in the same photo).</p><br>
    <p>Example: Searching for Bill Anderson and Tracy Anderson will return photos that contain Bill, Tracy, and other people tagged in the photos.</p>
   </div>
 
-  <div id="ANDExclusive" class="modal-container city">
+  <div id="ANDExclusive" class="modal-container search-type">
    <h2 style="margin-left:0px">AND Exclusive Search</h2>
    <p>This search returns a list of photos containing ONLY people selected during a single selected year or all years.</p><br>
    <p>Example: Searching for Bill Anderson and Tracy Anderson will return photos that contain ONLY Bill and Tracy (note: this search currently does NOT support other tag types or multiple year searches).</p>
   </div>
 
-  <div id="OR" class="modal-container city">
+  <div id="OR" class="modal-container search-type">
    <h2 style="margin-left:0px">Basic OR Search</h2>
    <p>This search returns a list of photos containing ANY of the tags selected.</p><br>
    <p>Example: Searching for Bill Anderson and Tracy Anderson will return photos that contain either Bill (and others) or Tracy (and others) as well as pictures that contain both Bill and Tracy (and others).</p>
@@ -161,9 +160,9 @@
 <script>
 document.getElementsByClassName("tablink")[0].click();
 
-function openCity(evt, cityName) {
+function openSearchType(evt, cityName) {
   var i, x, tablinks;
-  x = document.getElementsByClassName("city");
+  x = document.getElementsByClassName("search-type");
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";
   }
