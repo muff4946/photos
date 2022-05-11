@@ -35,8 +35,6 @@ p{
 	outline: none;
 }
 
-
-
 .modal-content{
 	margin:auto;
 	background-color:#1C6973;
@@ -51,9 +49,13 @@ p{
 	animation:animatezoom 0.6s}@keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}
 }
 
-.w3-card-4,.w3-hover-shadow:hover{box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)}
+.modal-card,.w3-hover-shadow:hover{
+	box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)
+}
 
-.w3-right{float:right!important}
+.modal-right{
+	float:right!important
+}
 
 .modal-header{
 	background-color: #2B303A;
