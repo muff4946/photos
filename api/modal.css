@@ -47,7 +47,9 @@ p{
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-.modal-animate-zoom {animation:animatezoom 0.6s}@keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
+.modal-animate-zoom{
+	animation:animatezoom 0.6s}@keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}
+}
 
 .w3-card-4,.w3-hover-shadow:hover{box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)}
 
@@ -80,9 +82,9 @@ p{
 	border-bottom: 1px solid #2B303A;
 }
 
-.w3-card-4,.w3-hover-shadow:hover{box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)}
-
-.w3-modal-base{align:right;}
+.modal-base{
+	align:right;
+}
 
 .modal-tab-button{
 	background-color: #F7F7F2;
