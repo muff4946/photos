@@ -100,5 +100,7 @@ p{
 	width: 150px;
 }
 
-.w3-light-grey,.w3-hover-light-grey:hover,.w3-light-gray,.w3-hover-light-gray:hover{color:#000!important;background-color:#f1f1f1!important}
+.modal-light-grey,.modal-hover-light-grey:hover{
+	color:#000!important;background-color:#f1f1f1!important
+}
 

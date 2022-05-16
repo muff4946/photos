@@ -152,6 +152,8 @@
 	</div>
 </body>
 <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+
+<!-- this script drives the search help and tips modal-->
 <script>
 document.getElementsByClassName("tablink")[0].click();
 
@@ -162,11 +164,11 @@ function openSearchType(evt, searchName) {
     x[i].style.display = "none";
   }
   tablinks = document.getElementsByClassName("tablink");
-  // for (i = 0; i < x.length; i++) {
-  //   tablinks[i].classList.remove("w3-light-grey");
-  // }
+  for (i = 0; i < x.length; i++) {
+	tablinks[i].classList.remove("modal-light-grey");
+  }
   document.getElementById(searchName).style.display = "block";
-  // evt.currentTarget.classList.add("w3-light-grey");
+  evt.currentTarget.classList.add("modal-light-grey");
 }
 </script>
 
