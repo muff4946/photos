@@ -80,7 +80,7 @@ p{
 .modal-tab-bar {
 	width:auto;
 	border:none;
-	display:block;
+	display:inline-flex;
 	outline:0;
 	border-bottom: 1px solid #2B303A;
 }
@@ -94,7 +94,7 @@ p{
 	border-color: #2B303A;
 	border-radius:0px;
 	padding: 3px;
-	border-width: 1.5px;
+	border-width: 0px;
 	font-size: 14px;
 	color: black;
 	width: 150px;
