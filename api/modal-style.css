@@ -68,13 +68,14 @@ p{
 
 .modal-container{
 	margin:0;
-	margin-top:16px;
 	margin-bottom:16px; 
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	padding-bottom: 12px;
 	line-height: 1.5;
 	padding-left: 5px;
 	padding-right: 5px;
+	border-bottom: 1px solid #2B303A;
+	
 }
 
 .modal-tab-bar {
@@ -82,7 +83,6 @@ p{
 	border:none;
 	display:inline-flex;
 	outline:0;
-	border-bottom: 1px solid #2B303A;
 }
 
 .modal-base{
