@@ -165,10 +165,10 @@ function openSearchType(evt, searchName) {
   }
   tablinks = document.getElementsByClassName("tablink");
   for (i = 0; i < x.length; i++) {
-	tablinks[i].classList.remove("modal-light-grey");
+	tablinks[i].classList.remove("modal-tab-button");
   }
   document.getElementById(searchName).style.display = "block";
-  evt.currentTarget.classList.add("modal-light-grey");
+  evt.currentTarget.classList.add("modal-tab-button");
 }
 </script>
 
