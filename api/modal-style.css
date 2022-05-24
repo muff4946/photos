@@ -98,6 +98,10 @@ p{
 	color: black;
 }
 
+.modal-tab-button:hover{
+	background-color: #FEFEFE;
+}
+
 .modal-light-grey,.modal-hover-light-grey:hover{
 	color:#000!important;background-color:#9b9b9b!important
 }
