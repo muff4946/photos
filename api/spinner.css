@@ -15,7 +15,7 @@
   box-sizing: border-box;
   border: 32px solid #594157;
   border-color: #594157 transparent #594157 transparent;
-  animation: lds-hourglass 1.2s infinite;
+  animation: loading-spinner 1.2s infinite;
 }
 @keyframes loading-spinner {
   0% {
