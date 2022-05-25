@@ -3,11 +3,6 @@
 <head>
 <title>Anderson Photo Library Tag Search Results</title>
 <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
-<!--<script src = "/api/js/ui-bootstrap-2.5.0.min.js"></script>
-<script src = "/api/js/ui-bootstrap-tpls-2.5.0.min.js"></script>
-<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>-->
 <link rel="stylesheet" href="api/search-list-style.css?v=1.02"></link>
 <link rel="stylesheet" href="api/spinner.css?v=1.02"></link>
 <link rel="stylesheet" href="api/modal-style.css?v=1.03"></link>
@@ -18,7 +13,6 @@
     <div class="photo-table" ng-app="PhotoTable" ng-controller="PhotoTableCont">
 		<h2 class="header"> {{row_count}} results in path and file name order; click thumbnails for larger views.</h2>
 		<button onclick="document.getElementById('searched-tags-modal').style.display='block'" class="modal-link-button"><img src="help-icon-white.png" style="width:24px;"></button>
-<!--	<button class = "btn" ng-click="showDetails()">Searched Tags</button>-->
 		<div class = "grid-container">
 			<div class="file_list">
 				<table>
@@ -101,36 +95,7 @@
 					onclick="document.getElementById('searched-tags-modal').style.display='none'">Close</button>
 				</div>
 			</div>
-		</div>
-			
-			
-<!--	<div id="myModal" role="dialog" class="modal fade" style="display:none;" data-backdrop="false">
-			<div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Tag(s) you searched for (using search type {{searchType}}):</h4>
-                    </div>
-                    <div class="modal-body">
-                        <table width=75%>
-							<tr id="headers">
-								<th id="tag_id" style="padding:3px;">Tag ID</th>
-								<th id="tag_name" style="padding:3px;">Tag Label(s)</th>
-								<th id="tag_name" style="padding:3px;">Tag Type</th>
-							</tr>
-							<tr ng-repeat="i in tags_searched">
-								<td style="padding:3px;">{{i.id}}</td>
-								<td style="padding:3px;">{{i.names}}</td>
-								<td style="padding:3px;">{{i.type}}</td>
-							</tr>
-						</table>                            
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>-->
+		</div>			
     </div>
 </body>
 
