@@ -82,6 +82,20 @@
 				<header class="modal-header">
 					<h2>Tag(s) you searched for (using search type {{searchType}}):</h2>
 				</header>
+				<div class="modal-container">
+					<table width=75%>
+						<tr id="headers">
+							<th id="tag_id" style="padding:3px;">Tag ID</th>
+							<th id="tag_name" style="padding:3px;">Tag Label(s)</th>
+							<th id="tag_name" style="padding:3px;">Tag Type</th>
+						</tr>
+						<tr ng-repeat="i in tags_searched">
+							<td style="padding:3px;">{{i.id}}</td>
+							<td style="padding:3px;">{{i.names}}</td>
+							<td style="padding:3px;">{{i.type}}</td>
+						</tr>
+					</table>
+				</div>
 				<div class="modal-base">
 					<button class="modal-right"
 					onclick="document.getElementById('searched-tags-modal').style.display='none'">Close</button>
