@@ -37,6 +37,12 @@ h2 {
 	font-weight: 500;
 }
 
+h1 {
+	color:white;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 500;
+}
+
 .btn{
 	display: inline-block;
 	position: fixed;
