@@ -110,4 +110,5 @@ p{
 table, th, td {
 	color: black;
 	border-spacing: 0px;
+	border-collapse: collapse;
 }
