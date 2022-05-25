@@ -154,6 +154,7 @@ th {
 	position: sticky;
 	top: 0;
 	background-color: #7C7C7C;
+	border: 1px solid black;
 }
 
 table tr:nth-child(even){
