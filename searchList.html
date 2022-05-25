@@ -76,6 +76,19 @@
 		</div>
 		<div class="clientip">Your Internet IP is {{ip}}
 		</div>
+		<div class="modal" id="searched-tags-modal">
+			<div class="modal-content modal-card modal-animate-zoom">
+				<header class="modal-header">
+					<h1>Tag(s) you searched for (using search type {{searchType}}):</h1>
+				</header>
+				<div class="modal-base">
+					<button class="modal-right"
+					onclick="document.getElementById('searched-tags-modal').style.display='none'">Close</button>
+				</div>
+			</div>
+		</div>
+			
+			
 <!--	<div id="myModal" role="dialog" class="modal fade" style="display:none;" data-backdrop="false">
 			<div class="modal-dialog">
                 <div class="modal-content">
