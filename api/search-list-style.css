@@ -109,7 +109,7 @@ h2 {
 .image_tags {
 	grid-area:image_tags;
 	position: relative;
-	overflow: scroll;
+	overflow: auto;
 	
 }
 
@@ -124,7 +124,7 @@ h2 {
 .search_tags {
 	grid-area:search_tags;
 	position: relative;
-	overflow: scroll;
+	overflow: auto;
 	
 }
 
@@ -138,7 +138,7 @@ h2 {
 
 .file_list{
 	grid-area:list;
-	overflow: scroll;
+	overflow: auto;
 }
 
 .file_list table{
