@@ -152,6 +152,7 @@ table, th, td {
 
 th {
 position: sticky;
+top: 0;
 }
 
 table tr:nth-child(even){
