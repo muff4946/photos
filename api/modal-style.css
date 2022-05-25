@@ -104,3 +104,8 @@ p{
 .modal-light-gray:hover{
 	background-color:#b7b7b7!important
 }
+
+table, th, td {
+	border: 1px solid black;
+	color: black;
+}
