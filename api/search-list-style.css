@@ -49,6 +49,7 @@ h2 {
 	position: fixed;
 	right: 12px;
 	bottom: 0px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 12px;
 }
 
@@ -58,6 +59,7 @@ h2 {
 	position: fixed;
 	left: 12px;
 	bottom: 0px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 12px;
 }
 
