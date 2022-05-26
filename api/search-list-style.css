@@ -108,6 +108,8 @@ h3 {
 	grid-area:image;
 	height: 1fr;
 	width: 1fr;
+	display: flex;
+	justify-content: center;
 }
 
 .to_be_image .image{
@@ -187,6 +189,9 @@ table tr:nth-child(odd){
 
 .button-grid-area{
 	grid-area: button-location;
+	display: flex;
+	align-items: center;
+	justiy-content: center;
 }
 
 .button{
