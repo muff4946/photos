@@ -185,13 +185,14 @@ table tr:nth-child(odd){
 }
 
 .button{
-	background-color: #f7f72;
+	background-color: #F7F7F2;
 	border-color: #2B303A;
 	border-radius:3px;
 	padding: 3px;
 	border-width: 1.5px;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 14px;
+	font-weight: bold;
 	color: black;
 	width: 100%;
 }
