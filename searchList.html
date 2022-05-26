@@ -105,6 +105,18 @@
 
 <script>
 
+document.addEventListener(
+	"click",
+	function(event) {
+	if (
+		!event.target.closest(".modal")
+		) {
+			document.getElementById('searched-tags-modal').style.display='none'
+		}
+	},
+	false
+)
+
 var app = angular.module('PhotoTable',[]);
 
 app.controller('PhotoTableCont', function($scope, $http, $window){
