@@ -185,6 +185,8 @@ table tr:nth-child(odd){
 }
 
 .button{
+	position: sticky;
+	top: 0;
 	background-color: #F7F7F2;
 	border-color: #2B303A;
 	border-radius:3px;
