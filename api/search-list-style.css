@@ -191,7 +191,7 @@ table tr:nth-child(odd){
 	grid-area: button-location;
 	display: flex;
 	align-items: center;
-	justiy-content: center;
+	justify-content: center;
 }
 
 .button{
@@ -204,5 +204,4 @@ table tr:nth-child(odd){
 	font-size: 14px;
 	font-weight: bold;
 	color: black;
-	width: 100%;
 }
