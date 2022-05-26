@@ -80,7 +80,7 @@ h3 {
 .grid-container{
 	display: grid;
 	grid-template-columns: 58% 40%;
-	grid-template-rows: 75% 25%;
+	grid-template-rows: 70% 5% 25%;
 	top: 7%;
 	height: 88%;
 	position: absolute;
@@ -96,6 +96,7 @@ h3 {
 	background-color: #1C6973;
 	grid-template-areas: 
 		'list image'
+		'list button'
 		'list image_tags';
 }
 
