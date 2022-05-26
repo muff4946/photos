@@ -96,7 +96,7 @@ h3 {
 	background-color: #1C6973;
 	grid-template-areas: 
 		'list image'
-		'list button'
+		'list button-location'
 		'list image_tags';
 }
 
@@ -185,8 +185,11 @@ table tr:nth-child(odd){
 	grid-area:bottom;
 }
 
+.button-grid-area{
+	grid-area: button-location;
+}
+
 .button{
-	grid-area: button;
 	background-color: #F7F7F2;
 	border-color: #2B303A;
 	border-radius:3px;
