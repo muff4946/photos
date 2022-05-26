@@ -190,7 +190,8 @@ table tr:nth-child(odd){
 	border-radius:3px;
 	padding: 3px;
 	border-width: 1.5px;
-	font-size: 12px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
 	color: black;
 	width: 100%;
 }
