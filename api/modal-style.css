@@ -6,6 +6,7 @@ p{
 	z-index:3;
 	display:none;
 	padding-top:150px;
+	position:fixed;
 	left:0;
 	top:0;
 	width:100%;
