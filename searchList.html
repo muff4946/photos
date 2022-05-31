@@ -232,10 +232,12 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 		});
 	}
 
-//attempting to add a modal for the search details
-	$scope.showDetails = function(){
-    $('#myModal').modal('show');
-  }
+	for(var i=0; i < localStorage.length; i++){
+ 
+    var keyName = localStorage.key(i);
+ 
+    console.log( keyName + " === " +sessionStorage.getItem(keyName));
+	}
   
 });
 
