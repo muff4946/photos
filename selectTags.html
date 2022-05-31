@@ -566,7 +566,14 @@ app.controller('TagSelecterCont', function($scope, $http){
 		}
 		
 	}
-	
+
+	for(var i=0; i < localStorage.length; i++){
+ 
+    var keyName = localStorage.key(i);
+ 
+    console.log( keyName + " === " +sessionStorage.getItem(keyName));
+	}
+
 });	
 </script>
 </html>
