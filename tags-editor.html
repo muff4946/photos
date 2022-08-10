@@ -133,6 +133,27 @@
 		</div>
 	</div>
 </body>
+
+<!-- this script drives the search help and tips modal-->
+<script>
+document.getElementsByClassName("tablink")[0].click();
+
+function openSearchType(evt, searchName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("search-type");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+	tablinks[i].classList.remove("modal-light-gray");
+  }
+  document.getElementById(searchName).style.display = "block";
+  evt.currentTarget.classList.add("modal-light-gray");
+}
+</script>
+
+
 <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
 <script>
 var page;
