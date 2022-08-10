@@ -52,11 +52,12 @@
 					</select>
 					<span class="br"></span>
 					<select id="events">
-						<option value="none" selected disabled hidden>Select an event tag.</option>
+						<option value="none" selected disabled hidden>Select an event tag</option>
 						<option ng-repeat="e in events" value={{e.id}}>{{e.name}}</option>
 					</select>
 					<button ng-click="addEvent()">add</button>
 					<select id="holidays">
+						<option value="none" selected disabled hidden>Select a holiday tag</option>
 						<option ng-repeat="h in holidays" value={{h.id}}>{{h.name}}</option>
 					</select>
 					<button ng-click="addHolidays()">add</button>
