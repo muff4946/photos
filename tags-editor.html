@@ -52,6 +52,7 @@
 					</select>
 					<span class="br"></span>
 					<select id="events">
+						<option value="none" selected disabled hidden>Select an event tag.</option>
 						<option ng-repeat="e in events" value={{e.id}}>{{e.name}}</option>
 					</select>
 					<button ng-click="addEvent()">add</button>
