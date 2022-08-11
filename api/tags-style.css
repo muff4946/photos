@@ -297,7 +297,6 @@ table tr:nth-child(odd){
 	left: 0px;
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	
 }
 
@@ -323,7 +322,6 @@ table tr:nth-child(odd){
 	
 	.header{ 
 		color: #A6A6A6;
-		font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	}
 	
 	
@@ -339,7 +337,6 @@ table tr:nth-child(odd){
 		color: #A6A6A6;
 		left: 30px;
 		bottom: -90px;
-		font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	}
 	
 	.fun{
