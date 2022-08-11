@@ -132,6 +132,7 @@ input{
 	border-radius: 10px;
 	padding: 12px 24px;
 	font-size: 14px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .left .prev:hover{
@@ -155,7 +156,8 @@ input{
 	border-color: #594157;
 	border-radius: 10px;
 	padding: 12px 24px;
-	font-size; 14px;
+	font-size: 14px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .right .next:hover{
