@@ -302,6 +302,8 @@ table tr:nth-child(odd){
 	
 }
 
+.funbutton {font-size: 14px;}
+
 .br{
 	display: block;
 	margin-bottom: 15px;
