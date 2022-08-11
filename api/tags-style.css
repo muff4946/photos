@@ -283,6 +283,7 @@ table tr:nth-child(odd){
 .fun .not_title{
 	padding: 4px;
 	height: 250px;
+	font-size: 14px;
 }
 
 .fun{
