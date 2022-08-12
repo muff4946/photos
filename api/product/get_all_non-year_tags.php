@@ -16,7 +16,7 @@ $tags = new tags($db);
 
 if($tagtype !=''){
 	//get array of tags
-	$stmt = $tags->get_all_non-year_tags();
+	$stmt = $tags->get_all_non_year_tags();
 
 	//make a new array
 	$tag_arr = array();
