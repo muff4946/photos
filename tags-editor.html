@@ -257,7 +257,7 @@ app.controller('TagEditorCont',function($scope, $http){
 		$http.get("https://photos.dbq-andersons.com/api/product/get_all_non-year_tags.php",).then(
 			function successfulCallback(response){
 				$scope.all_tags = response.data.tags;
-				//console.log($scope.tags_assigned);
+				console.log($scope.all_tags);
 			},
 			function errorCallback(response){
 				console.log(response);
