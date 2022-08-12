@@ -42,6 +42,21 @@ class tags{
 		return $stmt;
 	}
 	
+	//get all non-year tags
+	public function get_all_non-year_tags(){
+		
+		$query = "SELECT * FROM anderson_images.tags where tag_type != 'year' order by tag_names";
+		$stmt = $this->connection->prepare($query);
+		$stmt->bindParam(1,$tagType);
+		try{
+			$stmt->execute();
+		}
+		catch(PDOException $e){
+			echo $stmt . $e->getMessage();
+		}
+		return $stmt;
+	}
+	
 	//get tag by type
 	public function get_tag_by_type($tagType){
 		if($tagType!='year'){
