@@ -210,7 +210,7 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_info_by_ids.php?tags="+toAdd,).then(
 			function successfulCallback(response){
 				$scope.tags_searched = response.data.tags;
-				//console.log($scope.tags_searched);
+				console.log($scope.tags_searched);
 			},
 			function errorCallback(response){
 				console.log(response);
