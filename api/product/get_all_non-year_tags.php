@@ -14,17 +14,10 @@ $db = $database->getConnection();
 //initialize object 
 $tags = new tags($db);
 
-//get tag_type from url
-$tagtype=isset($_GET['type']) ? $_GET['type'] : '';
-
 if($tagtype !=''){
 	//get array of tags
-	if($tagtype=='other'){
-		$stmt = $tags->get_tag_no_type();
-	}
-	else{
-		$stmt = $tags->get_tag_by_type($tagtype);
-	}
+	$stmt = $tags->get_all_non-year_tags();
+
 	//make a new array
 	$tag_arr = array();
 	$tag_arr["tags"]=array();
