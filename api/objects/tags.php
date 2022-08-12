@@ -45,9 +45,8 @@ class tags{
 	//get all non-year tags
 	public function get_all_non_year_tags(){
 		
-		$query = "SELECT * FROM anderson_images.tags where tag_type != year order by tag_names";
+		$query = "SELECT * FROM anderson_images.tags where tag_type != 'year' order by tag_names";
 		$stmt = $this->connection->prepare($query);
-//		$stmt->bindParam(1,$tagType);
 		try{
 			$stmt->execute();
 		}
