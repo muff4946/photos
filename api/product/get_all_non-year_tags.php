@@ -14,7 +14,7 @@ $db = $database->getConnection();
 //initialize object 
 $tags = new tags($db);
 
-if($tagtype !=''){
+
 	//get array of tags
 	$stmt = $tags->get_all_non_year_tags();
 
@@ -42,14 +42,5 @@ if($tagtype !=''){
 	http_response_code(200);
 	
 	echo json_encode($tag_arr);	
-}
-else{
-	//set response code - 404 Not found
-	http_response_code(404);
-	//tell the user products does not exist
-	echo json_encode(
-		array("message" => "No products found.")
-	);
-}
 
 ?>
