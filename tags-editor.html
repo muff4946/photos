@@ -363,7 +363,7 @@ app.controller('TagEditorCont',function($scope, $http){
 	$scope.pasteTags=function(){
 		toAdd=localStorage.getItem("copiedTags");
 		toAdd=JSON.parse(toAdd);
-		console.log(toAdd);
+		//console.log(toAdd);
 		var i;
 		for(i=0;i<toAdd.length;i++){
 			$scope.addTagLink1(toAdd[i].id);
@@ -404,7 +404,7 @@ app.controller('TagEditorCont',function($scope, $http){
 	$scope.getLastPage=function(){
 		toAdd=localStorage.getItem("lastTags");
 		toAdd=JSON.parse(toAdd);
-		console.log(toAdd);
+		//console.log(toAdd);
 		var i;
 		for(i=0;i<toAdd.length;i++){
 			$scope.addTagLink1(toAdd[i].id);
