@@ -14,7 +14,7 @@ $db = $database->getConnection();
 //initialize object 
 $tags = new tags($db);
 
-i//get array of tags
+//get array of tags
 $stmt = $tags->get_all_non_year_tags();
 
 //make a new array
