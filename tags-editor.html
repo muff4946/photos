@@ -156,6 +156,13 @@
 						<th>EDIT</th>
 						<th>DELETE</th>
 					</tr>
+					<tr ng-repeat="t in all_tags">
+						<td>{{$index + 1}}</td>
+						<td>{{t.id}}</td>
+						<td>{{t.name}}</td>
+						<td class="delete"><button ng-click="deleteTagLink(t.id)">X</button></td>
+					</tr>
+					
 				</table>
 			</div>
 			<div id="ANDExclusive" class="help-modal-container search-type">
@@ -244,6 +251,19 @@ app.controller('TagEditorCont',function($scope, $http){
 	
 	}
 	
+	//getting list of all tags for the edit tags modal
+	$scope.getAllTags = function(){
+		$http.get("https://photos.dbq-andersons.com/api/product/get_all_non-year_tags.php",).then(
+			function successfulCallback(response){
+				$scope.all_tags = response.data.tags;
+				//console.log($scope.tags_assigned);
+			},
+			function errorCallback(response){
+				console.log(response);
+		});
+	
+	}
+
 	//getting the image and setting the source
 	$scope.getImage = function(){
 		var str = $scope.page_info[0].path;

@@ -14,30 +14,29 @@ $db = $database->getConnection();
 //initialize object 
 $tags = new tags($db);
 
+i//get array of tags
+$stmt = $tags->get_all_non_year_tags();
 
-	//get array of tags
-	$stmt = $tags->get_all_non_year_tags();
-
-	//make a new array
-	$tag_arr = array();
-	$tag_arr["tags"]=array();
-	//retrieve table contents
-	while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-		extract($row);
+//make a new array
+$tag_arr = array();
+$tag_arr["tags"]=array();
+//retrieve table contents
+while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+	extract($row);
 		
-		$tag_id = $row["tag_id"];
-		$tag_names = $row["tag_names"];
-		$tag_type = $row["tag_type"];
-		$tag_initial = $tag_names[0];
+	$tag_id = $row["tag_id"];
+	$tag_names = $row["tag_names"];
+	$tag_type = $row["tag_type"];
+	$tag_initial = $tag_names[0];
 		
-		$tag_item=array(
-			"id"=>$tag_id,
-			"names"=>$tag_names,
-			"type"=>$tag_type,
-			"initial"=>$tag_initial
-		);
-		array_push($tag_arr["tags"],$tag_item);
-	}
+	$tag_item=array(
+		"id"=>$tag_id,
+		"names"=>$tag_names,
+		"type"=>$tag_type,
+		"initial"=>$tag_initial
+	);
+	array_push($tag_arr["tags"],$tag_item);
+}
 	
 	http_response_code(200);
 	
