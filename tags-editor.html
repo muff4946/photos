@@ -34,10 +34,10 @@
 						<th>TAG</th>
 						<th>DEL</th>
 					</tr>
-					<tr ng-repeat="t in tags_assigned">
+					<tr ng-repeat="t in all_tags">
 						<td>{{$index + 1}}</td>
 						<td>{{t.id}}</td>
-						<td>{{t.name}}</td>
+						<td>{{t.names}}</td>
 						<td class="delete"><button ng-click="deleteTagLink(t.id)">X</button></td>
 					</tr>
 				</table>
