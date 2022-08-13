@@ -231,7 +231,7 @@ app.controller('TagEditorCont',function($scope, $http){
 				imageid = $scope.page_info[0].id;
 				$scope.getTags();
 				$scope.getTypes();
-				$scope.getAllTags();
+				//$scope.getAllTags();
 			},
 			function errorCallback(response){
 				alert("No photos found here");
@@ -258,7 +258,7 @@ app.controller('TagEditorCont',function($scope, $http){
 		$http.get("https://photos.dbq-andersons.com/api/product/get_all_non-year_tags.php").then(
 			function successfulCallback(response){
 				$scope.all_tags = response.data.all_tags;
-				//console.log($scope.all_tags);
+				console.log($scope.all_tags);
 			},
 			function errorCallback(response){
 				console.log(response);
