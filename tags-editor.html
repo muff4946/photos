@@ -156,10 +156,10 @@
 						<th>EDIT</th>
 						<th>DELETE</th>
 					</tr>
-					<tr ng-repeat="t in all_tags">
+					<tr ng-repeat="a in all_tags">
 						<td>{{$index + 1}}</td>
-						<td>{{t.id}}</td>
-						<td>{{t.names}}</td>
+						<td>{{a.id}}</td>
+						<td>{{a.names}}</td>
 						<td></td>
 						<td class="delete"><button ng-click="deleteTagLink(t.id)">X</button></td>
 					</tr>
