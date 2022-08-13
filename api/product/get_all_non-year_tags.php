@@ -19,7 +19,7 @@ $stmt = $tags->get_all_non_year_tags();
 
 //make a new array
 $tag_arr = array();
-$tag_arr["tags"]=array();
+$tag_arr["all_tags"]=array();
 //retrieve table contents
 while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 	extract($row);
@@ -35,7 +35,7 @@ while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 		"type"=>$tag_type,
 		"initial"=>$tag_initial
 	);
-	array_push($tag_arr["tags"],$tag_item);
+	array_push($tag_arr["all_tags"],$tag_item);
 }
 	
 	http_response_code(200);
