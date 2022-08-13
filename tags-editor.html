@@ -212,6 +212,7 @@ var app = angular.module('TagEditor',[]);
 app.controller('TagEditorCont',function($scope, $http){
 	window.onload = function(){
 		$scope.start();
+		$scope.getAllTags();
 		};
 	
 	$scope.start = function(){
@@ -230,8 +231,7 @@ app.controller('TagEditorCont',function($scope, $http){
 				$scope.getImage();
 				imageid = $scope.page_info[0].id;
 				$scope.getTags();
-				$scope.getTypes();
-				//$scope.getAllTags();
+				$scope.getTypes();				
 			},
 			function errorCallback(response){
 				alert("No photos found here");
