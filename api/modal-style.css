@@ -144,3 +144,21 @@ table, th, td {
 	color:white; 
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+
+.tag-maintenance-modal-grid-container{
+	display: grid;
+	grid-template-rows: 80px auto;
+	top: 10%;
+	height: 85%;
+	position: absolute;
+	width: 100%;
+	grid-row-gap: 10px;
+	border-top: 3px solid #594157;
+	padding-top: 12px;
+	padding-bottom: 5px;
+	border-bottom: 3px solid #594157;
+	background-color: #1C6973;
+	grid-template-areas: 
+		'all_tags-header'
+		'all_tags';
+}
