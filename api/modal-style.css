@@ -170,7 +170,6 @@ table, th, td {
 	display: flex;
 	overflow-y: auto;
 	overflow-x: auto;
-	display: block;
     font-weight: bold;
 	color: #FFFFFF;
 }
