@@ -159,6 +159,6 @@ table, th, td {
 	border-bottom: 3px solid #594157;
 	background-color: #1C6973;
 	grid-template-areas: 
-		'all_tags-header'
-		'all_tags';
+		'all-tags-header'
+		'all-tags';
 }
