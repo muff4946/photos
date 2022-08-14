@@ -150,13 +150,10 @@ table, th, td {
 	grid-template-rows: 80px auto;
 	top: 10%;
 	height: 85%;
-	position: absolute;
 	width: 100%;
 	grid-row-gap: 10px;
-	border-top: 3px solid #594157;
 	padding-top: 12px;
 	padding-bottom: 5px;
-	border-bottom: 3px solid #594157;
 	background-color: #1C6973;
 	grid-template-areas: 
 		'all-tags-header'
