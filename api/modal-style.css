@@ -183,5 +183,5 @@ table, th, td {
 	scroll-behavior: smooth;
 }
 .tag-maintenance-modal-tag-list-header-alphabet{
-	int-weight: normal;
+	font-weight: normal;
 }
