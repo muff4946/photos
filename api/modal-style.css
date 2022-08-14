@@ -162,3 +162,29 @@ table, th, td {
 		'all-tags-header'
 		'all-tags';
 }
+
+.tag-maintenance-modal-tag-list-header{
+	grid-area: all-tags-header;
+	padding: 5px;
+	border-radius: 7px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	text-align: center;
+	display: flex;
+	overflow-y: auto;
+	overflow-x: auto;
+	display: block;
+    font-weight: bold;
+	color: #FFFFFF;
+}
+.tag-maintenance-modal-tag-list{
+	grid-area: all-tags;
+	border: 2px solid #7C7C7C;
+	padding: 10px;
+	border-radius: 7px;
+	overflow-y: auto;
+	overflow-x: auto;
+	scroll-behavior: smooth;
+}
+.tag-maintenance-modal-tag-list-header-alphabet{
+	int-weight: normal;
+}
