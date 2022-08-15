@@ -25,7 +25,7 @@ $tag_id= isset($_GET['tag_id']) ? $_GET['tag_id'] : '';
 if($tag_id != ''){
 
 	//delete tag from database
-	$stmt = $taglinks->delete_tag($tag_id);
+	$stmt = $tags->delete_tag($tag_id);
 	http_response_code(200);
 	echo json_encode(
 		array("message"=> $tag_id . " removed from database if found")
