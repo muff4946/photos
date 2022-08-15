@@ -187,6 +187,7 @@
 							<th style="padding:2px">#</th>
 							<th style="padding:2px">ID</th>
 							<th style="padding:2px">TAG NAME(S)</th>
+							<th style="padding:2px">TAG TYPE</th>
 							<th style="padding:2px">EDIT</th>
 							<th style="padding:2px">DELETE</th>
 						</tr>						
@@ -194,6 +195,7 @@
 							<td style="padding:2px"><a id="{{a.initial}}"></a>{{$index + 1}}</td>
 							<td style="padding:2px;text-align:center">{{a.id}}</td>
 							<td style="padding:2px">{{a.names}}</td>
+							<td style="padding:2px">{{a.type}}</td>
 							<td style="padding:2px"></td>
 							<td class="delete" style="padding:2px;text-align:center"><button ng-click="deleteTag(a.id)">X</button></td>
 						</tr>
