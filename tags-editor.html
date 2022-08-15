@@ -191,12 +191,12 @@
 							<th>DELETE</th>
 						</tr>						
 						<tr ng-repeat="a in all_tags">
+							<a id="{{a.initial}}"></a>
 							<td>{{$index + 1}}</td>
 							<td>{{a.id}}</td>
 							<td>{{a.names}}</td>
 							<td></td>
 							<td class="delete"><button ng-click="deleteTagLink(t.id)">X</button></td>
-							<a id="{{a.initial}}"></a>
 						</tr>
 					</table>					
 				</div>
