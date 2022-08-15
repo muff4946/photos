@@ -168,7 +168,7 @@ class tags{
 	}
 
 	//D
-	public function delete($tag_id){
+	public function delete_tag($tag_id){
 		$query = "DELETE from anderson_images.tags
 					WHERE tag_id = ?";
 		$stmt = $this->connection->prepare($query);
