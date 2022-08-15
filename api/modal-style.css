@@ -185,3 +185,7 @@ table, th, td {
 .tag-maintenance-modal-tag-list-header-alphabet{
 	font-weight: normal;
 }
+
+#test {
+	background-color:rgba(0,0,0,0);
+}
