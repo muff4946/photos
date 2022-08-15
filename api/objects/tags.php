@@ -146,8 +146,7 @@ class tags{
 		return $stmt;
 				
 	}
-	
-	
+		
 	//U
 	public function update($tag, $ntag, $ntagType){
 		$query = "UPDATE anderson_images.tags
@@ -167,8 +166,22 @@ class tags{
 		}
 		return $stmt;
 	}
+
 	//D
-	public function delete(){
+	public function delete($tag_id){
+		$query = "DELETE from anderson_images.tags
+					WHERE tag_id = ?";
+		$stmt = $this->connection->prepare($query);
+		//bind variable values
+		$stmt->bindParam(1,$tag_id, PDO::PARAM_INT);
+		
+		try{
+		$stmt->execute();
+		}
+		catch(PDOException $e){
+			echo $stmt . $e->getMessage();
+		}
+		return $stmt;
 		
 	}
 }
