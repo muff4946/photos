@@ -184,17 +184,17 @@
 					<div class="tag-maintenance-modal-tag-list">
 					<table style="padding:3px">
 						<tr>
-							<th style="padding:3px">#</th>
-							<th style="padding:3px">ID</th>
-							<th style="padding:3px">TAG NAME(S)</th>
-							<th style="padding:3px">EDIT</th>
-							<th style="padding:3px">DELETE</th>
+							<th style="padding:2px">#</th>
+							<th style="padding:2px">ID</th>
+							<th style="padding:2px">TAG NAME(S)</th>
+							<th style="padding:2px">EDIT</th>
+							<th style="padding:2px">DELETE</th>
 						</tr>						
 						<tr ng-repeat="a in all_tags">
-							<td style="padding:3px"><a id="{{a.initial}}"></a>{{$index + 1}}</td>
-							<td style="padding:3px">{{a.id}}</td>
-							<td style="padding:3px">{{a.names}}</td>
-							<td style="padding:3px"></td>
+							<td style="padding:2px"><a id="{{a.initial}}"></a>{{$index + 1}}</td>
+							<td style="padding:2px">{{a.id}}</td>
+							<td style="padding:2px">{{a.names}}</td>
+							<td style="padding:2px"></td>
 							<td class="delete" style="padding:3px"><button ng-click="deleteTagLink(t.id)">X</button></td>
 						</tr>
 					</table>					
