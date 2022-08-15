@@ -195,7 +195,7 @@
 							<td style="padding:2px;text-align:center">{{a.id}}</td>
 							<td style="padding:2px">{{a.names}}</td>
 							<td style="padding:2px"></td>
-							<td class="delete" style="padding:2px;text-align:center"><button ng-click="deleteTagLink(t.id)">X</button></td>
+							<td class="delete" style="padding:2px;text-align:center"><button ng-click="deleteTag(t.id)">X</button></td>
 						</tr>
 					</table>					
 				</div>
@@ -431,6 +431,23 @@ app.controller('TagEditorCont',function($scope, $http){
 		}	
 	}
 	
+	$scope.deleteTag=function(tag_id){
+		var values_to_send="?tag="+tag_id;
+		var r = confirm("Do you want to delete tag "+tag_id+" from the database (including all tag links)?");
+		if(r==true){
+			$http.get("https://photos.dbq-andersons.com/api/product/delete_tag.php"+values_to_send,).then(
+				function successfulCallback(response){
+					//alert("new tag added");
+					$scope.getTags();
+					//document.getElementById("searchbar").value = "";
+				},
+				function errorCallback(response){
+					//alert("tag not added");
+					console.log(response);
+			});
+		}	
+	}
+
 	$scope.setLastPage = function(){
 		var toAdd = JSON.stringify($scope.tags_assigned);
 		localStorage.setItem("lastTags",toAdd);
