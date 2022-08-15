@@ -420,8 +420,8 @@ app.controller('TagEditorCont',function($scope, $http){
 		if(r==true){
 			$http.get("https://photos.dbq-andersons.com/api/product/delete_tag_link.php"+values_to_send,).then(
 				function successfulCallback(response){
-					//alert("new tag added");
-					$scope.getAllTags();
+					//alert("Tag deleted.");
+					$scope.getTags();
 					//document.getElementById("searchbar").value = "";
 				},
 				function errorCallback(response){
@@ -438,7 +438,7 @@ app.controller('TagEditorCont',function($scope, $http){
 			$http.get("https://photos.dbq-andersons.com/api/product/delete_tag.php"+values_to_send,).then(
 				function successfulCallback(response){
 					//alert("new tag added");
-					$scope.getTags();
+					$scope.getAllTags();
 					//document.getElementById("searchbar").value = "";
 				},
 				function errorCallback(response){
