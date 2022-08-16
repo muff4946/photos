@@ -107,6 +107,17 @@ body{
 	margin-bottom: auto;
 }
 
+.tag-index{
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 75px;
+	text-align: justify;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+
 .search{
 	position: absolute;
 	left: 10px;
@@ -143,36 +154,36 @@ body{
 	right: 10px;
 }
 
-.tag_list{
+.tag-list{
 	position: relative;
 	margin-right: 5px;
 	margin-left: 5px;
 	margin-bottom: 5px;
 }
 
-.tag_list #num{
+.tag-list #num{
 	width:40px;
 }
 
-.tag_list #tag_id{
+.tag-list #tag_id{
 	width:60px;
 }
 
-.tag_list #tag_name{
+.tag-list #tag_name{
 	width:auto;
 }
 
-.tag_list #tag_type{
+.tag-list #tag_type{
 	width:100px;
 }
 
-.tag_list #edit_tag{
+.tag-list #edit_tag{
 	width:40px;
 	text-align: center;
 	position: relative;
 }
 
-.tag_list #delete_tag{
+.tag-list #delete_tag{
 	width:65px;
 	text-align: center;
 	position: relative;
