@@ -14,43 +14,8 @@
 			<h2 class="title">Anderson Photo Library Tag Maintenance</h2>
 		</div>
 		
-		<div class="button_bar">
-			
-			
-			<div class="search">
-				<input type = "text" placeholder= "search for a photo" id = "search_text">
-				<button type = "button" id = "search_button" ng-click= "submit_search()" onsubmit="submit_search">Search</button>
-			</div>
-			<div class="otherTop">
-				<input type="number" placeholder="find image number" id="pick_image">
-				<button type="submit" ng-click="submit_image()">go</button>
-				<button ng-click="goToOldPage()">Revisit last <i class="fa fa-tags"></i></button>
-			</div>
-			
-			<div class="pages">
-				<button id="First" ng-click="sendToFirst();">First Page</button>
-					<button class="page_numbers" id = "2- page" ng-click="sendToPage(0);" >{{page_list[0].page}}</button>
-					<button class="page_numbers" id = "1- page" ng-click="sendToPage(1);" >{{page_list[1].page}}</button>
-					<button class="page_numbers" id="1 page" ng-click = "sendToPage(2);"  >{{page_list[2].page}}</button>
-					<button class="page_numbers" id="1+ page" ng-click = "sendToPage(3);" >{{page_list[3].page}}</button>
-					<button class="page_numbers" id="2+ page" ng-click = "sendToPage(4);" >{{page_list[4].page}}</button>
-				<button id="Last" ng-click="sendToLast();">Last Page</button>
-			</div>	
-			<div class="pages2">
-				<input type="number" placeholder="Page" id = "pick_page">
-				<button type = "button" ng-click= "submit_page()" onsubmit="submit_page">Go</button>
-				<select id="photos_per_page">
-					<option value="25">25</value>
-					<option value="50">50</value>
-					<option value="75">75</value>
-					<option value="100">100</value>
-				</select>
-				<button type="button" ng-click = "setPerPage()" >Set</button>
-			</div>
-			
-			
-			
-			
+		<div class="middle">
+					
 		</div>
 		
 		<div class="file_list">
@@ -78,11 +43,11 @@
 </body>
 <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
 <script>
-var this_page = 1;
+//var this_page = 1;
 //var search_term = "";
 //var user = null;
 var app = angular.module('TagMaint',[]);
-var read_from = "https://photos.dbq-andersons.com/api/product/read_images_paging.php";
+//var read_from = "https://photos.dbq-andersons.com/api/product/read_images_paging.php";
 app.controller('TagMaintCont', function($scope, $http){
 	/*runs when welcome button was pressed*/
 	window.onload = function(){
