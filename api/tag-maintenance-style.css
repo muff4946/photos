@@ -155,7 +155,7 @@ body{
 }
 
 .tag_list #tag_id{
-	width:40px;
+	width:60px;
 }
 
 .tag_list #tag_name{
@@ -163,7 +163,7 @@ body{
 }
 
 .tag_list #tag_type{
-	width:70px;
+	width:100px;
 }
 
 .tag_list #edit_tag{
@@ -173,7 +173,7 @@ body{
 }
 
 .tag_list #delete_tag{
-	width:50px;
+	width:65px;
 	text-align: center;
 	position: relative;
 }
