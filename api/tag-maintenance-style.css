@@ -143,26 +143,26 @@ body{
 	right: 10px;
 }
 
-.file_list{
+.tag_list{
 	position: relative;
 	margin-right: 5px;
 	margin-left: 5px;
 	margin-bottom: 5px;
 }
 
-.file_list #num{
+.tag_list #num{
 	width:40px;
 }
 
-.file_list #file_path{
+.tag_list #file_path{
 	width:25%;
 }
 
-.file_list #file_name{
+.tag_list #file_name{
 	width:auto;
 }
 
-.file_list #tag_table{
+.tag_list #tag_table{
 	width:40px;
 	text-align: center;
 	position: relative;
