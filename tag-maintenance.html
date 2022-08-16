@@ -29,11 +29,13 @@
 					<th id="delete_tag">DELETE TAG</th>
 				</tr>
 			
-				<tr ng-repeat="i in images">
-					<td ng-if="this_page">{{i.count+(50*( this_page -1))-1}}</td>
-					<td id = {{i.path}}>{{i.path}}</td>
-					<td>{{i.file}}</td>
-					<td id="tag_table"><button ng-click = "goToPage(i.count)"><i class="fa fa-tags" style="font-size:15px;"></i></button></td>
+				<tr ng-repeat="a in all_tags">
+					<td><a id="{{a.initial}}"></a>{{$index + 1}}</td>
+					<td>{{a.id}}</td>
+					<td>{{a.names}}</td>
+					<td>{{a.type}}</td>
+					<td></td>
+					<td class="delete" style="padding:2px;text-align:center"><button ng-click="deleteTag(a.id)">X</button></td>
 				</tr>
 			</table>
 		</div>
@@ -79,6 +81,7 @@ app.controller('TagMaintCont', function($scope, $http){
 				console.log("Error"+response);
 		});
 		$scope.get_user_info();
+		$scope.getAllTags();
 		document.getElementById("page_tracker").innerHTML = "Page "+this_page;
 	};
 	
@@ -103,6 +106,18 @@ app.controller('TagMaintCont', function($scope, $http){
 		alert("This is not yet functional, check back later for updates");
 	};
 	
+	//getting list of all tags
+	$scope.getAllTags = function(){
+		$http.get("https://photos.dbq-andersons.com/api/product/get_all_non-year_tags.php",).then(
+			function successfulCallback(response){
+				$scope.all_tags = response.data.all_tags;
+				//console.log($scope.all_tags);
+			},
+			function errorCallback(response){
+				console.log(response);
+		});
+	
+	}
 	
 	/*Buttons for switching pages*/
 	
