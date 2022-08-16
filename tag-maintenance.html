@@ -1,0 +1,282 @@
+<!doctype html>
+<html>
+<head>
+<title>Anderson Photo Library Tag Maintenance</title>
+<!--<script src='https://kit.fontawesome.com/a076d05399.js'></script>-->
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css-->
+<link rel="stylesheet" href="api/tag-maintenance-style.css?v=1.3"></link>
+</head>
+<body>
+
+	<div class="photo-table" ng-app="PhotoTable" ng-controller="PhotoTableCont">
+	<div class="grid-container">
+		<div class="top">
+			<h2 class="title">Anderson Photo List</h2>
+			<label id="page_tracker" align="right">Page 1</label>
+			<label id="user_name" ng-click="setUser()" align = "left">Hello User!</label>
+		</div>
+		
+		<div class="button_bar">
+			
+			
+			<div class="search">
+				<input type = "text" placeholder= "search for a photo" id = "search_text">
+				<button type = "button" id = "search_button" ng-click= "submit_search()" onsubmit="submit_search">Search</button>
+			</div>
+			<div class="otherTop">
+				<input type="number" placeholder="find image number" id="pick_image">
+				<button type="submit" ng-click="submit_image()">go</button>
+				<button ng-click="goToOldPage()">Revisit last <i class="fa fa-tags"></i></button>
+			</div>
+			
+			<div class="pages">
+				<button id="First" ng-click="sendToFirst();">First Page</button>
+					<button class="page_numbers" id = "2- page" ng-click="sendToPage(0);" >{{page_list[0].page}}</button>
+					<button class="page_numbers" id = "1- page" ng-click="sendToPage(1);" >{{page_list[1].page}}</button>
+					<button class="page_numbers" id="1 page" ng-click = "sendToPage(2);"  >{{page_list[2].page}}</button>
+					<button class="page_numbers" id="1+ page" ng-click = "sendToPage(3);" >{{page_list[3].page}}</button>
+					<button class="page_numbers" id="2+ page" ng-click = "sendToPage(4);" >{{page_list[4].page}}</button>
+				<button id="Last" ng-click="sendToLast();">Last Page</button>
+			</div>	
+			<div class="pages2">
+				<input type="number" placeholder="Page" id = "pick_page">
+				<button type = "button" ng-click= "submit_page()" onsubmit="submit_page">Go</button>
+				<select id="photos_per_page">
+					<option value="25">25</value>
+					<option value="50">50</value>
+					<option value="75">75</value>
+					<option value="100">100</value>
+				</select>
+				<button type="button" ng-click = "setPerPage()" >Set</button>
+			</div>
+			
+			
+			
+			
+		</div>
+		
+		<div class="file_list">
+			<table>
+				<tr id="headers">
+					<th id="num">NUM</th>
+					<th id="file_path">FILE PATH</th>
+					<th id="file_name">FILE NAME</th>
+					<th id="tag_table">EDIT TAGS</th>
+				</tr>
+			
+				<tr ng-repeat="i in images">
+					<td ng-if="this_page">{{i.count+(50*( this_page -1))-1}}</td>
+					<td id = {{i.path}}>{{i.path}}</td>
+					<td>{{i.file}}</td>
+					<td id="tag_table"><button ng-click = "goToPage(i.count)"><i class="fa fa-tags" style="font-size:15px;"></i></button></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	</div>
+	
+	
+	
+</body>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+<script>
+var this_page = 1;
+var search_term = "";
+var user = null;
+var app = angular.module('PhotoTable',[]);
+var read_from = "https://photos.dbq-andersons.com/api/product/read_images_paging.php";
+app.controller('PhotoTableCont', function($scope, $http){
+	/*runs when welcome button was pressed*/
+	window.onload = function(){
+		var url = "https://photos.dbq-andersons.com/photos.html";
+		if(window.location!=url){
+			window.location = url;
+		}
+		$scope.start();
+	};
+	
+	
+	/*runs after most buttons are pressed to reset the page*/
+	
+	
+	$scope.start = function(){
+		$scope.this_page = this_page;
+		$http.get("https://photos.dbq-andersons.com/api/product/read_images_paging.php?page="+this_page+"&name="+search_term,).then(
+			function successfulCallback(response){
+				$scope.page_list = response.data.paging.pages;
+				$scope.page_info = response.data.paging;
+				$scope.images = response.data.records;
+				
+				console.log(response);
+			}, 
+			function errorCallback(response){
+				alert("No photos found here");
+				console.log("Error"+response);
+		});
+		$scope.get_user_info();
+		document.getElementById("page_tracker").innerHTML = "Page "+this_page;
+	};
+	
+	
+	//an attempt at switching number of photos per page, will revisit later
+	/*$scope.setPerPage = function(){
+		var pp = document.getElementById("photos_per_page").value;
+		console.log(pp);
+		$http.post("https://photos.dbq-andersons.com/api/config/core.php?per="+pp,).then(
+			function successfulCallback(response){
+				$scope.start();
+				console.log(response);
+			},
+			function errorCallback(response){
+				alert("something went wrong");
+				console.log(response);
+		});
+	};*/
+	
+	//temporarily used for not-yet-functional buttons
+	$scope.setPerPage = function(){
+		alert("This is not yet functional, check back later for updates");
+	};
+	
+	
+	/*Buttons for switching pages*/
+	
+	
+	$scope.sendToFirst = function(){
+		//read_from = $scope.page_info.first;
+		this_page = 1;
+		$scope.start();
+	};
+	$scope.sendToLast = function(){
+		//read_from = $scope.page_info.last;
+		this_page = $scope.page_info.last;
+		$scope.start();
+		
+	};
+	$scope.sendToPage = function(num){
+		//read_from = $scope.page_list[num].url;
+		this_page = $scope.page_list[num].page;
+		$scope.start();
+	};
+	$scope.submit_page = function(){
+		var pg = document.getElementById("pick_page").value;
+		this_page = pg;
+		//read_from = "https://photos.dbq-andersons.com/api/product/read_images_paging.php?page=" + pg;
+		$scope.start();
+	};
+	
+	
+	/*Button for search*/
+	
+	
+	$scope.submit_search = function(){
+		var srch = document.getElementById("search_text").value;
+		search_term = srch;
+		$scope.start();
+	};
+	
+	$scope.fake_click = function(path){
+		document.getElementById(path).style="purple";
+	};
+	
+	$scope.submit_image=function(){
+		var id=document.getElementById("pick_image").value;
+		$scope.goToPage(parseInt(id));
+	};
+	
+	
+	//goes to image based on local storage
+	
+	
+	$scope.goToPage = function(id){
+		var page = id+(50*(this_page-1))-1;
+		localStorage.setItem("tag_page", page);
+		localStorage.setItem("keyword",search_term);
+		var url = "https://photos.dbq-andersons.com/tags-editor.html";
+		document.location.href = url;
+	};
+	
+	$scope.goToOldPage= async function(){
+		await $scope.makeSynchronousRequest();
+		if(localStorage.getItem("tag_page")==null){
+			alert("no page set");
+		}
+		else{
+			var url = "https://photos.dbq-andersons.com/tags-editor.html";
+			document.location.href=url;
+		}
+	};
+	
+	
+	
+	
+	/*Methods relating to username and old page ids*/
+	$scope.setUser=function(){
+		user = prompt("Please enter your name", "");
+		if(user==null || user==""){
+			user = null;
+		}
+		else{
+			localStorage.setItem("user", user);
+			$scope.get_user_info();
+		}
+		console.log(user);
+	};
+	
+	$scope.get_user_info=function(){
+		user = localStorage.getItem("user");
+		if(user==null){
+			document.getElementById("user_name").innerHTML = "Hello User!";
+		} else {
+			document.getElementById("user_name").innerHTML = "Hello " + user +"!";
+		}
+		console.log(user);
+	};
+	
+	$scope.get_img_by_user = function(){
+		return new Promise((resolve, reject)=>{
+			$http.post("https://photos.dbq-andersons.com/api/product/get_image_by_user.php/?user="+user,).then(
+				function successfulCallback(response){
+					console.log(response);
+					$scope.imgByUser=response.data.images[0].image;
+					localStorage.setItem("tag_page",$scope.imgByUser);
+				},
+				function errorCallback(response){
+					console.log(response);
+					alert("error");
+				}
+			);
+		});	
+	};
+	
+	$scope.makeSynchronousRequest= async function (){
+		try{
+			let http_promise = $scope.get_img_by_user();
+			let response_body = await http_promise;
+			
+			console.log(response_body);
+		} catch (error){
+			console.log(error);
+		}
+	};
+	
+});
+
+
+// Get the input field
+var input = document.getElementById("search_text");
+
+// Execute a function when the user releases a key on the keyboard
+input.addEventListener("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("search_button").click();
+  }
+});
+
+</script>
+
+</html>
