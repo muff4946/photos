@@ -119,6 +119,23 @@ app.controller('TagMaintCont', function($scope, $http){
 	
 	}
 	
+	$scope.deleteTag=function(tag_id){
+		var values_to_send="?tag_id="+tag_id;
+		var r = confirm("Do you want to delete tag "+tag_id+" from the database (including all tag links)?");
+		if(r==true){
+			$http.get("https://photos.dbq-andersons.com/api/product/delete_tag.php"+values_to_send,).then(
+				function successfulCallback(response){
+					//alert("new tag added");
+					$scope.getAllTags();
+					//document.getElementById("searchbar").value = "";
+				},
+				function errorCallback(response){
+					//alert("tag not added");
+					console.log(response);
+			});
+		}	
+	}
+	
 	/*Buttons for switching pages*/
 	
 	
