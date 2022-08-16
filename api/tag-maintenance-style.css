@@ -154,16 +154,26 @@ body{
 	width:40px;
 }
 
-.tag_list #file_path{
-	width:25%;
+.tag_list #tag_id{
+	width:40px;
 }
 
-.tag_list #file_name{
+.tag_list #tag_name{
 	width:auto;
 }
 
-.tag_list #tag_table{
+.tag_list #tag_type{
+	width:70px;
+}
+
+.tag_list #edit_tag{
 	width:40px;
+	text-align: center;
+	position: relative;
+}
+
+.tag_list #delete_tag{
+	width:50px;
 	text-align: center;
 	position: relative;
 }
