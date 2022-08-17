@@ -170,6 +170,7 @@ body{
 	margin-left: 5px;
 	margin-bottom: 5px;
 	overflow-y: scroll;
+	scroll-behavior: smooth;
 }
 
 .tag-list #num{
