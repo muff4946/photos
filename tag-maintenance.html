@@ -69,12 +69,12 @@
 				</tr>
 			
 				<tr ng-repeat="a in all_tags">
-					<td id="num"><a id="{{a.initial}}"></a>{{$index + 1}}</td>
-					<td id="tag_id">{{a.id}}</td>
-					<td id="tag_name">{{a.names}}</td>
-					<td id="tag_type">{{a.type}}</td>
-					<td id="edit_tag"></td>
-					<td id="delete_tag"><button ng-click="deleteTag(a.id)">X</button></td>
+					<td><a id="{{a.initial}}"></a>{{$index + 1}}</td>
+					<td>{{a.id}}</td>
+					<td>{{a.names}}</td>
+					<td>{{a.type}}</td>
+					<td></td>
+					<td class="delete" style="padding:2px;text-align:center"><button ng-click="deleteTag(a.id)">X</button></td>
 				</tr>
 			</table>
 		</div>
