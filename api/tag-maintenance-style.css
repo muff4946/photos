@@ -122,10 +122,11 @@ body{
 	width: 99%;
 	height: 75px;
 	text-align: justify;
-	margin-top: 5px;
+	margin-top: auto;
 	margin-bottom: auto;
 	margin-right: 5px;
 	margin-left: 5px;
+	margin-top: 5px;
 }
 
 
