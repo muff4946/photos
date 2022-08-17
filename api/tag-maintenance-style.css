@@ -126,7 +126,6 @@ body{
 	margin-bottom: auto;
 	margin-right: 5px;
 	margin-left: 5px;
-	margin-top: 5px;
 }
 
 
@@ -170,6 +169,7 @@ body{
 	margin-right: 5px;
 	margin-left: 5px;
 	margin-bottom: 5px;
+	margin-top: 5px;
 	overflow-y: scroll;
 	scroll-behavior: smooth;
 }
