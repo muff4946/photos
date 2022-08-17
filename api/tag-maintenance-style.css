@@ -58,6 +58,7 @@ input:active{
 body{
 	background-color: #594157;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	overflow: hidden;
 }
 
 .grid-container{
@@ -67,6 +68,14 @@ body{
 	height: 100%;
 	padding-top: 0px;
 	padding-bottom: 5px;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 50px 75px 75px 1fr;
+	grid-template-areas: 
+	'header'
+	'tag-add'
+	'tag-index'
+	'tag-list';
 }
 
 .header{
