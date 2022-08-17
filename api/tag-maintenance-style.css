@@ -128,31 +128,6 @@ body{
 	margin-left: 5px;
 }
 
-.tag-index #num{
-	width: 40px;
-}
-
-.tag-index #tag_id{
-	width: 60px;
-}
-
-.tag-index #tag_name{
-	width: auto;
-}
-
-.tag-index #tag_type{
-	width: 100px;
-}
-
-.tag-index #edit_tag{
-	width: 40px;
-	text-align: center;
-}
-
-.tag-index #delete_tag{
-	width: 65px;
-	text-align: center;
-}
 
 .search{
 	position: absolute;
