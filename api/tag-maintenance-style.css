@@ -174,31 +174,47 @@ body{
 }
 
 .tag-list #num{
-	width:40px;
+	width: 40px;
+	position: sticky;
+	top: 0;
+	background-color: #2B303A;
 }
 
 .tag-list #tag_id{
 	width:60px;
+	position: sticky;
+	top: 0;
+	background-color: #2B303A;
 }
 
 .tag-list #tag_name{
 	width:auto;
+	position: sticky;
+	top: 0;
+	background-color: #2B303A;
 }
 
 .tag-list #tag_type{
 	width:100px;
+	position: sticky;
+	top: 0;
+	background-color: #2B303A;
 }
 
 .tag-list #edit_tag{
 	width:40px;
 	text-align: center;
-	position: relative;
+	position: sticky;
+	top: 0;
+	background-color: #2B303A;
 }
 
 .tag-list #delete_tag{
 	width:65px;
 	text-align: center;
-	position: relative;
+	position: sticky;
+	top: 0;
+	background-color: #2B303A;
 }
 
 table{
