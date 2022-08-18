@@ -19,23 +19,17 @@ $stmt = $tags->get_tag_types();
 
 //make a new array
 $tag_arr = array();
-$tag_arr["all_tags"]=array();
+$tag_arr["tag_types"]=array();
 //retrieve table contents
 while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 	extract($row);
 		
-	$tag_id = $row["tag_id"];
-	$tag_names = $row["tag_names"];
 	$tag_type = $row["tag_type"];
-	$tag_initial = $tag_names[0];
 		
 	$tag_item=array(
-		"id"=>$tag_id,
-		"names"=>$tag_names,
-		"type"=>$tag_type,
-		"initial"=>$tag_initial
+		"type"=>$tag_type
 	);
-	array_push($tag_arr["all_tags"],$tag_item);
+	array_push($tag_arr["tag_types"],$tag_item);
 }
 	
 	http_response_code(200);
