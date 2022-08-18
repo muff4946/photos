@@ -16,6 +16,12 @@
 		
 		<div class="tag-add">
 			<h3 class="title" style="text-align:center">(tag add functionality will go here)</h3>
+			<form>
+			<select id="tag_types">
+				<option value="none" selected disabled hidden>Select a Tag Type</option>
+				<option ng-repeat="t in tag_types" value={{t.type>>>{{t.type}}</option>
+			</select>
+			</form>
 		</div>
 		
 		<div class="tag-index">
@@ -98,7 +104,6 @@ app.controller('TagMaintCont', function($scope, $http){
 		if(window.location!=url){
 			window.location = url;
 		}
-		//$scope.start();
 		$scope.getAllTags();
 	};
 	
