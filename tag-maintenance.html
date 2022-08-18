@@ -132,7 +132,7 @@ app.controller('TagMaintCont', function($scope, $http){
 		$http.get("https://photos.dbq-andersons.com/api/product/get_tag_types.php",).then(
 			function successfulCallback(response){
 				$scope.tag_types = response.data.tag_type;
-				console.log($scope.tag_types);
+				//console.log($scope.tag_types);
 			},
 			function errorCallback(response){
 				console.log(response);
