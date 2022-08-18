@@ -102,49 +102,7 @@ app.controller('TagMaintCont', function($scope, $http){
 		$scope.getAllTags();
 	};
 	
-	
-	/*runs after most buttons are pressed to reset the page*/
-	
-	
-	$scope.start = function(){
-		$scope.this_page = this_page;
-		$http.get("https://photos.dbq-andersons.com/api/product/read_images_paging.php?page="+this_page+"&name="+search_term,).then(
-			function successfulCallback(response){
-				$scope.page_list = response.data.paging.pages;
-				$scope.page_info = response.data.paging;
-				$scope.images = response.data.records;
-				
-				console.log(response);
-			}, 
-			function errorCallback(response){
-				alert("No photos found here");
-				console.log("Error"+response);
-		});
-		$scope.get_user_info();
-		document.getElementById("page_tracker").innerHTML = "Page "+this_page;
-	};
-	
-	
-	//an attempt at switching number of photos per page, will revisit later
-	/*$scope.setPerPage = function(){
-		var pp = document.getElementById("photos_per_page").value;
-		console.log(pp);
-		$http.post("https://photos.dbq-andersons.com/api/config/core.php?per="+pp,).then(
-			function successfulCallback(response){
-				$scope.start();
-				console.log(response);
-			},
-			function errorCallback(response){
-				alert("something went wrong");
-				console.log(response);
-		});
-	};*/
-	
-	//temporarily used for not-yet-functional buttons
-	$scope.setPerPage = function(){
-		alert("This is not yet functional, check back later for updates");
-	};
-	
+
 	//getting list of all tags
 	$scope.getAllTags = function(){
 		$http.get("https://photos.dbq-andersons.com/api/product/get_all_non-year_tags.php",).then(
@@ -158,6 +116,7 @@ app.controller('TagMaintCont', function($scope, $http){
 	
 	}
 	
+	//delete a given tag (after confirmation)
 	$scope.deleteTag=function(tag_id){
 		var values_to_send="?tag_id="+tag_id;
 		var r = confirm("Do you want to delete tag "+tag_id+" from the database (including all tag links)?");
