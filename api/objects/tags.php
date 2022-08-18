@@ -91,7 +91,7 @@ class tags{
 	
 	
 	
-	//get tag by id
+	//get tag information by id
 	public function get_tag($id){
 		//select query
 		$query = "SELECT tag_id, tag_names, tag_type
@@ -108,7 +108,7 @@ class tags{
 				
 	}
 	
-	//get tags by ids
+	//get tag information by ids
 	public function get_tags_info_by_ids($ids){
 		//select query
 		$query = "SELECT tag_id, tag_names, tag_type
