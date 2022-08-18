@@ -89,8 +89,21 @@ class tags{
 		
 	}
 	
+	// build list of tag types
+	public function get_tag_types(){
+		$query = "SELECT DISTINCT tag_types FROM anderson_images.tags order by tag_type";
+		$stmt = $this->connection->prepare($query);
+		try{
+			$stmt->execute();
+		}
+		catch(PDOException $e){
+			echo $stmt . $e->getMessage();
+		}
+		return $stmt;
+		
+	}
 	
-	
+		
 	//get tag information by id
 	public function get_tag($id){
 		//select query
