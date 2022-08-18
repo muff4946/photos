@@ -175,93 +175,11 @@ app.controller('TagMaintCont', function($scope, $http){
 		}	
 	}
 	
-	/*Buttons for switching pages*/
-	
-	
-	$scope.sendToFirst = function(){
-		//read_from = $scope.page_info.first;
-		this_page = 1;
-		$scope.start();
-	};
-	$scope.sendToLast = function(){
-		//read_from = $scope.page_info.last;
-		this_page = $scope.page_info.last;
-		$scope.start();
-		
-	};
-	$scope.sendToPage = function(num){
-		//read_from = $scope.page_list[num].url;
-		this_page = $scope.page_list[num].page;
-		$scope.start();
-	};
-	$scope.submit_page = function(){
-		var pg = document.getElementById("pick_page").value;
-		this_page = pg;
-		//read_from = "https://photos.dbq-andersons.com/api/product/read_images_paging.php?page=" + pg;
-		$scope.start();
-	};
-	
-	
-	/*Button for search*/
-	
-	
-	$scope.submit_search = function(){
-		var srch = document.getElementById("search_text").value;
-		search_term = srch;
-		$scope.start();
-	};
-	
-	$scope.fake_click = function(path){
-		document.getElementById(path).style="purple";
-	};
-	
-	$scope.submit_image=function(){
-		var id=document.getElementById("pick_image").value;
-		$scope.goToPage(parseInt(id));
-	};
-	
-	
-	//goes to image based on local storage
-	
-	
-	$scope.goToPage = function(id){
-		var page = id+(50*(this_page-1))-1;
-		localStorage.setItem("tag_page", page);
-		localStorage.setItem("keyword",search_term);
-		var url = "https://photos.dbq-andersons.com/tags-editor.html";
-		document.location.href = url;
-	};
-	
-	$scope.goToOldPage= async function(){
-		await $scope.makeSynchronousRequest();
-		if(localStorage.getItem("tag_page")==null){
-			alert("no page set");
-		}
-		else{
-			var url = "https://photos.dbq-andersons.com/tags-editor.html";
-			document.location.href=url;
-		}
-	};
-	
 	
 	$scope.notYetFunctional = function(){
 		alert("This is not yet functional, check back later for updates");
 	};
-	
-	
-	/*Methods relating to username and old page ids*/
-	$scope.setUser=function(){
-		user = prompt("Please enter your name", "");
-		if(user==null || user==""){
-			user = null;
-		}
-		else{
-			localStorage.setItem("user", user);
-			$scope.get_user_info();
-		}
-		console.log(user);
-	};
-	
+
 });
 
 
