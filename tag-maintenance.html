@@ -262,59 +262,8 @@ app.controller('TagMaintCont', function($scope, $http){
 		console.log(user);
 	};
 	
-	$scope.get_user_info=function(){
-		user = localStorage.getItem("user");
-		if(user==null){
-			document.getElementById("user_name").innerHTML = "Hello User!";
-		} else {
-			document.getElementById("user_name").innerHTML = "Hello " + user +"!";
-		}
-		console.log(user);
-	};
-	
-	$scope.get_img_by_user = function(){
-		return new Promise((resolve, reject)=>{
-			$http.post("https://photos.dbq-andersons.com/api/product/get_image_by_user.php/?user="+user,).then(
-				function successfulCallback(response){
-					console.log(response);
-					$scope.imgByUser=response.data.images[0].image;
-					localStorage.setItem("tag_page",$scope.imgByUser);
-				},
-				function errorCallback(response){
-					console.log(response);
-					alert("error");
-				}
-			);
-		});	
-	};
-	
-	$scope.makeSynchronousRequest= async function (){
-		try{
-			let http_promise = $scope.get_img_by_user();
-			let response_body = await http_promise;
-			
-			console.log(response_body);
-		} catch (error){
-			console.log(error);
-		}
-	};
-	
-});
 
 
-// Get the input field
-var input = document.getElementById("search_text");
-
-// Execute a function when the user releases a key on the keyboard
-input.addEventListener("keyup", function(event) {
-  // Number 13 is the "Enter" key on the keyboard
-  if (event.keyCode === 13) {
-    // Cancel the default action, if needed
-    event.preventDefault();
-    // Trigger the button element with a click
-    document.getElementById("search_button").click();
-  }
-});
 
 </script>
 
