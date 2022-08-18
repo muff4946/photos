@@ -159,8 +159,7 @@ app.controller('TagMaintCont', function($scope, $http){
 	}
 	
 	//adding tag link with option
-	$scope.addTag=function(tag_type, tag_names){
-		
+	$scope.addTag=function(tag_type, tag_names){		
 		var values_to_send="?tag_type="+tag_type+"&tag_names="+tag_names;
 		$http.get("https://photos.dbq-andersons.com/api/product/post_new_tag.php"+values_to_send,).then(
 			function successfulCallback(response){
