@@ -22,7 +22,7 @@
 				<option ng-repeat="t in tag_types" value={{t.type}}>{{t.type}}</option>
 			</select>
 			<input id="tag_names" type="text" placeholder="Enter the name(s) for the new tag."/>
-			<button class="funbutton" ng-click="addTag($tag_type, $tag_names)" type="submit">add</button>
+			<button class="funbutton" ng-click="addTag()" type="submit">add</button>
 
 			</form>
 		
@@ -158,7 +158,7 @@ app.controller('TagMaintCont', function($scope, $http){
 	}
 	
 	//adding tag link with option
-	$scope.addTag=function(tag_type, tag_names){		
+	$scope.addTag=function(tag_type,tag_names){		
 		var values_to_send="?tag_type="+tag_type+"&tag_names="+tag_names;
 		$http.get("https://photos.dbq-andersons.com/api/product/post_new_tag.php"+values_to_send,).then(
 			function successfulCallback(response){
