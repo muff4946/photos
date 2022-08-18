@@ -75,6 +75,7 @@ class tags{
 		
 	}
 	
+	// build list of tags with other types
 	public function get_tag_no_type(){
 		$query = "SELECT * FROM anderson_images.tags where tag_type != 'individual' and tag_type != 'holiday' and tag_type != 'event' and tag_type != 'year'";
 		$stmt = $this->connection->prepare($query);
