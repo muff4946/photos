@@ -16,6 +16,7 @@
 		
 		<div class="tag-add">
 			<form>
+			<input id="newtagbar" type="text" placeholder="Type tag names(s) here"/>
 			<select id="tag_types">
 				<option value="none" selected disabled hidden>Select a Tag Type</option>
 				<option ng-repeat="t in tag_types" value={{t.type}}>{{t.type}}</option>
