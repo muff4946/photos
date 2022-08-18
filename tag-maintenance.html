@@ -21,7 +21,7 @@
 				<option value="none" selected disabled hidden>Select a type for the new tag.</option>
 				<option ng-repeat="t in tag_types" value={{t.type}}>{{t.type}}</option>
 			</select>
-			<input id="newtagbar" type="text" placeholder="Enter the names for the new tag."/>
+			<input id="newtagbar" type="text" placeholder="Enter the name(s) for the new tag."/>
 			<button class="funbutton" ng-click="addTag()" type="submit">add</button>
 
 			</form>
