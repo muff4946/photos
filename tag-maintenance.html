@@ -21,7 +21,7 @@
 				<option value="none" selected disabled hidden>Select a type for the new tag.</option>
 				<option ng-repeat="t in tag_types" value={{t.type}}>{{t.type}}</option>
 			</select>
-			<input id="newtagbar" type="text" placeholder="Enter the name(s) for the new tag."/>
+			<input id="tag_names" type="text" placeholder="Enter the name(s) for the new tag."/>
 			<button class="funbutton" ng-click="notYetFunctional()" type="submit">add</button>
 			<!--<button class="funbutton" ng-click="addTag()" type="submit">add</button>-->
 
@@ -158,6 +158,21 @@ app.controller('TagMaintCont', function($scope, $http){
 		}	
 	}
 	
+	//adding tag link with option
+	$scope.addTag=function(tag_type, tag_names){
+		
+		var values_to_send="?tag_type="+tag_type+"&tag_names="+tag_names;
+		$http.get("https://photos.dbq-andersons.com/api/product/post_new_tag.php"+values_to_send,).then(
+			function successfulCallback(response){
+				//alert("new tag added");
+				$scope.getAllTags();
+				document.getElementById("newtagbar").value = "";
+			},
+			function errorCallback(response){
+				alert("tag not added");
+				console.log(response);
+		});	
+	}
 	
 	$scope.notYetFunctional = function(){
 		alert("This is not yet functional, check back later for updates");
