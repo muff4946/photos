@@ -17,11 +17,11 @@
 		<div class="tag-add">
 			<h3>Use this form to add new tags to the database.</h3>
 			<form>
-			<select id="tag_type" name="tag_type">
+			<select id="tag_type">
 				<option value="none" selected disabled hidden>Select a type for the new tag.</option>
 				<option ng-repeat="t in tag_types" value={{t.type}}>{{t.type}}</option>
 			</select>
-			<input id="tag_names" name="tag_names" type="text" placeholder="Enter the name(s) for the new tag."/>
+			<input id="tag_names" type="text" placeholder="Enter the name(s) for the new tag."/>
 			<button class="funbutton" ng-click="addTag()" type="submit">add</button>
 
 			</form>
