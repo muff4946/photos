@@ -14,7 +14,7 @@ include_once '../objects/tag_links.php';
 
 
 //get tag type and names from URL
-$tag_type= isset($_GET['tag_type']) ? $_GET['type_type'] : '';
+$tag_type= isset($_GET['tag_type']) ? $_GET['tag_type'] : '';
 $tag_names= isset($_GET['tag_names']) ? $_GET['tag_names'] : '';
 
 print $tag_type;
