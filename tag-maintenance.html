@@ -105,6 +105,7 @@ app.controller('TagMaintCont', function($scope, $http){
 			window.location = url;
 		}
 		$scope.getAllTags();
+		$scope.getTagTypes();
 	};
 	
 
@@ -113,6 +114,19 @@ app.controller('TagMaintCont', function($scope, $http){
 		$http.get("https://photos.dbq-andersons.com/api/product/get_all_non-year_tags.php",).then(
 			function successfulCallback(response){
 				$scope.all_tags = response.data.all_tags;
+				//console.log($scope.all_tags);
+			},
+			function errorCallback(response){
+				console.log(response);
+		});
+	
+	}
+
+	//getting list of tag types
+	$scope.getTagTypes = function(){
+		$http.get("https://photos.dbq-andersons.com/api/product/get_tag_types.php",).then(
+			function successfulCallback(response){
+				$scope.tag_types = response.data.tag_types;
 				//console.log($scope.all_tags);
 			},
 			function errorCallback(response){
