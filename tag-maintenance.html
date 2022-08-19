@@ -16,7 +16,7 @@
 		
 		<div class="tag-add">
 			<h3>Use this form to add new tags to the database.</h3>
-			<form ng-submit="submitNewTag()" >>
+			<form ng-submit="submitNewTag()" >
 			<select id="tag_type" ng-model="tag.type">
 				<option value="none" selected disabled hidden>Select a type for the new tag.</option>
 				<option ng-repeat="t in tag_types" value={{t.type}}>{{t.type}}</option>
@@ -160,7 +160,7 @@ app.controller('TagMaintCont', function($scope, $http){
 	}
 	
 	//adding tag link with option
-	$scope.addTag=function(tag_type,tag_names){		
+	$scope.submitNewTag=function(){		
 		var values_to_send="?tag_type="+tag_type+"&tag_names="+tag_names;
 		$http.get("https://photos.dbq-andersons.com/api/product/add_new_tag.php"+values_to_send,).then(
 			function successfulCallback(response){
