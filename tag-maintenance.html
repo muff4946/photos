@@ -22,7 +22,7 @@
 				<option ng-repeat="t in tag_types" value={{t.type}}>{{t.type}}</option>
 			</select>
 			<input id="tag_names" type="text" placeholder="Enter the name(s) for the new tag."/>
-			<button class="funbutton" ng-click="addTag(tag_type,tag_names)" type="submit">add</button>
+			<button class="funbutton" ng-click="addTag($tag_type,$tag_names)" type="submit">add</button>
 
 			</form>
 		
