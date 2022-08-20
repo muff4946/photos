@@ -169,14 +169,14 @@ app.controller('TagMaintCont', function($scope, $http){
 		var tag_names=$scope.tag_names;
 		console.log($tag_type);
 		console.log($tag_names);
-		//var values_to_send="?tag_type="+tag_type+"&tag_names="+tag_names;
-		//$http.get("https://photos.dbq-andersons.com/api/product/add_new_tag.php"+values_to_send,).then(
-		//	function successfulCallback(response){
+		var values_to_send="?tag_type="+tag_type+"&tag_names="+tag_names;
+		$http.get("https://photos.dbq-andersons.com/api/product/add_new_tag.php"+values_to_send,).then(
+			function successfulCallback(response){
 				//alert("new tag added");
-		//		$scope.getAllTags();
-		//		document.getElementById("newtagbar").value = "";
-		//	},
-		//	function errorCallback(response){
+				//$scope.getAllTags();
+				//document.getElementById("newtagbar").value = "";
+			},
+			function errorCallback(response){
 				//alert("tag not added");
 				//console.log(response);
 		});	
