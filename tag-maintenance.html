@@ -16,7 +16,7 @@
 		
 		<div class="tag-add">
 			<h3>You entered: {{tag_names}}. You selected: {{tag_type}}.</h3>
-				Tag Type: <select ng-model="tag_type">
+				Tag Type: <select ng-model="tag_type" id='tag_type'>
 					<option value="">Select a type for the new tag.</option>
 					<option ng-repeat="t in tag_types" value={{t.type}}>{{t.type}}</option>
 				</select>
