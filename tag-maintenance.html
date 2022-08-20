@@ -18,7 +18,7 @@
 			<h3>You entered: {{tag_names}}. You selected: {{tag_type}}.</h3>
 				Name: <input ng-model="tag_names">
 				<select ng-model="tag_type">
-					<!--<option value="none" selected disabled hidden>Select a type for the new tag.</option>-->
+					<option selected disabled hidden>Select a type for the new tag.</option>
 					<option ng-repeat="t in tag_types" value={{t.type}}>{{t.type}}</option>
 				</select>
 <!--			<form>
