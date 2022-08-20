@@ -16,14 +16,16 @@
 		
 		<div class="tag-add">
 			<h3>Use this form to add new tags to the database.</h3>
-			<form>
+				Name: <input ng-model="name">
+				<h4>You entered: {{name}}</h4>
+<!--			<form>
 			<select id="tag_type">
 				<option value="none" selected disabled hidden>Select a type for the new tag.</option>
 				<option ng-repeat="t in tag_types" value={{t.type}}>{{t.type}}</option>
 			</select>
 			<input id="tag_names" type="text" placeholder="Enter the name(s) for the new tag."/>
 			<button class="funbutton" ng-click="addTag(tag_type, tag_names)" type="button">add</button>
-			</form>
+			</form>-->
 		
 		</div>
 		
@@ -174,6 +176,8 @@ app.controller('TagMaintCont', function($scope, $http){
 	$scope.notYetFunctional = function(){
 		alert("This is not yet functional, check back later for updates");
 	};
+	
+	$scope.name = "John Doe";
 
 });
 
