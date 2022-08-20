@@ -15,8 +15,12 @@
 		</div>
 		
 		<div class="tag-add">
-			<h3>You entered: {{tag_names}}</h3>
+			<h3>You entered: {{tag_names}}. You selected: {{tag_type}}.</h3>
 				Name: <input ng-model="tag_names">
+				<select mg-model="tag_type">
+					<option value="none" selected disabled hidden>Select a type for the new tag.</option>
+					<option ng-repeat="t in tag_types" value={{t.type}}>{{t.type}}</option>
+				</select>
 <!--			<form>
 			<select id="tag_type">
 				<option value="none" selected disabled hidden>Select a type for the new tag.</option>
