@@ -16,7 +16,7 @@
 		
 		<div class="tag-add">
 			<h3>You entered: {{name}}</h3>
-				Name: <input ng-model="tag_names">
+				Name: <input ng-model="tagNames">
 <!--			<form>
 			<select id="tag_type">
 				<option value="none" selected disabled hidden>Select a type for the new tag.</option>
@@ -176,7 +176,7 @@ app.controller('TagMaintCont', function($scope, $http){
 		alert("This is not yet functional, check back later for updates");
 	};
 	
-	$scope.tag_names = "John Doe";
+	$scope.tagNames = "John Doe";
 
 });
 
