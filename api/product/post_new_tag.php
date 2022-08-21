@@ -11,6 +11,13 @@ include_once '../objects/images.php';
 include_once '../objects/tags.php';
 include_once '../objects/tag_links.php';
 
+// instantiate database and product object
+$database = new DBClass();
+$db = $database->getConnection();
+
+//initialize objects
+$tags = new tags($db);
+$taglinks = new tag_links($db);
 
 
 //get tag type and names from URL
