@@ -19,6 +19,21 @@ $tag_names= isset($_GET['tag_names']) ? $_GET['tag_names'] : '';
 
 print $tag_type;
 print $tag_names;
+
+// create connection
+$conn = mysqli_connect($db_host, $db_user, $db_pwd, $db_name);
+
+//Check connection
+if(!$conn)
+{
+	die("Connection failed: " . mysqli_connect_error());
+}
+
+$current_highest_non_year_tag_id = mysqli_query($conn, "select distinct tag_id from tags where tag_type != 'year' order by tag_id desc limit 1");
+
+print $current_highest_non_year_tag_id;
+
+
 ?>
 
 
