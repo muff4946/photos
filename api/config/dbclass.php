@@ -1,10 +1,10 @@
 <?php
 class DBClass { 
 
-	private $db_host = 'localhost';
-	private $db_user = 'images';
-	private $db_pwd = 'F0t0b0mb';
-	private $db_name = 'anderson_images';
+	public $db_host = 'localhost';
+	public $db_user = 'images';
+	public $db_pwd = 'F0t0b0mb';
+	public $db_name = 'anderson_images';
 
 	public $conn;
 	
