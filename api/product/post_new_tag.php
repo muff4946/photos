@@ -20,6 +20,7 @@ $tag_names= isset($_GET['tag_names']) ? $_GET['tag_names'] : '';
 print $tag_type;
 print $tag_names;
 
+exit ();
 // create connection
 $conn = mysqli_connect($db_host, $db_user, $db_pwd, $db_name);
 
@@ -33,7 +34,7 @@ $current_highest_non_year_tag_id = mysqli_query($conn, "select distinct tag_id f
 
 print $current_highest_non_year_tag_id;
 
-
+exit ();
 ?>
 
 
