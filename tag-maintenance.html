@@ -160,7 +160,7 @@ app.controller('TagMaintCont', function($scope, $http){
 		var tag_type=$scope.tag_type;
 		var tag_names=$scope.tag_names;
 		var values_to_send="?tag_type="+tag_type+"&tag_names="+tag_names;
-		$http.get("https://photos.dbq-andersons.com/api/product/add_new_tag.php"+values_to_send,).then(
+		$http.get("https://photos.dbq-andersons.com/api/product/post_new_tag.php"+values_to_send,).then(
 			function successfulCallback(response){
 				//alert("new tag added");
 				$scope.getAllTags();
