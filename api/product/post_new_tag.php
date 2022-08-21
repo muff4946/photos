@@ -26,6 +26,7 @@ $tag_names= isset($_GET['tag_names']) ? $_GET['tag_names'] : '';
 
 print $tag_type;
 print $tag_names;
+print $db;
 
 exit ();
 // create connection
