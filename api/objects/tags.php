@@ -103,6 +103,19 @@ class tags{
 		
 	}
 	
+	// get the highest used tag ID number
+	public function get_highest_tag_id(){
+		$query = "select distinct tag_id from tags where tag_type != 'year' order by tag_id desc limit 1";
+		$stmt = $this->connection-prepare($query);
+		try{
+			stmt->execute();
+		}
+		catch(PDOException $e){
+			echo stmt . $e->getMessage(();
+		}
+		return $stmt;
+	}
+	
 		
 	//get tag information by id
 	public function get_tag($id){
