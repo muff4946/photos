@@ -30,10 +30,6 @@ print $tag_names;
 
 $stmt = $tags->get_highest_tag_id();
 
-$row = mysqli_fetch_row($stmt);
-
-var_dump($row);
-
 $OUTPUT = $stmt->fetch(PDO::FETCH_ASSOC);
 
 extract($OUTPUT);
