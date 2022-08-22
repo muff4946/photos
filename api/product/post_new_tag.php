@@ -28,9 +28,9 @@ print $tag_type;
 print $tag_names;
 //print $tags;
 
-$stmt = $tags->get_highest_tag_id
+$stmt = $tags->get_highest_tag_id();
 
-print $stmt;
+//print $stmt;
 
 exit ();
 ?>
