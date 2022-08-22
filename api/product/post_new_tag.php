@@ -21,10 +21,8 @@ $tags = new tags($db);
 //get tag type and names from URL
 $tag_type= isset($_GET['tag_type']) ? $_GET['tag_type'] : '';
 $tag_names= isset($_GET['tag_names']) ? $_GET['tag_names'] : '';
-
 print $tag_type;
 print $tag_names;
-//print $tags;
 
 // Get the current highest non-year tag ID in the database.
 $stmt = $tags->get_highest_tag_id();
@@ -32,13 +30,13 @@ $OUTPUT = $stmt->fetch(PDO::FETCH_ASSOC);
 $highest_tag_id=$OUTPUT["tag_id"];
 print $highest_tag_id;
 
+//If the tag type is year, use the year as the tag ID.  If not, increment one up from the current highest tag ID.
 if($tag_type == "year"){
 	$tgt_tag_id= $tag_names;
 } else{
 	$highest_tag_id++;
 	$tgt_tag_id = $highest_tag_id;
 }
-
 print $tgt_tag_id;
 
 exit ();

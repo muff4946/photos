@@ -16,13 +16,14 @@ class tags{
 		$this->connection = $connection;
 	}
 	
-	//Connection
-	public function create($tag, $tagType){
-		$query = "INSERT INTO anderson_images.tags (tag_names, tag_type)
-				VALUES (?,?)";
+	//Add new tag
+	public function create($tag, $tagType, $tagId){
+		$query = "INSERT INTO anderson_images.tags (tag_names, tag_type, tag_id)
+				VALUES (?,?,?)";
 		$stmt = $this->connection->prepare($query);
 		$stmt->bindParam(1, $tag);
 		$stmt->bindParam(2, $tagType);
+		$stmt->bindParam(3, $tagId);
 		try{
 		$stmt->execute();
 		}
