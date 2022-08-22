@@ -30,7 +30,9 @@ print $tag_names;
 
 $stmt = $tags->get_highest_tag_id();
 
-print $stmt;
+$OUTPUT = $stmt->fetch(PDO::FETCH_ASSOC);
+
+print $OUTPUT;
 
 exit ();
 ?>
