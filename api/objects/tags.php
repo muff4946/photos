@@ -17,7 +17,7 @@ class tags{
 	}
 	
 	//Add new tag
-	public function create($tag, $tagType, $tagId){
+	public function create_new_tag($tag, $tagType, $tagId){
 		$query = "INSERT INTO anderson_images.tags (tag_names, tag_type, tag_id)
 				VALUES (?,?,?)";
 		$stmt = $this->connection->prepare($query);
