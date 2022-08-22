@@ -32,14 +32,16 @@ print $highest_tag_id;
 
 //If the tag type is year, use the year as the tag ID.  If not, increment one up from the current highest tag ID.
 if($tag_type == "year"){
-	$tgt_tag_id= $tag_names;
+	$tag_id= $tag_names;
 } else{
 	$highest_tag_id++;
-	$tgt_tag_id = $highest_tag_id;
+	$tag_id = $highest_tag_id;
 }
-print $tgt_tag_id;
+print $highest_tag_id;
 
-if($tagid != ''||$imageid=''){
+exit();
+
+if($tag_type != ''||$tag_names=''||$tag_id=''){
 
 	//get array of tag ids
 	$stmt = $taglinks->create_new_tag($tagid,$imageid);
