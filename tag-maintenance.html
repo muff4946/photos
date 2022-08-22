@@ -153,7 +153,7 @@ app.controller('TagMaintCont', function($scope, $http){
 		var values_to_send="?tag_type="+tag_type+"&tag_names="+tag_names;
 		$http.get("https://photos.dbq-andersons.com/api/product/post_new_tag.php"+values_to_send,).then(
 			function successfulCallback(response){
-				alert("Tag "+tag_names+" has been added to the database with an ID of "+tag_id+".");
+				alert("Tag "+tag_names+" has been added to the database.");
 				$scope.getAllTags();
 				$scope.tag_type = '';
 				$scope.tag_names = '';
