@@ -230,3 +230,7 @@ table tr:nth-child(even) {
 
 .funbutton {font-size: 14px;}
 
+.alphabetLinks{
+	color: black;
+	text-decoration: none;
+}
