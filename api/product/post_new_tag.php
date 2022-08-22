@@ -26,7 +26,6 @@ $tag_names= isset($_GET['tag_names']) ? $_GET['tag_names'] : '';
 $stmt = $tags->get_highest_tag_id();
 $OUTPUT = $stmt->fetch(PDO::FETCH_ASSOC);
 $highest_tag_id=$OUTPUT["tag_id"];
-print $highest_tag_id;
 
 //If the tag type is year, use the year as the tag ID.  If not, increment one up from the current highest tag ID.
 if($tag_type == "year"){
