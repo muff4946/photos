@@ -36,10 +36,6 @@ $number=$OUTPUT["tag_id"];
 
 print $number;
 
-extract($OUTPUT);
-
-var_dump($OUTPUT);
-
 exit ();
 ?>
 
