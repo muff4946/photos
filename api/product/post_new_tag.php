@@ -41,7 +41,7 @@ if($tag_type == "year"){
 if($tag_type != ''||$tag_names=''||$tag_id=''){
 
 	//post new tag to database
-	$stmt = $taglinks->create_new_tag($tag_names,$tag_type,$tag_id);
+	$stmt = $tags->create_new_tag($tag_names,$tag_type,$tag_id);
 	http_response_code(200);
 	echo json_encode(
 		array("message"=> $tagid . " added")
