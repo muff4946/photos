@@ -34,6 +34,8 @@ $OUTPUT = $stmt->fetch(PDO::FETCH_ASSOC);
 
 extract($OUTPUT);
 
+"tag_id"=>$tag_id;
+
 var_dump($OUTPUT);
 
 exit ();
