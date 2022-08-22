@@ -30,7 +30,7 @@ print $tag_names;
 
 $stmt = $tags->get_highest_tag_id();
 
-$row = mysql_fetch_row($stmt);
+$row = mysqli_fetch_row($stmt);
 
 var_dump($row);
 
