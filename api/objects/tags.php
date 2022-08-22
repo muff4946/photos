@@ -44,7 +44,7 @@ class tags{
 	}
 	
 	//get all tags soeted by tag name (with years at the bottom)
-	public function get_all_non_year_tags(){		
+	public function get_all_tags_name_sort(){		
 		$query = "SELECT * FROM anderson_images.tags order by if(tag_names RLIKE '^[A-Z]', 1, 2), tag_names";
 		$stmt = $this->connection->prepare($query);
 		try{
