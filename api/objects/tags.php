@@ -34,7 +34,7 @@ class tags{
 	}
 	
 	
-	//R
+	// get all tags sorted by tag_id
 	public function read(){
 		
 		$query= "SELECT tag_id, tag_names, tag_type FROM anderson_images.tags order by tag_id";
@@ -43,7 +43,20 @@ class tags{
 		return $stmt;
 	}
 	
-	//get all non-year tags
+	//get all tags soeted by tag name (with years at the bottom)
+	public function get_all_non_year_tags(){		
+		$query = "SELECT * FROM anderson_images.tags order by if(tag_names RLIKE '^[A-Z]', 1, 2), tag_names";
+		$stmt = $this->connection->prepare($query);
+		try{
+			$stmt->execute();
+		}
+		catch(PDOException $e){
+			echo $stmt . $e->getMessage();
+		}
+		return $stmt;
+	}
+
+	//get all non-year tags soeted by tag name
 	public function get_all_non_year_tags(){		
 		$query = "SELECT * FROM anderson_images.tags where tag_type != 'year' order by tag_names";
 		$stmt = $this->connection->prepare($query);

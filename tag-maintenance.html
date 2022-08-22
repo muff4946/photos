@@ -113,7 +113,7 @@ app.controller('TagMaintCont', function($scope, $http){
 
 	//getting list of all tags
 	$scope.getAllTags = function(){
-		$http.get("https://photos.dbq-andersons.com/api/product/get_all_non-year_tags.php",).then(
+		$http.get("https://photos.dbq-andersons.com/api/product/get_all_tags.php",).then(
 			function successfulCallback(response){
 				$scope.all_tags = response.data.all_tags;
 				//console.log($scope.all_tags);
