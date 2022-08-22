@@ -28,6 +28,7 @@ print $tag_type;
 print $tag_names;
 //print $tags;
 
+$stmt = $tags->get_highest_tag_id();
 
 exit ();
 ?>
