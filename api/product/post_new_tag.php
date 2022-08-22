@@ -35,7 +35,7 @@ print $highest_tag_id;
 if($tag_type == "year"){
 	$tgt_tag_id = $tag_names;
 } else{
-	$tgt_tag_id = $highest_tag_id++
+	$tgt_tag_id = $highest_tag_id++;
 }
 
 print $tgt_tag_id
