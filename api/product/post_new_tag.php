@@ -29,15 +29,6 @@ print $tag_names;
 //print $tags;
 
 
-
-
-exit ();
-
-
-$current_highest_non_year_tag_id = mysqli_query($conn, "select distinct tag_id from tags where tag_type != 'year' order by tag_id desc limit 1");
-
-print $current_highest_non_year_tag_id;
-
 exit ();
 ?>
 
