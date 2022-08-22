@@ -32,7 +32,7 @@ $stmt = $tags->get_highest_tag_id();
 
 $OUTPUT = $stmt->fetch(PDO::FETCH_ASSOC);
 
-print $OUTPUT;
+var_dump($OUTPUT);
 
 exit ();
 ?>
