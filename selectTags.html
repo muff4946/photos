@@ -56,7 +56,7 @@
 					<div class="row" ng-repeat="x in people_list">
 						<a id="{{x.initial}}"></a>
 						<input type="checkbox" id={{x.id}} ng-click="clickPeople(x.id, x.names)" ng-checked="checkall">
-						<label for={{x.id}}>{{x.names}}</label>
+						<label for={{x.id}}>{{x.names}} ({{x.tag_link_count}})</label>
 					</div>
 				</form>
 			</div>
