@@ -76,7 +76,8 @@ class tags{
 			//$query="SELECT tag_id, tag_names, tag_type FROM tags where tag_type = ? order by tag_names";
 		}
 		else{
-			$query="SELECT tag_id, tag_names, tag_type FROM tags where NOT tag_id = 9999 AND tag_type = ? order by tag_names DESC";
+			$query="select t.tag_id, t.tag_type, t.tag_names, count(tl.image_id) AS tag_link_count from tags t left join tag_links tl on t.tag_id=tl.tag_id where NOT t.tag_id = 9999 and t.tag_type = ? group by t.tag_id, t.tag_type, t.tag_names order by tag_names DESC";
+			//$query="SELECT tag_id, tag_names, tag_type FROM tags where NOT tag_id = 9999 AND tag_type = ? order by tag_names DESC";
 		}
 		$stmt = $this->connection->prepare($query);
 		$stmt->bindParam(1,$tagType);
