@@ -76,7 +76,7 @@
 				<form>
 					<div class="row" ng-repeat="x in holiday_list">
 						<input type="checkbox" id={{x.id}} ng-click="clickHoliday(x.id, x.names)" ng-checked="checkall">
-						<label for={{x.id}}>{{x.names}} ({{x.tag_link_count}})</label>
+						<label for={{x.id}}>{{x.names}}<div style="text-align:right">({{x.tag_link_count}})</div></label>
 					</div>
 				</form>
 			</div>
