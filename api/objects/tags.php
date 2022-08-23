@@ -93,7 +93,8 @@ class tags{
 	
 	// build list of tags with other types
 	public function get_tag_no_type(){
-		$query = "SELECT * FROM anderson_images.tags where tag_type != 'individual' and tag_type != 'holiday' and tag_type != 'event' and tag_type != 'year'";
+		$query = "select t.tag_id, t.tag_type, t.tag_names, count(tl.image_id) AS tag_link_count from tags t left join tag_links tl on t.tag_id=tl.tag_id where t.tag_type != 'individual' and t.tag_type != 'holiday' and t.tag_type != 'event' and t.tag_type != 'year' group by t.tag_id, t.tag_type, t.tag_names order by tag_names";
+		//$query = "SELECT * FROM anderson_images.tags where tag_type != 'individual' and tag_type != 'holiday' and tag_type != 'event' and tag_type != 'year'";
 		$stmt = $this->connection->prepare($query);
 		try{
 			$stmt->execute();
