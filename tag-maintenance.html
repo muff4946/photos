@@ -69,16 +69,16 @@
 					<th id="tag_id">TAG ID</th>
 					<th id="tag_name">TAG NAME(s)/YEAR</th>
 					<th id="tag_type">TAG TYPE</th>
-					<th id="edit_tag">EDIT TAG</th>
-					<th id="delete_tag">DELETE TAG</th>
+					<th id="edit_tag">ACION</th>
+					<!--<th id="delete_tag">DELETE TAG</th>-->
 				</tr>
 				<tr ng-repeat="a in all_tags">
 					<td><a id="{{a.initial}}"></a>{{$index + 1}}</td>
 					<td>{{a.id}}</td>
 					<td>{{a.names}}</td>
 					<td>{{a.type}}</td>
-					<td class="delete" style="padding:2px;text-align:center"><button ng-click="notYetFunctional()"><i class="fa fa-edit" style="font-size:15px;"></i></button></td>
-					<td class="delete" style="padding:2px;text-align:center"><button ng-click="deleteTag(a.id,a.names)"><i class="fa fa-trash" style="font-size:15px;"></i></button></td>
+					<td class="delete" style="padding:2px;text-align:center"><button ng-click="notYetFunctional()"><i class="fa fa-edit" style="font-size:15px;"></i></button>
+					<button ng-click="deleteTag(a.id,a.names)"><i class="fa fa-trash" style="font-size:15px;"></i></button></td>
 				</tr>
 			</table>
 		</div>
