@@ -60,6 +60,7 @@ body{
 	background-color: #594157;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	overflow: hidden;
+	font-size: 18px;
 }
 
 .grid-container{
@@ -206,6 +207,7 @@ body{
 table{
 	width: 75%;
 	table-layout: fixed;
+	margin: auto;
 }
 
 table, th , td {
