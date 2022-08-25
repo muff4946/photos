@@ -80,7 +80,7 @@
 						<option value="">Select a type for a new tag.</option>
 						<option ng-repeat="t in tag_types" value={{t.type}}>{{t.type}}</option></select>
 					</td>
-					<td><button class="funbutton" ng-click="addTag()" type="button"><i class="fa fa-plus" style="font-size:15px;"></i></button></td>
+					<td id="edit_tag"><button class="funbutton" ng-click="addTag()" type="button"><i class="fa fa-plus" style="font-size:15px;"></i></button></td>
 				</tr>
 					<tr ng-repeat="a in all_tags">
 					<td><a id="{{a.initial}}"></a>{{$index + 1}}</td>
