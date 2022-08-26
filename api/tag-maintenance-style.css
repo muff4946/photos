@@ -72,10 +72,9 @@ body{
 	padding-bottom: 5px;
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: 75px 75px 75px 1fr;
+	grid-template-rows: 75px 75px 1fr;
 	grid-template-areas: 
 	'header'
-	'tag-add'
 	'tag-index'
 	'tag-list';
 }
