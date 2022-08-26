@@ -217,7 +217,7 @@ table, th , td {
 }
 
 table tr:nth-child(odd) {
-  background-color: #7C7C7C;
+  background-color: #d3d3d3;
 }
 
 table tr:first-child {
