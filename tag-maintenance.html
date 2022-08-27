@@ -92,8 +92,11 @@
             <script type="text/ng-template" id="edit">
                 <td><a id="{{a.initial}}"></a>{{$index + 1}}</td>
 				<td>{{a.id}}</td>
-                <td><input type="text" ng-model="formData.first_name" class="form-control"  /></td>
-                <td><input type="text" ng-model="formData.last_name" class="form-control" /></td>
+                <td><input ng-model="tag_names" placeholder="{{a.names}}"/></td>
+                <td><select ng-model="tag_type">
+						<option value={{t.type}}>{{t.type}}</option>
+						<option ng-repeat="t in tag_types" value={{t.type}}>{{t.type}}</option>
+				</select></td>
                 <td>
                     <input type="hidden" ng-model="formData.data.id" />
                     <button type="button" class="btn btn-info btn-sm" ng-click="notYetFunctional()">Save</button>
