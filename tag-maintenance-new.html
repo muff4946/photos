@@ -118,6 +118,8 @@ app.controller('TagMaintCont', function($scope, $http){
 	};
 
     //new stuff for tag editing
+	$scope.formData = {};
+	
     $scope.getTemplate = function(a){
         if (data.id === $scope.formData.id)
         {
