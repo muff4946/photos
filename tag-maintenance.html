@@ -78,7 +78,7 @@
 				<td>{{a.id}}</td>
 				<td>{{a.names}}</td>
 				<td>{{a.type}}</td>
-                <td>
+                <td style="text-align:center">
                     <button ng-click="showEdit(a)"><i class="fa fa-edit" style="font-size:15px;"></i></button>
                     <button ng-click="deleteTag(a.id,a.names)"><i class="fa fa-trash" style="font-size:15px;"></i></button>
                 </td>
@@ -91,7 +91,7 @@
 					<option value="">{{a.type}}</option>
 					<option ng-repeat="t in tag_types" value={{t.type}}>{{t.type}}</option>
 				</select></td>
-                <td>
+                <td style="text-align:center">
                     <input type="hidden" ng-model="formData.data.id" />
                     <button ng-click="editTag(); reset()"><i class="fa fa-save" style="font-size:15px;"></i></button>
                     <button ng-click="reset()"><i class="fa fa-times" style="font-size:15px;"></i></button>
