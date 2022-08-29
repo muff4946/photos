@@ -94,7 +94,7 @@
 					<option value="">{{a.type}}</option>
 					<option ng-repeat="t in tag_types" value={{t.type}}>{{t.type}}</option>
 				</select></td>
-				<td>{{a.tag_link_count}}</td>
+				<td style="text-align:right">{{a.tag_link_count}}</td>
                 <td style="text-align:center">
                     <input type="hidden" ng-model="formData.data.id" />
                     <button ng-click="editTag(); reset()"><i class="fa fa-save" style="font-size:15px;"></i></button>
