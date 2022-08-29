@@ -35,8 +35,10 @@ if($tagtype !=''){
 		$tag_id = $row["tag_id"];
 		$tag_names = $row["tag_names"];
 		$tag_type = $row["tag_type"];
-		$tag_link_count = $row["tag_link_count"];
+		$raw_tag_link_count = $row["tag_link_count"];
 		$tag_initial = $tag_names[0];
+		
+		$tag_link_count = number_format($raw_tag_link_count);
 		
 		$tag_item=array(
 			"id"=>$tag_id,
