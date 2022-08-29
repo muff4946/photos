@@ -27,13 +27,15 @@ while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 	$tag_id = $row["tag_id"];
 	$tag_names = $row["tag_names"];
 	$tag_type = $row["tag_type"];
+	$tag_link_count = $row["tag_link_count"];
 	$tag_initial = $tag_names[0];
 		
 	$tag_item=array(
 		"id"=>$tag_id,
 		"names"=>$tag_names,
 		"type"=>$tag_type,
-		"initial"=>$tag_initial
+		"initial"=>$tag_initial,
+		"tag_link_count"=>$tag_link_count
 	);
 	array_push($tag_arr["all_tags"],$tag_item);
 }
