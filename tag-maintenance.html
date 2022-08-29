@@ -208,7 +208,7 @@ app.controller('TagMaintCont', function($scope, $http){
 		var new_tag_names=$scope.new_tag_names;
 		var new_tag_type=$scope.new_tag_type;
 		var values_to_send="?tag_id="+tag_id+"&new_tag_type="+new_tag_type+"&new_tag_names="+new_tag_names;
-		$http.get("https://photos.dbq-andersons.com/api/product/update_tag.php"+values_to_send,).then(
+		$http.get("https://photos.dbq-andersons.com/api/product/update_tags.php"+values_to_send,).then(
 			function successfulCallback(response){
 				$scope.getAllTags();
 				$scope.tag_type = '';

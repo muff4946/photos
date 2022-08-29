@@ -193,14 +193,34 @@ class tags{
 		
 	//U
 	public function update($tag_id, $new_tag_names, $new_tag_type){
+		if ($new_tag_names == 'undefined') {
 		$query = "UPDATE anderson_images.tags
-					SET tag_names = ?, tag_type = ?
+					SET tag_type = ?
+					WHERE tag_id = ?";
+		$stmt = $this->connection->prepare($query);
+		//bind variable values
+		$stmt->bindParam(1,$new_tag_type);
+		$stmt->bindParam(2,$tag_id, PDO::PARAM_INT);
+		}
+		elseif ($new_tag_type == 'undefined') {
+		$query = "UPDATE anderson_images.tags
+					SET tag_names = ?
 					WHERE tag_id = ?";
 		$stmt = $this->connection->prepare($query);
 		//bind variable values
 		$stmt->bindParam(1,$new_tag_names);
-		$stmt->bindParam(2,$new_tag_type);
-		$stmt->bindParam(3,$tag_id, PDO::PARAM_INT);
+		$stmt->bindParam(2,$tag_id, PDO::PARAM_INT);
+		}
+		else {
+		$query = "UPDATE anderson_images.tags
+                    SET tag_names = ?, tag_type = ?
+                    WHERE tag_id = ?";
+        $stmt = $this->connection->prepare($query);
+        //bind variable values
+        $stmt->bindParam(1,$new_tag_names);
+        $stmt->bindParam(2,$new_tag_type);
+        $stmt->bindParam(3,$tag_id, PDO::PARAM_INT);
+		}
 		
 		try{
 		$stmt->execute();
