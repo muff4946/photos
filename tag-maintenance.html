@@ -205,7 +205,7 @@ app.controller('TagMaintCont', function($scope, $http){
 
 	//editing tag properties 
 	$scope.editTag=function(tag_id,new_tag_names,new_tag_type){
-		var tag_id=$scope.a.tag_id;
+		var tag_id=$scope.tag_id;
 		var new_tag_names=$scope.new_tag_names;
 		var new_tag_type=$scope.new_tag_type;
 		var values_to_send="?tag_id="+tag_id+"&new_tag_type="+new_tag_type+"&new_tag_names="+new_tag_names;
