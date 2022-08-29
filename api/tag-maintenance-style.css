@@ -195,7 +195,7 @@ body{
 
 .tag-list #link_count{
 	width: 65px;
-	text-align: right;
+	text-align: center;
 }
 
 .tag-list #edit_tag{
