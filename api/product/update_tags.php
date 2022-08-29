@@ -25,6 +25,12 @@ $tag_id= isset($_GET['tag_id']) ? $_GET['tag_id'] : '';
 $new_tag_names= isset($_GET['new_tag_names']) ? $_GET['new_tag_names'] : '';
 $new_tag_type= isset($_GET['new_tag_type']) ? $_GET['new_tag_type'] : 'individual';
 
+print $tag_id;
+print $new_tag_names;
+print $new_tag_type;
+
+exit ();
+
 
 if($tag_id != ''&&$new_tag_names != ''&&$new_tag_type != ''){
 
