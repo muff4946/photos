@@ -23,7 +23,7 @@ $images = new images($db);
 //get image id from url
 $tag_id= isset($_GET['tag_id']) ? $_GET['tag_id'] : '';
 $new_tag_names= isset($_GET['new_tag_names']) ? $_GET['new_tag_names'] : '';
-$new_tag_type= isset($_GET['new_tag_type']) ? $_GET['new_tag_type'] : 'individual';
+$new_tag_type= isset($_GET['new_tag_type']) ? $_GET['new_tag_type'] : '';
 
 print $tag_id;
 print $new_tag_names;
