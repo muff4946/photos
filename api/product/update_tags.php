@@ -29,7 +29,7 @@ $ntagtype= isset($_GET['type']) ? $_GET['type'] : 'individual';
 if($tagid != ''||$ntag != ''){
 
 	//get array of tag ids
-	$stmt = $tags->update($tagid,$ntag, $ntagtype);
+	$stmt = $tags->update($tagid,$ntag,$ntagtype);
 	http_response_code(200);
 	echo json_encode(
 		array("message"=> "tag no. " . $tagid . " is now " . $ntag)
