@@ -43,9 +43,10 @@ class tags{
 		return $stmt;
 	}
 	
-	//get all tags soeted by tag name (with years at the bottom)
+	//get all tags sorted by tag name with years at the bottom (including tag counts)
 	public function get_all_tags_name_sort(){		
-		$query = "SELECT * FROM anderson_images.tags order by if(tag_names RLIKE '^[A-Z]', 1, 2), tag_names";
+		//$query = "SELECT * FROM anderson_images.tags order by if(tag_names RLIKE '^[A-Z]', 1, 2), tag_names";
+		$query = "select t.tag_id, t.tag_type, t.tag_names, count(tl.image_id) AS tag_link_count from tags t left join tag_links tl on t.tag_id=tl.tag_id group by t.tag_id, t.tag_type, t.tag_names order by if(tag_names RLIKE '^[A-Z]', 1, 2), tag_names";
 		$stmt = $this->connection->prepare($query);
 		try{
 			$stmt->execute();
