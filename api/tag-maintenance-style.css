@@ -193,13 +193,13 @@ body{
 	width: 200px;
 }
 
-.tag-list #edit_tag{
-	width: 70px;
-	text-align: center;
+.tag-list #link_count{
+	width: 65px;
+	text-align: right;
 }
 
-.tag-list #delete_tag{
-	width: 65px;
+.tag-list #edit_tag{
+	width: 70px;
 	text-align: center;
 }
 
