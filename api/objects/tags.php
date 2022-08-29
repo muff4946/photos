@@ -192,7 +192,7 @@ class tags{
 	}
 		
 	//U
-	public function update($tag, $new_tag_names, $new_tag_type){
+	public function update($tag_id, $new_tag_names, $new_tag_type){
 		$query = "UPDATE anderson_images.tags
 					SET tag_names = ?, tag_type = ?
 					WHERE tag_id = ?";
@@ -200,7 +200,7 @@ class tags{
 		//bind variable values
 		$stmt->bindParam(1,$new_tag_names);
 		$stmt->bindParam(2,$new_tag_type);
-		$stmt->bindParam(3,$tag, PDO::PARAM_INT);
+		$stmt->bindParam(3,$tag_id, PDO::PARAM_INT);
 		
 		try{
 		$stmt->execute();

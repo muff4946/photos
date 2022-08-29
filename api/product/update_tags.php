@@ -21,15 +21,15 @@ $taglinks = new tag_links($db);
 $images = new images($db);
 
 //get image id from url
-$tagid= isset($_GET['tag']) ? $_GET['tag'] : '';
+$tag_id= isset($_GET['tag_id']) ? $_GET['tag_id'] : '';
 $new_tag_names= isset($_GET['new_tag_names']) ? $_GET['new_tag_names'] : '';
 $new_tag_type= isset($_GET['new_tag_type']) ? $_GET['new_tag_type'] : 'individual';
 
 
-if($tagid != ''||$new_tag_names != ''||$new_tag_type != ''){
+if($tag_id != ''||$new_tag_names != ''||$new_tag_type != ''){
 
 	//get array of tag ids
-	$stmt = $tags->update($tagid,$new_tag_names,$new_tag_type);
+	$stmt = $tags->update($tag_id,$new_tag_names,$new_tag_type);
 	http_response_code(200);
 	echo json_encode(
 		array("message"=> "tag no. " . $tagid . " is now " . $new_tag_names)
