@@ -172,7 +172,7 @@ app.controller('TagMaintCont', function($scope, $http){
 	//delete a given tag (after confirmation)
 	$scope.deleteTag=function(tag_id,tag_names){
 		var values_to_send="?tag_id="+tag_id;
-		var r = confirm("Do you want to delete tag "+tag_id+" ("+tag_names+") from the database (including all tag links)?");
+		var r = confirm("The tag "+tag_id+" ("+tag_names+") is currently linked to "+tag_link_count" images.  All of these links will be removed with the tag. This deletion cannot be undone. Do you wish to continue?");
 		if(r==true){
 			$http.get("https://photos.dbq-andersons.com/api/product/delete_tag.php"+values_to_send,).then(
 				function successfulCallback(response){
