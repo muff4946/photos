@@ -83,7 +83,7 @@
 				<td style="text-align:right">{{a.tag_link_count}}</td>
                 <td style="text-align:center">
                     <button ng-click="showEdit(a)"><i class="fa fa-edit" style="font-size:15px;"></i></button>
-                    <button ng-click="deleteTag(a.id,a.names)"><i class="fa fa-trash" style="font-size:15px;"></i></button>
+                    <button ng-click="deleteTag(a.id,a.names,a.tag_link_count)"><i class="fa fa-trash" style="font-size:15px;"></i></button>
                 </td>
             </script>
             <script type="text/ng-template" id="edit">
@@ -170,7 +170,7 @@ app.controller('TagMaintCont', function($scope, $http){
 	}
 	
 	//delete a given tag (after confirmation)
-	$scope.deleteTag=function(tag_id,tag_names){
+	$scope.deleteTag=function(tag_id,tag_names,tag_link_count){
 		var values_to_send="?tag_id="+tag_id;
 		var r = confirm("The tag "+tag_id+" ("+tag_names+") is currently linked to "+tag_link_count+" images.  All of these links will be removed with the tag. This deletion cannot be undone. Do you wish to continue?");
 		if(r==true){
