@@ -26,7 +26,7 @@ $new_tag_names= isset($_GET['new_tag_names']) ? $_GET['new_tag_names'] : '';
 $new_tag_type= isset($_GET['new_tag_type']) ? $_GET['new_tag_type'] : 'individual';
 
 
-if($tag_id != ''||$new_tag_names != ''||$new_tag_type != ''){
+if($tag_id != ''&&$new_tag_names != ''&&$new_tag_type != ''){
 
 	//get array of tag ids
 	$stmt = $tags->update($tag_id,$new_tag_names,$new_tag_type);
