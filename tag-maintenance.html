@@ -191,6 +191,25 @@ app.controller('TagMaintCont', function($scope, $http){
 		$http.get("https://photos.dbq-andersons.com/api/product/post_new_tag.php"+values_to_send,).then(
 			function successfulCallback(response){
 				$scope.getAllTags();
+				$scope.new_tag_type = '';
+				$scope.new_tag_names = '';
+				//alert("Tag "+tag_names+" has been added to the database.");
+			},
+			function errorCallback(response){
+				//alert("tag not added");
+				console.log(response);
+		});	
+	}
+
+	//editing tag properties 
+	$scope.editTag=function(tag_id,new_tag_names,new_tag_type){
+		var tag_id=$scope.tag_id;
+		var new_tag_names=$scope.new_tag_names;
+		var new_tag_type=$scope.new_tag_type;
+		var values_to_send="?tag_id="+tag_id+"&new_tag_type="+new_tag_type+"&new_tag_names="+new_tag_names;
+		$http.get("https://photos.dbq-andersons.com/api/product/post_new_tag.php"+values_to_send,).then(
+			function successfulCallback(response){
+				$scope.getAllTags();
 				$scope.tag_type = '';
 				$scope.tag_names = '';
 				//alert("Tag "+tag_names+" has been added to the database.");
@@ -199,7 +218,8 @@ app.controller('TagMaintCont', function($scope, $http){
 				//alert("tag not added");
 				console.log(response);
 		});	
-	}
+	}	
+
 	
 	$scope.notYetFunctional = function(){
 		alert("This is not yet functional, check back later for updates");
