@@ -29,7 +29,7 @@ $new_tag_type= isset($_GET['new_tag_type']) ? $_GET['new_tag_type'] : '';
 if($tag_id != ''&&$new_tag_names != ''&&$new_tag_type != ''){
 
 	//get array of tag ids
-	//$stmt = $tags->update($tag_id,$new_tag_names,$new_tag_type);
+	$stmt = $tags->update($tag_id,$new_tag_names,$new_tag_type);
 	http_response_code(200);
 	echo json_encode(
 		array("message"=> "Tag no. " . $tag_id . " is now " . $new_tag_names . " with a type of " . $new_tag_type)
