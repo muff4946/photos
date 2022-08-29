@@ -22,17 +22,17 @@ $images = new images($db);
 
 //get image id from url
 $tagid= isset($_GET['tag']) ? $_GET['tag'] : '';
-$ntag= isset($_GET['ntag']) ? $_GET['ntag'] : '';
-$ntagtype= isset($_GET['type']) ? $_GET['type'] : 'individual';
+$new_tag_names= isset($_GET['new_tag_names']) ? $_GET['new_tag_names'] : '';
+$new_tag_type= isset($_GET['new_tag_type']) ? $_GET['new_tag_type'] : 'individual';
 
 
-if($tagid != ''||$ntag != ''){
+if($tagid != ''||$new_tag_names != ''){
 
 	//get array of tag ids
-	$stmt = $tags->update($tagid,$ntag,$ntagtype);
+	$stmt = $tags->update($tagid,$new_tag_names,$new_tag_type);
 	http_response_code(200);
 	echo json_encode(
-		array("message"=> "tag no. " . $tagid . " is now " . $ntag)
+		array("message"=> "tag no. " . $tagid . " is now " . $new_tag_names)
 	);
 	
 }

@@ -192,14 +192,14 @@ class tags{
 	}
 		
 	//U
-	public function update($tag, $ntag, $ntagType){
+	public function update($tag, $new_tag_names, $new_tag_type){
 		$query = "UPDATE anderson_images.tags
 					SET tag_names = ?, tag_type = ?
 					WHERE tag_id = ?";
 		$stmt = $this->connection->prepare($query);
 		//bind variable values
-		$stmt->bindParam(1,$ntag);
-		$stmt->bindParam(2,$ntagType);
+		$stmt->bindParam(1,$new_tag_names);
+		$stmt->bindParam(2,$new_tag_type);
 		$stmt->bindParam(3,$tag, PDO::PARAM_INT);
 		
 		try{
