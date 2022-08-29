@@ -89,8 +89,8 @@
 				<td>{{a.id}}</td>
                 <td><input ng-model="$parent.$parent.new_tag_names" placeholder="{{a.names}}"/></td>
                 <td><select ng-model="$parent.$parent.new_tag_type">
-						<option value="">{{a.type}}</option>
-						<option ng-repeat="t in tag_types" value={{t.type}}>{{t.type}}</option>
+					<option value="">{{a.type}}</option>
+					<option ng-repeat="t in tag_types" value={{t.type}}>{{t.type}}</option>
 				</select></td>
                 <td>
                     <input type="hidden" ng-model="formData.data.id" />
@@ -205,7 +205,7 @@ app.controller('TagMaintCont', function($scope, $http){
 
 	//editing tag properties 
 	$scope.editTag=function(tag_id,new_tag_names,new_tag_type){
-		var tag_id=$scope.tag_id;
+		var tag_id=a.id;
 		var new_tag_names=$scope.new_tag_names;
 		var new_tag_type=$scope.new_tag_type;
 		var values_to_send="?tag_id="+tag_id+"&new_tag_type="+new_tag_type+"&new_tag_names="+new_tag_names;
