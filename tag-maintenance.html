@@ -195,8 +195,8 @@ app.controller('TagMaintCont', function($scope, $http){
 		$http.get("https://photos.dbq-andersons.com/api/product/post_new_tag.php"+values_to_send,).then(
 			function successfulCallback(response){
 				$scope.getAllTags();
-				$scope.new_tag_type = '';
-				$scope.new_tag_names = '';
+				$scope.tag_type = '';
+				$scope.tag_names = '';
 				//alert("Tag "+tag_names+" has been added to the database.");
 			},
 			function errorCallback(response){
