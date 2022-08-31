@@ -127,6 +127,7 @@ body{
 
 .tag-list #num{
 	width: 40px;
+	color: white;
 }
 
 .tag-list #tag_id{
