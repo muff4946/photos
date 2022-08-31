@@ -84,7 +84,8 @@
 				<td style="text-align:right">{{a.tag_link_count}}</td>
                 <td style="text-align:center">
                     <button ng-click="showEdit(a)"><i class="fa fa-edit" style="font-size:15px;"></i></button>
-                    <button ng-click="deleteTag(a.id,a.names,a.tag_link_count)"><i class="fa fa-trash" style="font-size:15px;"></i></button>
+                    <!--<button ng-click="deleteTag(a.id,a.names,a.tag_link_count)"><i class="fa fa-trash" style="font-size:15px;"></i></button>-->
+					<button onclick="document.getElementById('searched-tags-modal').style.display='block'" class="button"><i class="fa fa-trash" style="font-size:15px;"></i></button>
                 </td>
             </script>
             <script type="text/ng-template" id="edit">
