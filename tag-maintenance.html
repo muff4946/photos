@@ -84,8 +84,7 @@
 				<td style="text-align:right">{{a.tag_link_count}}</td>
                 <td style="text-align:center">
                     <button ng-click="showEdit(a)"><i class="fa fa-edit" style="font-size:15px;"></i></button>
-                    <!--<button ng-click="deleteTag(a.id,a.names,a.tag_link_count)"><i class="fa fa-trash" style="font-size:15px;"></i></button>-->
-					<button onclick="document.getElementById('delete-confirmation-modal').style.display='block'" class="button"><i class="fa fa-trash" style="font-size:15px;"></i></button>
+                    <button ng-click="deleteTag(a.id,a.names,a.tag_link_count)"><i class="fa fa-trash" style="font-size:15px;"></i></button>
                 </td>
             </script>
             <script type="text/ng-template" id="edit">
@@ -103,20 +102,6 @@
                     <button ng-click="reset()"><i class="fa fa-times" style="font-size:15px;"></i></button>
                 </td>
             </script>
-		</div>
-	</div>
-	<div class="modal" id="delete-confirmation-modal">
-		<div class="modal-content modal-card modal-animate-zoom">
-			<header class="modal-header">
-			<h4>{{a.id}}</h4>
-			</header>
-			<div class="confirmation-modal-container">
-				<input ng-model="delete"/>
-			</div>
-			<div class="modal-base">
-				<button class="modal-right"
-				onclick="document.getElementById('delete-confirmation-modal').style.display='none'">Close</button>
-			</div>
 		</div>
 	</div>	
 </div>
