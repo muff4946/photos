@@ -91,22 +91,6 @@ body{
 	border-bottom: 1px solid black;
 }
 
-#page_tracker {
-	text-align: right;
-	position: absolute;
-	top: 10px;
-	right: 10px;
-}
-
-#user_name {
-	text-align: left;
-	position: absolute;
-	top: 10px;
-	left: 10px;
-	color: white;
-}
-
-
 .tag-add{
 	display: block;
 	position: relative;
@@ -131,42 +115,6 @@ body{
 	font-weight: bold;
 }
 
-
-.search{
-	position: absolute;
-	left: 10px;
-	top: 10px;
-}
-
-.otherTop{
-	position: absolute;
-	top: 10px;
-	right: 10px;
-	text-align: right;
-	
-}
-
-.pages{
-	position: absolute;
-	left: 10px;
-	top: 40px;
-	text-align: left;
-}
-
-.page_numbers{
-	width: 40px;
-}
-
-.pages2 input{
-	width: 50px;
-}
-
-.pages2{
-	text-align: right;
-	position: absolute;
-	top: 40px;
-	right: 10px;
-}
 
 .tag-list{
 	margin-right: 5px;
