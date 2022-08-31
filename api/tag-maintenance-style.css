@@ -132,24 +132,29 @@ body{
 
 .tag-list #tag_id{
 	width: 60px;
+	color: white;
 }
 
 .tag-list #tag_name{
 	width: auto;
+	color: white;
 }
 
 .tag-list #tag_type{
 	width: 200px;
+	color: white;
 }
 
 .tag-list #link_count{
 	width: 65px;
 	text-align: center;
+	color: white;
 }
 
 .tag-list #edit_tag{
 	width: 70px;
 	text-align: center;
+	color: white;
 }
 
 table{
