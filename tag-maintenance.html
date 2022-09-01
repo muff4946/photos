@@ -94,7 +94,7 @@
 				<td>{{a.id}}</td>
                 <td><input ng-model="$parent.$parent.new_tag_names" placeholder="{{a.names}}"/></td>
                 <td><select ng-model="$parent.$parent.new_tag_type">
-					<option value="">{{a.tag_type}}</option>
+					<option value="">{{a.type}}</option>
 					<option ng-repeat="t in tag_types" value={{t.type}}>{{t.type}}</option>
 				</select></td>
 				<td style="text-align:right">{{a.tag_link_count}}</td>
