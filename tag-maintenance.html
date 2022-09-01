@@ -179,7 +179,6 @@ app.controller('TagMaintCont', function($scope, $http){
 		if (confirm == "DELETE"){
 			$http.get("https://photos.dbq-andersons.com/api/product/delete_tag.php"+values_to_send,).then(
 				function successfulCallback(response){
-					alert("Deletions complete.");
 					$scope.getAllTags();
 					//document.getElementById("searchbar").value = "";
 				},
@@ -187,9 +186,7 @@ app.controller('TagMaintCont', function($scope, $http){
 					//alert("tag not added");
 					console.log(response);
 			});
-		} else {
-			alert("Deletions cancelled by user.");
-			}
+		} 
 	}
 	
 	//adding tag 
