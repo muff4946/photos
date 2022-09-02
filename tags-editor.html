@@ -144,7 +144,7 @@ var keyword;
 var imageid;
 
 var app = angular.module('TagEditor',[]);
-app.controller('TagEditorCont',function($scope, $http){
+app.controller('TagEditorCont',function($scope, $http, $window){
 	window.onload = function(){
 		$scope.start();
 		};
