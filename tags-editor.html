@@ -102,9 +102,7 @@
 				<div class="title"><b><center>Functions</center></b></div>
 				<span class="br"></span>
 				<div class="not_title">
-					<button class="funbutton" onclick="document.getElementById('tag-maintenance-modal').style.display='block'">Tag Maintenance<br>(under construction)</button>
-					<!--<span class="br"></span>
-					<button ng-click="notYetFunctional()">Tag maintenance</button>-->
+					<button class="funbutton" ng-click="tagMaintenance()">Tag Maintenance</button>
 					<span class="br"></span>
 					<button class="funbutton" ng-click="copyTags()">copy tags from image</button>
 					<span class="br"></span>
@@ -190,19 +188,13 @@ app.controller('TagEditorCont',function($scope, $http){
 	
 	}
 	
-	//getting list of all tags for the edit tags modal
-	$scope.getAllTags = function(){
-		$http.get("https://photos.dbq-andersons.com/api/product/get_all_non-year_tags.php",).then(
-			function successfulCallback(response){
-				$scope.all_tags = response.data.all_tags;
-				//console.log($scope.all_tags);
-			},
-			function errorCallback(response){
-				console.log(response);
-		});
+	//method that opens the tag-maintenance page in a new tab
 	
-	}
-
+	$scope.tagMaintenance = function(){
+		$window.open('https://photos.dbq-andersons.com/tag-maintenance.html', '_blank');
+	};
+	
+	
 	//getting the image and setting the source
 	$scope.getImage = function(){
 		var str = $scope.page_info[0].path;
@@ -333,23 +325,6 @@ app.controller('TagEditorCont',function($scope, $http){
 		}	
 	}
 	
-	$scope.deleteTag=function(tag_id){
-		var values_to_send="?tag_id="+tag_id;
-		var r = confirm("Do you want to delete tag "+tag_id+" from the database (including all tag links)?");
-		if(r==true){
-			$http.get("https://photos.dbq-andersons.com/api/product/delete_tag.php"+values_to_send,).then(
-				function successfulCallback(response){
-					//alert("new tag added");
-					$scope.getAllTags();
-					//document.getElementById("searchbar").value = "";
-				},
-				function errorCallback(response){
-					//alert("tag not added");
-					console.log(response);
-			});
-		}	
-	}
-
 	$scope.setLastPage = function(){
 		var toAdd = JSON.stringify($scope.tags_assigned);
 		localStorage.setItem("lastTags",toAdd);
