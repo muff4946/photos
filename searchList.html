@@ -225,6 +225,7 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_image.php?use=view&image="+imageid,).then(
 			function successfulCallback(response){
 				$scope.tags_assigned = response.data.tags;
+				$scope.image_id = response.data.image;
 				//console.log($scope.tags_assigned);
 			},
 			function errorCallback(response){
