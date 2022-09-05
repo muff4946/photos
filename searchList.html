@@ -227,6 +227,7 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 				$scope.tags_assigned = response.data.tags;
 				$scope.image_id = response.data.image;
 				//console.log($scope.tags_assigned);
+				//console.log($scope.image_id);
 			},
 			function errorCallback(response){
 				console.log(response);
