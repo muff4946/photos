@@ -262,7 +262,7 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 
 //deleting tag link rom tag-edit modal
 	$scope.deleteTagLink=function(tag_id){
-		var values_to_send="?tag="+tag_id+"&image="+imageid;
+		var values_to_send="?tag="+tag_id+"&image="+image_id;
 		var r = confirm("Do you want to delete tag "+tag_id+"?");
 		if(r==true){
 			$http.get("https://photos.dbq-andersons.com/api/product/delete_tag_link.php"+values_to_send,).then(
