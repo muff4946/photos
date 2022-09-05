@@ -82,16 +82,18 @@
 					<h3>Tag(s) you searched for (using search type {{searchType}}):</h3>
 				</header>
 				<div class="tags-modal-container">
-					<table width=95% align="center">
-						<tr id="headers">
-							<th id="tag_id" style="padding:3px;">Tag ID</th>
-							<th id="tag_name" style="padding:3px;">Tag Label(s)</th>
-							<th id="tag_name" style="padding:3px;">Tag Type</th>
+					<table>
+						<tr> 
+							<th>#</th>
+							<th>ID</th>
+							<th>TAG</th>
+							<th>DEL</th>
 						</tr>
-						<tr ng-repeat="i in tags_searched">
-							<td style="padding:3px;">{{i.id}}</td>
-							<td style="padding:3px;">{{i.names}}</td>
-							<td style="padding:3px;">{{i.type}}</td>
+						<tr ng-repeat="t in tags_assigned">
+							<td>{{$index + 1}}</td>
+							<td>{{t.id}}</td>
+							<td>{{t.name}}</td>
+							<td class="delete"><button ng-click="deleteTagLink(t.id)">X</button></td>
 						</tr>
 					</table>
 				</div>
