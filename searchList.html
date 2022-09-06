@@ -290,6 +290,19 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 			});
 		}	
 	}
+	
+//Search bar for adding tags in the tag-edit modal
+	$scope.searchText=null;
+	$scope.change=function(text){
+		valtosend=$scope.searchText;
+		$http.get("https://photos.dbq-andersons.com/api/product/search_tags.php?keyword="+$scope.searchText,).then(
+			function successfulCallback(response){
+				$scope.entries=response.data.records;
+			},
+			function errorCallback(response){
+				console.log(response);
+		});
+	}
  
 });
 
