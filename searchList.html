@@ -126,7 +126,7 @@
 						<span class="br"></span>
 						<form>
 						<input id="searchbar" type="text" ng-model="searchText" ng-change="change(text)" placeholder="Type search text here"/>
-						<button class="funbutton" ng-click="addTagLink()" type="submit">add</button>
+						<button class="funbutton" ng-click="addTagLink(entry.id,image_id)" type="submit">add</button>
 						<span class="br"></span>
 							<select class="add_select" id="add_select">
 								<option ng-repeat="entry in entries" value={{entry.id}}>{{entry.name}}</option>
@@ -305,7 +305,7 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 	}
 
 //adding tag link in the tag-edit modal
-	$scope.addTagLink=function(){
+	$scope.addTagLink=function(tag_id,image){
 		var tag_id = document.getElementById("add_select").value;
 		var values_to_send="?tag="+tag_id+"&image="+image;
 		$http.get("https://photos.dbq-andersons.com/api/product/post_new_tag_link.php"+values_to_send,).then(
