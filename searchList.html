@@ -269,7 +269,7 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 			$http.get("https://photos.dbq-andersons.com/api/product/delete_tag_link.php"+values_to_send,).then(
 				function successfulCallback(response){
 					//alert("Tag deleted.");
-					$scope.getTags();
+					$scope.getTags(image_id);
 					//document.getElementById("searchbar").value = "";
 				},
 				function errorCallback(response){
