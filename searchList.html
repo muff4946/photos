@@ -307,7 +307,7 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 //adding tag link in the tag-edit modal
 	$scope.addTagLink=function(){
 		var tag_id = document.getElementById("add_select").value;
-		var values_to_send="?tag="+tag_id+"&image="+imageid;
+		var values_to_send="?tag="+tag_id+"&image="+image;
 		$http.get("https://photos.dbq-andersons.com/api/product/post_new_tag_link.php"+values_to_send,).then(
 			function successfulCallback(response){
 				//alert("new tag added");
