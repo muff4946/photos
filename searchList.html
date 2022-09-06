@@ -303,7 +303,23 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 				console.log(response);
 		});
 	}
- 
+
+//adding tag link in the tag-edit modal
+	$scope.addTagLink=function(){
+		var tag_id = document.getElementById("add_select").value;
+		var values_to_send="?tag="+tag_id+"&image="+imageid;
+		$http.get("https://photos.dbq-andersons.com/api/product/post_new_tag_link.php"+values_to_send,).then(
+			function successfulCallback(response){
+				//alert("new tag added");
+				$scope.getTags();
+				document.getElementById("searchbar").value = "";
+			},
+			function errorCallback(response){
+				alert("tag not added");
+				console.log(response);
+		});	
+	}
+
 });
 
 
