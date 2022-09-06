@@ -133,6 +133,7 @@
 						<form>
 						<input id="searchbar" type="text" ng-model="searchText" ng-change="change(text)" placeholder="Type search text here"/>
 						<button class="funbutton" ng-click="addTagLink(entry.id,image_id)" type="submit">Link</button>
+						<button class="funbutton" ng-click="tagMaintenance()" type="submit">Tag Maintenance</button>
 						<span class="br"></span>
 							<select class="add_select" id="add_select">
 								<option ng-repeat="entry in entries" value={{entry.id}}>{{entry.name}}</option>
@@ -311,9 +312,15 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 				console.log(response);
 		});	
 	}
+	
+//method that opens the tag-maintenance page in a new tab (called from tag-edit modal)
+	
+	$scope.tagMaintenance = function(){
+		$window.open('https://photos.dbq-andersons.com/tag-maintenance.html', '_blank');
+	};
+	
 
 });
-
 
 
 </script>
