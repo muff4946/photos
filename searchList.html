@@ -121,6 +121,16 @@
 							<td style="text-align:center"><button ng-click="deleteTagLink(t.id,image_id)">X</button></td>
 						</tr>
 					</table>
+					<div class="addSection"><center><b>SEARCH FOR TAG(S) TO ADD</b></center><span class="br"></span>
+						<form>
+						<input id="searchbar" type="text" ng-model="searchText" ng-change="change(text)" placeholder="Type search text here"/>
+						<button class="funbutton" ng-click="addTagLink()" type="submit">add</button>
+						<span class="br"></span>
+							<select class="add_select" id="add_select">
+								<option ng-repeat="entry in entries" value={{entry.id}}>{{entry.name}}</option>
+							</select>
+						</form>
+					</div>
 				</div>
 				<div class="modal-base">
 					<button class="modal-right"
