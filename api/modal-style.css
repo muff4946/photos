@@ -119,7 +119,9 @@ table, th, td {
 	border-top: 1px solid #2B303A;
 }
 
-.confirmation-modal-container{
+/* Tag Edit Modal Styles */
+
+.tag-edit-modal-container{
 	margin:0;
 	margin-bottom:16px; 
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
