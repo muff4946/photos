@@ -133,7 +133,7 @@
 						<form>
 						<input id="searchbar" type="text" ng-model="searchText" ng-change="change(text)" placeholder="Type search text here"/>
 						<button class="funbutton" ng-click="addTagLink(entry.id,image_id)" type="submit">Link</button>
-						<button class="funbutton" ng-click="tagMaintenance()" type="submit">Tag Maintenance</button>
+						<button class="funbutton" ng-click="tagMaintenance()" type="submit" style="float:right">Tag Maintenance</button>
 						<span class="br"></span>
 							<select class="add_select" id="add_select">
 								<option ng-repeat="entry in entries" value={{entry.id}}>{{entry.name}}</option>
