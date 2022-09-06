@@ -104,7 +104,7 @@
 		<div class="modal" id="edit-tags-modal">
 			<div class="modal-content modal-card modal-animate-zoom">
 				<header class="modal-header">
-					<h3>Editing tags for image {{image_id}}.</h3>
+					<h3>Editing tag links for image {{image_id}}.</h3>
 				</header>
 				<div class="tags-modal-container">
 					<table width=95% align="center">
@@ -126,7 +126,7 @@
 						<span class="br"></span>
 						<form>
 						<input id="searchbar" type="text" ng-model="searchText" ng-change="change(text)" placeholder="Type search text here"/>
-						<button class="funbutton" ng-click="addTagLink(entry.id,image_id)" type="submit">add</button>
+						<button class="funbutton" ng-click="addTagLink(entry.id,image_id)" type="submit">Link</button>
 						<span class="br"></span>
 							<select class="add_select" id="add_select">
 								<option ng-repeat="entry in entries" value={{entry.id}}>{{entry.name}}</option>
