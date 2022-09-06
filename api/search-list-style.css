@@ -217,6 +217,7 @@ table tr:nth-child(odd){
 	background-color: #7C7C7C;
 	border: 1px solid black;
 	padding: 7px;
+	color: black;
 }
 
 .addSection .br{
