@@ -132,3 +132,13 @@ table, th, td {
 	padding-right: 5px;
 	border-top: 1px solid #2B303A;
 }
+
+.tag-edit-modal-content{
+	margin-left:10%;
+	background-color:#1C6973;
+	position:relative;
+	outline:0;
+	width:600px;
+	color:white; 
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
