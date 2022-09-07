@@ -309,7 +309,7 @@ app.controller('TagEditorCont',function($scope, $http, $window){
 	
 	$scope.deleteTagLink=function(tag_id){
 		var values_to_send="?tag="+tag_id+"&image="+imageid;
-		var r = confirm("Do you want to delete tag "+tag_id+"?");
+		var r = confirm("Do you want to unlink tag "+tag_id+" from this image?");
 		if(r==true){
 			$http.get("https://photos.dbq-andersons.com/api/product/delete_tag_link.php"+values_to_send,).then(
 				function successfulCallback(response){
