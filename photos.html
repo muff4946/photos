@@ -84,11 +84,11 @@ var this_page = 1;
 var search_term = "";
 var user = null;
 var app = angular.module('PhotoTable',[]);
-var read_from = "https://photos.dbq-andersons.com/api/product/read_images_paging.php";
+var read_from = "https://www.dbq-andersons.com/photos-fork/api/product/read_images_paging.php";
 app.controller('PhotoTableCont', function($scope, $http){
 	/*runs when welcome button was pressed*/
 	window.onload = function(){
-		var url = "https://photos.dbq-andersons.com/photos.html";
+		var url = "https://www.dbq-andersons.com/photos-fork/photos.html";
 		if(window.location!=url){
 			window.location = url;
 		}
@@ -101,7 +101,7 @@ app.controller('PhotoTableCont', function($scope, $http){
 	
 	$scope.start = function(){
 		$scope.this_page = this_page;
-		$http.get("https://photos.dbq-andersons.com/api/product/read_images_paging.php?page="+this_page+"&name="+search_term,).then(
+		$http.get("https://www.dbq-andersons.com/photos-fork/api/product/read_images_paging.php?page="+this_page+"&name="+search_term,).then(
 			function successfulCallback(response){
 				$scope.page_list = response.data.paging.pages;
 				$scope.page_info = response.data.paging;
@@ -122,7 +122,7 @@ app.controller('PhotoTableCont', function($scope, $http){
 	/*$scope.setPerPage = function(){
 		var pp = document.getElementById("photos_per_page").value;
 		console.log(pp);
-		$http.post("https://photos.dbq-andersons.com/api/config/core.php?per="+pp,).then(
+		$http.post("https://www.dbq-andersons.com/photos-fork/api/config/core.php?per="+pp,).then(
 			function successfulCallback(response){
 				$scope.start();
 				console.log(response);
@@ -161,7 +161,7 @@ app.controller('PhotoTableCont', function($scope, $http){
 	$scope.submit_page = function(){
 		var pg = document.getElementById("pick_page").value;
 		this_page = pg;
-		//read_from = "https://photos.dbq-andersons.com/api/product/read_images_paging.php?page=" + pg;
+		//read_from = "https://www.dbq-andersons.com/photos-fork/api/product/read_images_paging.php?page=" + pg;
 		$scope.start();
 	};
 	
@@ -192,7 +192,7 @@ app.controller('PhotoTableCont', function($scope, $http){
 		var page = id+(50*(this_page-1))-1;
 		localStorage.setItem("tag_page", page);
 		localStorage.setItem("keyword",search_term);
-		var url = "https://photos.dbq-andersons.com/tags-editor.html";
+		var url = "https://www.dbq-andersons.com/photos-fork/tags-editor.html";
 		document.location.href = url;
 	};
 	
@@ -202,7 +202,7 @@ app.controller('PhotoTableCont', function($scope, $http){
 			alert("no page set");
 		}
 		else{
-			var url = "https://photos.dbq-andersons.com/tags-editor.html";
+			var url = "https://www.dbq-andersons.com/photos-fork/tags-editor.html";
 			document.location.href=url;
 		}
 	};
@@ -235,7 +235,7 @@ app.controller('PhotoTableCont', function($scope, $http){
 	
 	$scope.get_img_by_user = function(){
 		return new Promise((resolve, reject)=>{
-			$http.post("https://photos.dbq-andersons.com/api/product/get_image_by_user.php/?user="+user,).then(
+			$http.post("https://www.dbq-andersons.com/photos-fork/api/product/get_image_by_user.php/?user="+user,).then(
 				function successfulCallback(response){
 					console.log(response);
 					$scope.imgByUser=response.data.images[0].image;

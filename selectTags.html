@@ -223,7 +223,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 	
 	//GETTING BUTTONS
 	$scope.getPeople = function(){
-		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_type.php?type=individual").then(
+		$http.get("https://www.dbq-andersons.com/photos-fork/api/product/get_tags_by_type.php?type=individual").then(
 			function successfulCallback(response){
 				$scope.people_list = response.data.tags;
 				$scope.people_count = $scope.people_list.length;
@@ -236,7 +236,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 	};
 	
 	$scope.getEvents = function(){
-		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_type.php?type=event").then(
+		$http.get("https://www.dbq-andersons.com/photos-fork/api/product/get_tags_by_type.php?type=event").then(
 			function successfulCallback(response){
 				$scope.event_list = response.data.tags;
 				
@@ -248,7 +248,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 	};
 	
 	$scope.getHolidays = function(){
-		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_type.php?type=holiday").then(
+		$http.get("https://www.dbq-andersons.com/photos-fork/api/product/get_tags_by_type.php?type=holiday").then(
 			function successfulCallback(response){
 				$scope.holiday_list = response.data.tags;
 				
@@ -260,7 +260,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 	};
 	
 	$scope.getYears = function(){
-		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_type.php?type=year").then(
+		$http.get("https://www.dbq-andersons.com/photos-fork/api/product/get_tags_by_type.php?type=year").then(
 			function successfulCallback(response){
 				$scope.year_list = response.data.tags;
 				
@@ -272,7 +272,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 	};
 	
 	$scope.getOther = function(){
-		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_type.php?type=other").then(
+		$http.get("https://www.dbq-andersons.com/photos-fork/api/product/get_tags_by_type.php?type=other").then(
 			function successfulCallback(response){
 				$scope.other_list = response.data.tags;
 				
@@ -286,7 +286,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 	// GETTING IMAGE COUNT
 	
 	$scope.getImageCount = function(){
-		$http.get("https://photos.dbq-andersons.com/api/product/get_image_count.php").then(
+		$http.get("https://www.dbq-andersons.com/photos-fork/api/product/get_image_count.php").then(
 			function successfulCallback(response){
 				$scope.image_count = response.data.count;
 			
@@ -335,7 +335,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 		localStorage.setItem("yearCount",yearList.length);
 		
 		//change page
-		document.location.href="https://photos.dbq-andersons.com/searchList.html";
+		document.location.href="https://www.dbq-andersons.com/photos-fork/searchList.html";
 		
 		
 	};
@@ -373,7 +373,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 		
 		
 		//change page
-		document.location.href="https://photos.dbq-andersons.com/searchList.html";
+		document.location.href="https://www.dbq-andersons.com/photos-fork/searchList.html";
 		
 		
 	};
@@ -411,7 +411,7 @@ app.controller('TagSelecterCont', function($scope, $http){
 		
 		
 		//change page
-		document.location.href="https://photos.dbq-andersons.com/searchList.html";
+		document.location.href="https://www.dbq-andersons.com/photos-fork/searchList.html";
 		
 		
 	};
