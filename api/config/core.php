@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 //home page url
-$home_url="https://photos.dbq-andersons.com/";
+$home_url="https://www.dbq-andersons.com/photos-fork";
 
   
 // page given in URL parameter, default page is one
