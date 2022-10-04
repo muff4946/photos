@@ -12,10 +12,6 @@ include_once '../objects/tags.php';
 include_once '../objects/tag_links.php';
 
 
-//utilities
-//$utilities = new Utilities();
-
-
 // instantiate database and product object
 $database = new DBClass();
 $db = $database->getConnection();
