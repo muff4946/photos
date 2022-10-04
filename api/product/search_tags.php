@@ -13,7 +13,7 @@ include_once '../objects/tag_links.php';
 
 
 //utilities
-$utilities = new Utilities();
+//$utilities = new Utilities();
 
 
 // instantiate database and product object
