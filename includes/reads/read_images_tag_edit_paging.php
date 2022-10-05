@@ -4,10 +4,9 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
   
 // include database and object files
-include_once '../config/core.php';
-include_once '../shared/utilities.php';
-include_once '../config/dbclass.php';
-include_once '../objects/images.php';
+include_once '../global-functions.php';
+include_once '../db-connection.php';
+include_once '../sql/images-sql.php';
 
 
 //utilities
@@ -33,7 +32,7 @@ $images_arr["paging"]=array();
 $page=isset($_GET['page']) ? $_GET['page']:1;
 $records_per_page = 1;
 $total_rows=$images->count($keywords);
-$page_url="{$home_url}api/product/read_images_tag_edit_paging.php?";
+$page_url="{$home_url}includes/reads/read_images_tag_edit_paging.php?";
 //get image info for page
 $stmt = $images->readPaging($page, $records_per_page, $keywords);
 $num=$stmt->rowCount();
