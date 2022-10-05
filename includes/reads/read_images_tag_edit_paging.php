@@ -33,7 +33,7 @@ $images_arr["paging"]=array();
 $page=isset($_GET['page']) ? $_GET['page']:1;
 $records_per_page = 1;
 $total_rows=$images->count($keywords);
-$page_url="{$home_url}includes/reads/read_images_tag_edit_paging.php?";
+$page_url="{$home_url}/includes/reads/read_images_tag_edit_paging.php?";
 //get image info for page
 $stmt = $images->readPaging($page, $records_per_page, $keywords);
 $num=$stmt->rowCount();
