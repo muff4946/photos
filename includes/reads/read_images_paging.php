@@ -4,10 +4,10 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
   
 // include database and object files
-include_once '../../api/config/core.php';
-include_once '../../api/shared/utilities.php';
-include_once '../../api/config/dbclass.php';
-include_once '../../api/objects/images.php';
+include_once '../global-functions.php';
+include_once '../pagination-functions.php';
+include_once '../db-connection.php';
+include_once '../sql/images-sql.php';
 
 
 //utilities
@@ -52,7 +52,7 @@ if($num>0){
 	
 	//include paging
 	$total_rows=$images->count($keywords);
-	$page_url="{$home_url}api/product/read_images_paging.php?";
+	$page_url="{$home_url}includes/reads/read_images_paging.php?";
 	$paging=$utilities->getPaging($page, $total_rows, $records_per_page, $page_url);
 	$images_arr["paging"]=$paging;
 	$images_arr["per_page"]=$records_per_page;
