@@ -52,7 +52,7 @@ if($num>0){
 	
 	//include paging
 	$total_rows=$images->count($keywords);
-	$page_url="{$home_url}includes/reads/read_images_paging.php?";
+	$page_url="{$home_url}/includes/reads/read_images_paging.php?";
 	$paging=$utilities->getPaging($page, $total_rows, $records_per_page, $page_url);
 	$images_arr["paging"]=$paging;
 	$images_arr["per_page"]=$records_per_page;
