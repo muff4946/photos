@@ -4,9 +4,9 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
   
 // include database and object files
-include_once '../global-functions.php';
-include_once '../db-connection.php';
-include_once '../objects/tags.php';
+include_once 'global-functions.php';
+include_once 'db-connection.php';
+include_once 'objects/tags.php';
 
 
 // instantiate database and product object
