@@ -5,7 +5,7 @@ header("Content-Type: application/json; charset=UTF-8");
 
 // include database and object files
 include_once '../global-functions.php';
-include_once '../db=connection.php';
+include_once '../db-connection.php';
 include_once '../sql/tags-sql.php';
 
 // instantiate database and product object
