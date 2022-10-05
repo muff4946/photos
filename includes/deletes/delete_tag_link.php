@@ -12,10 +12,8 @@ include_once '../sql/tag-links-sql.php';
 $database = new DBClass();
 $db = $database->getConnection();
 
-//initialize objects
-$tags = new tags($db);
+//initialize object
 $taglinks = new tag_links($db);
-$images = new images($db);
 
 //get image id from url
 $tagid= isset($_GET['tag']) ? $_GET['tag'] : '';
