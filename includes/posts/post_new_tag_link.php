@@ -4,21 +4,16 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
   
 // include database and object files
-include_once '../config/core.php';
-include_once '../shared/utilities.php';
-include_once '../config/dbclass.php';
-include_once '../objects/images.php';
-include_once '../objects/tags.php';
-include_once '../objects/tag_links.php';
+include_once '../global-functions.php';
+include_once '../sql/dbconnection.php';
+include_once '../sql/tag-links-sql.php';
 
 // instantiate database and product object
 $database = new DBClass();
 $db = $database->getConnection();
 
 //initialize objects
-$tags = new tags($db);
 $taglinks = new tag_links($db);
-$images = new images($db);
 
 //get image id from url
 $tagid= isset($_GET['tag']) ? $_GET['tag'] : '';
