@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title>Anderson Photo Library</title>
-	<link rel="stylesheet" href="api/tags-style.css?v=2.02"></link>
-	<link rel="stylesheet" href="api/modal-style.css?v=1.03"></link>
+	<link rel="stylesheet" href="css/tags-style.css?v=2.02"></link>
+	<link rel="stylesheet" href="css/modal-style.css?v=1.03"></link>
 </head>
 
 <body>
@@ -158,7 +158,7 @@ app.controller('TagEditorCont',function($scope, $http, $window){
 		document.getElementById("header").innerText = "Tag Editor: " +page;
 		
 		//getting the paging information and setting the image
-		$http.get("https://photos.dbq-andersons.com/api/product/read_images_tag_edit_paging.php?page="+page+"&name="+keyword,).then(
+		$http.get("https://photos.dbq-andersons.com/includes/reads/read_images_tag_edit_paging.php?page="+page+"&name="+keyword,).then(
 			function successfulCallback(response){
 				$scope.page_list = response.data.paging;
 				$scope.page_info = response.data.records;
@@ -176,7 +176,7 @@ app.controller('TagEditorCont',function($scope, $http, $window){
 	
 	//getting tags for the upper-right panel
 	$scope.getTags = function(){
-		$http.get("https://photos.dbq-andersons.com/api/product/get_tags_by_image.php?use=edit&image="+imageid,).then(
+		$http.get("https://photos.dbq-andersons.com/includes/gets/get_tags_by_image.php?use=edit&image="+imageid,).then(
 			function successfulCallback(response){
 				$scope.tags_assigned = response.data.tags;
 				//console.log($scope.tags_assigned);
@@ -207,7 +207,7 @@ app.controller('TagEditorCont',function($scope, $http, $window){
 	$scope.searchText=null;
 	$scope.change=function(text){
 		valtosend=$scope.searchText;
-		$http.get("https://photos.dbq-andersons.com/api/product/search_tags.php?keyword="+$scope.searchText,).then(
+		$http.get("https://photos.dbq-andersons.com/includes/search_tags.php?keyword="+$scope.searchText,).then(
 			function successfulCallback(response){
 				$scope.entries=response.data.records;
 			},
@@ -218,14 +218,14 @@ app.controller('TagEditorCont',function($scope, $http, $window){
 	
 	//events list
 	$scope.getTypes=function(text){
-		$http.get("https://photos.dbq-andersons.com/api/product/search_tags.php?type=event",).then(
+		$http.get("https://photos.dbq-andersons.com/includes/search_tags.php?type=event",).then(
 			function successfulCallback(response){
 				$scope.events=response.data.records;
 			},
 			function errorCallback(response){
 				console.log(response);
 		});
-		$http.get("https://photos.dbq-andersons.com/api/product/search_tags.php?type=holiday",).then(
+		$http.get("https://photos.dbq-andersons.com/includes/search_tags.php?type=holiday",).then(
 			function successfulCallback(response){
 				$scope.holidays=response.data.records;
 			},
@@ -238,7 +238,7 @@ app.controller('TagEditorCont',function($scope, $http, $window){
 	$scope.addTagLink1=function(tag_id){
 		
 		var values_to_send="?tag="+tag_id+"&image="+imageid;
-		$http.get("https://photos.dbq-andersons.com/api/product/post_new_tag_link.php"+values_to_send,).then(
+		$http.get("https://photos.dbq-andersons.com/includes/posts/post_new_tag_link.php"+values_to_send,).then(
 			function successfulCallback(response){
 				//alert("new tag added");
 				$scope.getTags();
@@ -267,7 +267,7 @@ app.controller('TagEditorCont',function($scope, $http, $window){
 	$scope.addTagLink=function(){
 		var tag_id = document.getElementById("add_select").value;
 		var values_to_send="?tag="+tag_id+"&image="+imageid;
-		$http.get("https://photos.dbq-andersons.com/api/product/post_new_tag_link.php"+values_to_send,).then(
+		$http.get("https://photos.dbq-andersons.com/includes/posts/post_new_tag_link.php"+values_to_send,).then(
 			function successfulCallback(response){
 				//alert("new tag added");
 				$scope.getTags();
@@ -311,7 +311,7 @@ app.controller('TagEditorCont',function($scope, $http, $window){
 		var values_to_send="?tag="+tag_id+"&image="+imageid;
 		var r = confirm("Do you want to unlink tag "+tag_id+" from this image?");
 		if(r==true){
-			$http.get("https://photos.dbq-andersons.com/api/product/delete_tag_link.php"+values_to_send,).then(
+			$http.get("https://photos.dbq-andersons.com/includes/deletes/delete_tag_link.php"+values_to_send,).then(
 				function successfulCallback(response){
 					//alert("Tag deleted.");
 					$scope.getTags();
