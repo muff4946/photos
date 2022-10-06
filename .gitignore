@@ -4,3 +4,6 @@
 
 #storage
 /storage/*
+
+#SSL Challenge Files
+/.well-known
