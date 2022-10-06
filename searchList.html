@@ -3,9 +3,9 @@
 <head>
 <title>Anderson Photo Library Tag Search Results</title>
 <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
-<link rel="stylesheet" href="api/search-list-style.css?v=1.02"></link>
-<link rel="stylesheet" href="api/spinner.css?v=1.02"></link>
-<link rel="stylesheet" href="api/modal-style.css?v=1.03"></link>
+<link rel="stylesheet" href="css/search-list-style.css?v=1.02"></link>
+<link rel="stylesheet" href="css/spinner.css?v=1.02"></link>
+<link rel="stylesheet" href="css/modal-style.css?v=1.03"></link>
 
 </head>
 <body>
@@ -184,7 +184,7 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 		
 		$scope.showSpinner = true;
 
-		$http.get("https://www.dbq-andersons.com/photos-fork/api/product/get_images_by_tag.php/?searchType="+searchType + "&tag="+toAdd + "&num="+numTags + "&yearCount="+yearCount + "&otherCount="+otherCount + "&eventCount="+eventCount + "&holidayCount="+holidayCount + "&peopleCount="+peopleCount,).then(
+		$http.get("https://www.dbq-andersons.com/photos-fork/includes/gets/get_images_by_tag.php/?searchType="+searchType + "&tag="+toAdd + "&num="+numTags + "&yearCount="+yearCount + "&otherCount="+otherCount + "&eventCount="+eventCount + "&holidayCount="+holidayCount + "&peopleCount="+peopleCount,).then(
 		function successfulCallback(response){
 				$scope.imageList = response.data.images;
 				$scope.searchedtags = toAdd;
@@ -227,7 +227,7 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 	
 //getting the tags to put underneath the photo
 	$scope.getTags = function(imageid){
-		$http.get("https://www.dbq-andersons.com/photos-fork/api/product/get_tags_by_image.php?use=view&image="+imageid,).then(
+		$http.get("https://www.dbq-andersons.com/photos-fork/includes/gets/get_tags_by_image.php?use=view&image="+imageid,).then(
 			function successfulCallback(response){
 				$scope.tags_assigned = response.data.tags;
 				//console.log($scope.tags_assigned);
@@ -240,7 +240,7 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 
 //getting information about the tags that were included in the search
 	$scope.getSearchedTags = function(toAdd){
-		$http.get("https://www.dbq-andersons.com/photos-fork/api/product/get_tags_info_by_ids.php?tags="+toAdd,).then(
+		$http.get("https://www.dbq-andersons.com/photos-fork/includes/gets/get_tags_info_by_ids.php?tags="+toAdd,).then(
 			function successfulCallback(response){
 				$scope.tags_searched = response.data.tags;
 				console.log($scope.tags_searched);
@@ -252,7 +252,7 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 	
 //getting image information to display in the bottom row and drive the clickImage method
 	$scope.getImageInfo = function(imageid){
-		$http.get("https://www.dbq-andersons.com/photos-fork/api/product/get_image_info_by_id.php?image="+imageid,).then(
+		$http.get("https://www.dbq-andersons.com/photos-fork/includes/gets/get_image_info_by_id.php?image="+imageid,).then(
 			function successfulCallback(response){
 				$scope.image_id = response.data.id;
 				$scope.image_hash = response.data.hash;
@@ -271,7 +271,7 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 		var values_to_send="?tag="+tag_id+"&image="+image;
 		var r = confirm("Do you want to unlink tag "+tag_id+" from this image?");
 		if(r==true){
-			$http.get("https://www.dbq-andersons.com/photos-fork/api/product/delete_tag_link.php"+values_to_send,).then(
+			$http.get("https://www.dbq-andersons.com/photos-fork/includes/deletes/delete_tag_link.php"+values_to_send,).then(
 				function successfulCallback(response){
 					//alert("Tag deleted.");
 					$scope.getTags(image);
@@ -288,7 +288,7 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 	$scope.searchText=null;
 	$scope.change=function(text){
 		valtosend=$scope.searchText;
-		$http.get("https://www.dbq-andersons.com/photos-fork/api/product/search_tags.php?keyword="+$scope.searchText,).then(
+		$http.get("https://www.dbq-andersons.com/photos-fork/includes/search_tags.php?keyword="+$scope.searchText,).then(
 			function successfulCallback(response){
 				$scope.entries=response.data.records;
 			},
@@ -301,7 +301,7 @@ app.controller('PhotoTableCont', function($scope, $http, $window){
 	$scope.addTagLink=function(tag_id,image){
 		var tag_id = document.getElementById("add_select").value;
 		var values_to_send="?tag="+tag_id+"&image="+image;
-		$http.get("https://www.dbq-andersons.com/photos-fork/api/product/post_new_tag_link.php"+values_to_send,).then(
+		$http.get("https://www.dbq-andersons.com/photos-fork/includes/posts/post_new_tag_link.php"+values_to_send,).then(
 			function successfulCallback(response){
 				//alert("new tag added");
 				$scope.getTags(image);
