@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 //home page url
-$home_url="https://www.dbq-andersons.com/photos-fork";
+$home_url="https://photos.dbq-andersons.com";
 
 function console_log( $data ){
 	echo '<script>';

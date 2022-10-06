@@ -30,7 +30,7 @@ $image_hash = $row["image_hash"];
 $image_path = $row["image_path"];
 $image_file = $row["image_file"];
 $web_image_path = str_replace ("\\", "/", $image_path);
-$web_image_path = str_replace ("D:/pictures", "https://www.dbq-andersons.com/photos-fork/storage", $web_image_path);
+$web_image_path = str_replace ("D:/pictures", "https://photos.dbq-andersons.com/storage", $web_image_path);
 
 $image_info = array(
 	"id"=>$image_id,

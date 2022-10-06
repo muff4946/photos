@@ -116,7 +116,7 @@
 var app = angular.module('TagMaint',[]);
 app.controller('TagMaintCont', function($scope, $http){
 	window.onload = function(){
-		var url = "https://www.dbq-andersons.com/photos-fork/tag-maintenance.html";
+		var url = "https://photos.dbq-andersons.com/tag-maintenance.html";
 		if(window.location!=url){
 			window.location = url;
 		}
@@ -148,7 +148,7 @@ app.controller('TagMaintCont', function($scope, $http){
 
 	//getting list of all tags
 	$scope.getAllTags = function(){
-		$http.get("https://www.dbq-andersons.com/photos-fork/includes/gets/get_all_tags.php",).then(
+		$http.get("https://photos.dbq-andersons.com/includes/gets/get_all_tags.php",).then(
 			function successfulCallback(response){
 				$scope.all_tags = response.data.all_tags;
 				//console.log($scope.all_tags);
@@ -161,7 +161,7 @@ app.controller('TagMaintCont', function($scope, $http){
 
 	//getting list of tag types
 	$scope.getTagTypes = function(){
-		$http.get("https://www.dbq-andersons.com/photos-fork/includes/gets/get_tag_types.php",).then(
+		$http.get("https://photos.dbq-andersons.com/includes/gets/get_tag_types.php",).then(
 			function successfulCallback(response){
 				$scope.tag_types = response.data.tag_type;
 				//console.log($scope.tag_types);
@@ -177,7 +177,7 @@ app.controller('TagMaintCont', function($scope, $http){
 		var values_to_send="?tag_id="+tag_id;
 		let confirm = prompt("Tag "+tag_id+" ("+tag_names+") is currently linked to "+tag_link_count+" images.\nAll of these links will be removed with the tag.\nThese link deletions cannot be undone.\n\nType DELETE and click OK to continue with the tag and link deletions.", "");
 		if (confirm == "DELETE"){
-			$http.get("https://www.dbq-andersons.com/photos-fork/includes/deletes/delete_tag.php"+values_to_send,).then(
+			$http.get("https://photos.dbq-andersons.com/includes/deletes/delete_tag.php"+values_to_send,).then(
 				function successfulCallback(response){
 					$scope.getAllTags();
 					//document.getElementById("searchbar").value = "";
@@ -194,7 +194,7 @@ app.controller('TagMaintCont', function($scope, $http){
 		var tag_type=$scope.tag_type;
 		var tag_names=$scope.tag_names;
 		var values_to_send="?tag_type="+tag_type+"&tag_names="+tag_names;
-		$http.get("https://www.dbq-andersons.com/photos-fork/includes/posts/post_new_tag.php"+values_to_send,).then(
+		$http.get("https://photos.dbq-andersons.com/includes/posts/post_new_tag.php"+values_to_send,).then(
 			function successfulCallback(response){
 				$scope.getAllTags();
 				$scope.tag_type = '';
@@ -213,7 +213,7 @@ app.controller('TagMaintCont', function($scope, $http){
 		var new_tag_names=$scope.new_tag_names;
 		var new_tag_type=$scope.new_tag_type;
 		var values_to_send="?tag_id="+tag_id+"&new_tag_type="+new_tag_type+"&new_tag_names="+new_tag_names;
-		$http.get("https://www.dbq-andersons.com/photos-fork/includes/update_tags.php"+values_to_send,).then(
+		$http.get("https://photos.dbq-andersons.com/includes/update_tags.php"+values_to_send,).then(
 			function successfulCallback(response){
 				$scope.getAllTags();
 				$scope.tag_type = '';
